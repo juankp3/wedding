@@ -1,0 +1,46 @@
+@mixin primary_button($background: $color-red, $shadow : $color-red-dark)
+  display: flex
+  background: $shadow
+  border-radius: 20px
+  border: solid 3px $color-grey
+  padding: 3px 0px 0px 0px !important
+  text-decoration: none
+  text-transform: uppercase
+  span
+    padding: 5px 16px 5px 16px
+    border-radius: 20px
+    background: $background
+    color: $color-white
+    width: 100%
+    text-align: center
+    font-family: Montserrat-Regular
+    font-size: 13px
+  &:hover
+    border: solid 3px $color-grey !important
+
+$zIndex-0 : 0
+$zIndex-1 : 100
+$zIndex-2 : 200
+$zIndex-3 : 300
+$zIndex-4 : 400
+$zIndex-5 : 500
+$zIndex-6 : 600
+$zIndex-7 : 700
+$zIndex-8 : 800
+$zIndex-9 : 900
+$zIndex-10 : 1000
+
+$zIndex-0-initial : $zIndex-0
+// Z-Index Applications
+$zIndex-1-parcialOverlay : $zIndex-1
+$zIndex-1-label : $zIndex-1
+
+$zIndex-2-header: $zIndex-2
+$zIndex-2-formFooter: $zIndex-2
+
+$zIndex-6--navOverlay : $zIndex-6
+
+$zIndex-7--navMarketPlace: $zIndex-7
+
+$zIndex-9--overlay: $zIndex-9
+$zIndex-10--dev: $zIndex-10

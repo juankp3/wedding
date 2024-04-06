@@ -1,0 +1,30 @@
+// Media queries
+
+@mixin media-xxl()
+  @media screen and (max-width: 1400px)
+    @content
+
+@mixin media-xl()
+  @media screen and (max-width: 1200px)
+    @content
+
+// iPad Pro 11 pulgadas 834px
+@mixin media-lg()
+  @media screen and (max-width: 992px)
+    @content
+
+@mixin media-md()
+  @media screen and (max-width: 768px)
+    @content
+
+@mixin media-sm()
+  @media screen and (max-width: 576px)
+    @content
+
+@mixin media-xs()
+  @media screen and (max-width: 480px)
+    @content
+
+@mixin media-xxs()
+  @media screen and (max-width: 340px)
+    @content

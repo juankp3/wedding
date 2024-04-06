@@ -1,0 +1,6 @@
+node_modules/
+
+dist/js/bundle.min.js
+dist/js/data.json
+dist/css/style.css
+dist/css/style.min.css
