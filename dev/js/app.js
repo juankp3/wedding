@@ -1,17 +1,35 @@
-fetch('./dist/js/data.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('boyfriend').innerHTML = data.couple.boyfriend;
-    document.getElementById('bride').innerHTML = data.couple.bride;
-
-
-    var contenedorImagen = document.getElementById('container-main-photo');
-    var imagen = document.createElement('img');
-    imagen.src = data.mainphoto;
-    contenedorImagen.appendChild(imagen);
-    
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error al cargar el archivo JSON:', error);
+var jsonData = {}
+function loadData() {
+  $.getJSON('./dist/js/data.json', function (data) {
+    jsonData = data;
+    setCouple();
+    setParents()
   });
+}
+
+function setCouple() {
+  let couple = jsonData.couple;
+  $('#boyfriend').text(couple.boyfriend)
+  $('#bride').text(couple.bride)
+  $('#imageCouple').attr('src', couple.image);
+  $('#versiculo').text(couple.versiculo);
+  $('#capitulo').text(couple.capitulo);
+}
+
+function setParents() {
+  let paretns = jsonData.parents;
+  let html = ''
+  $.each(paretns, function (key, value) {
+    html+= `<div class="parents--name">
+      <b>${value.label}</b>`
+    $.each(value.names, function (key, fullname) {
+      html += `<p>${fullname}</p>`
+    })
+    html+=`</div>`
+  });
+  $(".parents-info").html(html)
+}
+
+$(document).ready(function () {
+  loadData();
+});

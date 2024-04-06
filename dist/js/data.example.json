@@ -1,7 +1,35 @@
 {
-  "couple" : {
-    "boyfriend" :"Pepito",
-    "bride" :"Luciana"
+  "couple": {
+    "boyfriend": "Pepito",
+    "bride": "Luciana",
+    "image": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/5c6ad9d0fb1826efef9e6e940375c31b.jpg",
+    "versiculo": "El amor nunca se da por vencido, jamás ​​​​​​​​​​pierde la fe, siempre tiene esperanzas y ​​​​​se ​​​​​mantiene firme en toda circunstancia",
+    "capitulo": "1 Corintios 13:7"
   },
-  "mainphoto" : "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/5c6ad9d0fb1826efef9e6e940375c31b.jpg"
+  "parents": [
+    {
+      "label": "Padres de la Novia",
+      "names": [
+        "uno Carolina Pfuyo Ccorahua",
+        "dos Carolina Pfuyo Ccorahua"
+      ]
+    },
+    {
+      "label": "Padres del Novi​o",
+      "names": [
+        "tres Carolina Pfuyo Ccorahua",
+        "cuatro Carolina Pfuyo Ccorahua"
+      ]
+    },
+    {
+      "label": "Nuestros Testigos",
+      "names": [
+        "cinco Carolina Pfuyo Ccorahua",
+        "cinco Carolina Pfuyo Ccorahua",
+        "cinco Carolina Pfuyo Ccorahua",
+        "cinco Carolina Pfuyo Ccorahua",
+        "sesis Carolina Pfuyo Ccorahua"
+      ]
+    }
+  ]
 }
