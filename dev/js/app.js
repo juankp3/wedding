@@ -1,6 +1,6 @@
-var jsonData = {}
-function loadData() {
-  $.getJSON('./dist/js/data.json', function (data) {
+var jsonData;
+function loadData(file) {
+  $.getJSON(`./dist/js/${file}`, function (data) {
     jsonData = data;
     setCouple();
     setParents()
@@ -12,8 +12,8 @@ function setCouple() {
   $('#boyfriend').text(couple.boyfriend)
   $('#bride').text(couple.bride)
   $('#imageCouple').attr('src', couple.image);
-  $('#versiculo').text(couple.versiculo);
-  $('#capitulo').text(couple.capitulo);
+  $('.couple-verse').find('p').text(couple.verse);
+  $('.couple-chapter').find('p').text(couple.chapter);
 }
 
 function setParents() {
@@ -31,5 +31,12 @@ function setParents() {
 }
 
 $(document).ready(function () {
-  loadData();
+  loadData('data.json');
+
+  console.log(jsonData)
+  if (typeof jsonData === 'undefined') {
+    console.log('aaa')
+    loadData('data.example.json');
+  }
+
 });
