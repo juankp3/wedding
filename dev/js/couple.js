@@ -39,7 +39,7 @@ export class Couple {
   }
 
   renderParents(paretns) {
-    let html
+    let html = ''
     $.each(paretns, function (key, value) {
       html += `<div class="parents--name">
         <b>${value.label}</b>`
