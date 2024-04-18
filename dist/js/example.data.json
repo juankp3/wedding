@@ -1,0 +1,77 @@
+{
+  "couple": {
+    "boyfriend": "Luis Angel",
+    "bride": "M. Angelica",
+    "image": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/5c6ad9d0fb1826efef9e6e940375c31b.jpg",
+    "verse": "El amor nunca se da por vencido, jamás ​​​​​​​​​​pierde la fe, siempre tiene esperanzas y ​​​​​se ​​​​​mantiene firme en toda circunstancia",
+    "chapter": "12 Corintios 13:7"
+  },
+  "parents": [
+    {
+      "label": "Padres de la Novia",
+      "names": [
+        "Carolina Pfuyo Ccorahua",
+        "Martín Chancahuaña Ampuero"
+      ]
+    },
+    {
+      "label": "Padres del Novi​o",
+      "names": [
+        "Norma Huamaní Basilio​",
+        "Freddy Vivas Fernández​"
+      ]
+    },
+    {
+      "label": "Nuestros Testigos",
+      "names": [
+        "Pamela Obregon M​ollinedo",
+        "Aldair​ Crispin Izquierdo"
+      ]
+    }
+  ],
+  "weddingDate": {
+    "day": "05",
+    "month": "Abril",
+    "year": "2024",
+    "weekday": "Viernes"
+  },
+  "itinerary": [
+    {
+      "icon": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/705b0362113b9e6b1aa4577a2b25c969.svg",
+      "title": "Ceremonia Civil",
+      "description": [
+        "Hora: 12:00 p.m.",
+        "Local de Loma Amarilla",
+        "Av. Monte de Los Olivos 545,",
+        "Urb. Prolongación Benavides, Surco,"
+      ]
+    },
+    {
+      "icon": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/705b0362113b9e6b1aa4577a2b25c969.svg",
+      "title": "Recepción",
+      "description": [
+        "Hora: 2:00 p.m.",
+        "Av. Higuereta 363,",
+        "Av. Monte de Los Olivos 545,",
+        "Cuadra 9 de Caminos del Inca"
+      ]
+    }
+  ],
+  "gifts": {
+    "regalos": "",
+    "bank-account": [
+      {
+        "bank": "Banco BCP",
+        "account": "N° de cuenta: 19492034572012",
+        "cci": "CCI: 00219419203457201290",
+        "owner": "Rebeca Chancahuaña Pfuyo"
+      },
+      {
+        "bank": "Banco BCP",
+        "account": "N° de cuenta: 19492034572012",
+        "cci": "CCI: 00219419203457201290",
+        "owner": "David Vivas Huamaní​"
+      }
+    ]
+  }
+}

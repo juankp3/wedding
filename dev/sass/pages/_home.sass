@@ -1,75 +1,52 @@
-body
-  background: #F9F4FF
-  p
-      padding: 0
-      margin: 0
-.topbanner
-  width: 100%
-  height: 100%
-  display: block
-  object-fit: cover
-  object-position: 50% 50%
-  transform:  rotate(-180deg)
-
 .couple-wrapper
   text-align: center
-  p
-    color: #bda7cb
-    text-align: center
-    font-size: 1.5rem
   .couple-names 
-      color: #bda7cb
-      text-align: center
-      font-style: italic
-      h1
-        font-size: 4rem
-      p
-        font-size: 2rem
-        line-height: 2rem
-  .couple-audio
-    background-color: #F5F0FF
-    padding: 1.5rem 0
+    color: $color-primary
+    text-align: center
+    padding: 32px 0px
     p
-      color: #000
-      font-size: 3rem
-      text-align: center
-    audio#music
-      width: 400px
+      color: $color-primary
+      padding: 0px 0px 16px
+      &.--y
+        font-size: 1rem
+        padding: 8px
+        margin: 0
+    h1
+      font-family: 'NovaQuinta'
+      font-size: 2.8rem
+      font-style: italic
+      line-height: 4rem
+      margin: 0
+      padding: 0
+  .couple-audio
+    padding: 0.5rem 0
+    margin: 8px auto
+    background-color: $color-primary-soft
+    p
+      font-size: 0.9rem
+      padding: 12px
+    audio
+      width: 80%
       background: transparent
-      margin: 1.5rem 0 0 0
-  .couple-image, .couple-verse
-    padding: 2rem 0 0 0
+  .couple-verse
+    width: 80%
+    text-align: center
+    margin: 0 auto
     p 
-      color: #000
-      font-size: 2.5rem
       text-align: center
   .couple-chapter
     padding: 0
     p
-      color: #bda7cb
-      font-size: 3.2rem
-      text-align: center
-      font-style: italic
+      color: $color-primary
+      font-weight: bold
+      font-size: 0.8rem
   img
     width: 70%
 
+  
 .parents-wrapper
   background: #f5f0ff
   .couple-info
     padding: 0
     text-align: center
-    img
-      width: 150px
-    p
-      color: #000
-      font-size: 2.5rem
-      text-align: center
-    .parents-info .parents--name
-      padding-top: 16px
-      b
-        color: #a798c1
-        font-size: 2.8rem
-      p
-        margin: 4px
-        padding: 4
-        font-size: 2.5rem
+    

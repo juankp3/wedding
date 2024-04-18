@@ -16,5 +16,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.74.1"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
   }
 }

@@ -7,7 +7,7 @@ const rename = require('gulp-rename');
 
 // Tarea para compilar Sass a CSS
 gulp.task('sass', () => {
-  return gulp.src('dev/sass/**/*.sass')
+  return gulp.src('dev/sass/**/*.{sass,scss}')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
 });
@@ -21,7 +21,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('css', () => {
-  return gulp.src('dev/sass/**/*.sass')
+  return gulp.src('dev/sass/**/*.{sass,scss}')
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS()) // Comprimir el CSS
     .pipe(rename({ suffix: '.min' })) // Renombrar el archivo comprimido
