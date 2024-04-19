@@ -51,6 +51,19 @@ export class Couple {
     return html
   }
 
+  renderGifts(accounts) {
+    let html = ''
+    $.each(accounts, function (key, value) {
+      html += `<div class="account--group">
+        <b>${value.bank}</b>
+        <p>${value.account}</p>
+        <p>${value.cci}</p>
+        <p>${value.owner}</p>`
+      html += `</div>`
+    });
+    return html
+  }
+
   test(){
     return 'Hola';
   }

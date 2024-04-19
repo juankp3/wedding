@@ -12,4 +12,7 @@ $(document).ready(async function () {
   $(".parents-info").html(parents)
   // console.log(parents)
 
+  console.log(data.gifts['bank-account'])
+  let accounts = couple.renderGifts(data.gifts['bank-account'])
+  $(".gifts-accounts").html(accounts)
 });
