@@ -13,14 +13,7 @@
 </head>
 <body>
   <img src="dist/img/flowers.webp" class="topbanner" />
-  <div class="couple-audio">
-    <p>Escucha nuestra canción</p>
-    <button id="toggleButton">x</button>
-    <audio id="music" controls>
-      <source src="dist/mp3/perfecta.mp3" type="audio/mpeg">
-      Tu navegador no soporta el elemento de audio.
-    </audio>
-  </div>
+  
 
 
   <section class="couple-wrapper">
@@ -56,10 +49,17 @@
     </div>
   </section>
 
-  <button class="speaker-wrapper active">
+  <div class="couple-audio">
+    <button id="toggleButton" class="speaker-wrapper ">
       <i class="fa-solid fa-volume-high"></i>
       <i class="fa-solid fa-volume-xmark"></i>
-  </button>
+    </button>
+    <audio id="music" controls>
+      <source src="dist/mp3/perfecta.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+
 
 </body>
 </html>

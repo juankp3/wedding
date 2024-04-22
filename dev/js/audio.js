@@ -5,10 +5,10 @@ $(document).ready(function () {
   button.click(function () {
     if (audio.paused) {
       audio.play();
-      // button.text("Pausar");
+      button.addClass('active');
     } else {
       audio.pause();
-      // button.text("Reproducir");
+      button.removeClass('active');
     }
   });
 });
