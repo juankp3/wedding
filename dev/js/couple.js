@@ -8,14 +8,23 @@ export class Couple {
         <p class="--y">&</p>
         <h1>${couple.boyfriend}</h1>
       </div>
-      ${this.renderMusic()}
       ${this.renderBody(couple)}` ;
+    // return `
+    // <div class="couple-names">
+    //     <p>Nuestra Boda</p>
+    //     <h1>${couple.bride}</h1>
+    //     <p class="--y">&</p>
+    //     <h1>${couple.boyfriend}</h1>
+    //   </div>
+    //   ${this.renderMusic()}
+    //   ${this.renderBody(couple)}` ;
   }
 
   renderMusic() {
     return `
     <div class="couple-audio">
       <p>Escucha nuestra canción</p>
+      <button id="reproducirBtn">x</button>
       <audio id="music" controls>
         <source src="dist/mp3/perfecta.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
