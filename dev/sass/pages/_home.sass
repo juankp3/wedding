@@ -71,3 +71,45 @@
       color: $color-primary
       font-family: 'DancingScriptMedium'
       font-size: 26px
+
+.nochildren-wrapper
+  background: #fffcf0
+  .couple-nochildren 
+    padding: 0
+    text-align: center
+  .couple-nochildren h3
+    color: $color-primary
+    font-family: 'DancingScriptMedium'
+    font-size: 45px
+  .couple-nochildren p
+    padding: 0
+    margin: 0
+    font-size: 1.2rem
+    color: #343434
+    text-align: center
+
+.speaker-wrapper
+  background: #000
+  position: fixed
+  opacity: .6
+  bottom: 10px
+  right: 10px
+  z-index: 1
+  border-radius: 25px
+  width: 50px
+  height: 50px
+  display: flex
+  justify-content: center
+  align-items: center
+  i
+    color: #ffffff
+    opacity: 1
+  .fa-volume-high
+    display: none
+  .fa-volume-xmark
+    display: block
+.speaker-wrapper.active
+  .fa-volume-high
+    display: block
+  .fa-volume-xmark
+    display: none
