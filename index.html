@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Incluye jQuery -->
   <script type="module" src="./dist/js/bundle.min.js?v=9"></script>
 </head>
-<body class=""> <!-- body-envelope  -->
+<body class="body-envelope"> <!-- body-envelope  -->
   <img src="dist/img/flowers.webp" class="topbanner" />
   
 
@@ -127,7 +127,7 @@
   </section>
 
   <div class="audio-wrapper">
-    <button id="toggleButton">
+    <button class="toggleButton">
       <i class="fa-solid fa-volume-high"></i>
       <i class="fa-solid fa-volume-xmark"></i>
     </button>
@@ -141,11 +141,10 @@
     
     <div class="seal-content">
       <div class="tippy-content" data-state="visible">
-        <p>¡Toca Aquí x3!</p>
+        <p>¡Toca Aquí</p>
       </div>
       <div class="seal">
-        <input class="image-seal" aria-label="" type="image" src="https://invitafy.com/24so/ChrisyBrenda/_app/immutable/assets/SelloInv%20(6)-21fdb09f.png"
-          name="saveForm" class="sello selloAnimation svelte-kk6z2o" id="selloButton" aria-describedby="tippy-1">
+        <input class="image-seal toggleButton" type="image" src="https://invitafy.com/24so/ChrisyBrenda/_app/immutable/assets/SelloInv%20(6)-21fdb09f.png">
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var audio = document.getElementById("music");
-  var button = $("#toggleButton");
+  var button = $(".toggleButton");
 
   button.click(function () {
     if (audio.paused) {
