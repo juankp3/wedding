@@ -4,6 +4,7 @@ $(document).ready(function () {
 
   button.click(function () {
     if (audio.paused) {
+      audio.currentTime = 20;
       audio.play();
       button.addClass('active');
     } else {
