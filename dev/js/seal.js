@@ -21,14 +21,14 @@ $(document).ready(function () {
   // Iniciar la animación
   animacionTamanio();
   $(".image-seal").click(function(){
+    contenido.stop(true)
     $('.tippy-content').hide()
-    sobreIzquierdo.animate({ left: "-50%" }, 500);
-    sobreDerecho.animate({ right: "-60%" }, 500, function(){
+    sobreIzquierdo.animate({ left: "-50%" }, 700);
+    sobreDerecho.animate({ right: "-60%" }, 700, function(){
       $(".image-seal").fadeOut(900, function(){
         $('body').removeClass('body-envelope')
       });
       $(".envelope-wrapper").toggleClass('blanco', 900);
-
     });
   })
 });
