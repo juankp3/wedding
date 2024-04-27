@@ -10,15 +10,15 @@
     {
       "label": "Padres de la Novia",
       "names": [
-        "Carolina Pfuyo Ccorahua",
-        "Martín Chancahuaña Ampuero"
+        "Sonia Palomino Huamán",
+        "Juan Fernando Kuga Miranda"
       ]
     },
     {
-      "label": "Padres del Novi​o",
+      "label": "Padres del Novio",
       "names": [
-        "Norma Huamaní Basilio​",
-        "Freddy Vivas Fernández​"
+        "Rosa Luz Aquino Pahuacho",
+        "José Salvatierra Monterola"
       ]
     },
     {
@@ -30,47 +30,52 @@
     }
   ],
   "weddingDate": {
-    "day": "05",
-    "month": "Abril",
+    "day": "24",
+    "month": "Agosto",
     "year": "2024",
-    "weekday": "Viernes"
+    "weekday": "Sábado"
   },
   "itinerary": [
     {
       "icon": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/705b0362113b9e6b1aa4577a2b25c969.svg",
-      "title": "Ceremonia Civil",
-      "description": [
-        "Hora: 12:00 p.m.",
-        "Local de Loma Amarilla",
-        "Av. Monte de Los Olivos 545,",
-        "Urb. Prolongación Benavides, Surco,"
-      ]
+      "title": "Ceremonia Religiosa",
+      "hour": "3:30 PM",
+      "locationimg": "dist/img/basilicaauxiliadora.jpg",
+      "locationname": "Basílica María Auxiliadora", 
+      "locationaddress": "Av. Brasil 210, Breña",
+      "locationiconbtn": "fa-church",
+      "locationtxtbtn": "Ver Ubicación",
+      "description": [""]
     },
     {
       "icon": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/705b0362113b9e6b1aa4577a2b25c969.svg",
       "title": "Recepción",
-      "description": [
-        "Hora: 2:00 p.m.",
-        "Av. Higuereta 363,",
-        "Av. Monte de Los Olivos 545,",
-        "Cuadra 9 de Caminos del Inca"
-      ]
+      "hour": "7:00 PM",
+      "locationimg": "dist/img/mamacona.png",
+      "locationname": "Club Cascada de Mamacona", 
+      "locationaddress": "Mz. A Lt 2A  Asoc. Agroganadería (Mamacona Alta - Lurín)",
+      "locationiconbtn": "fa-location-dot",
+      "locationtxtbtn": "Ver Ubicación",
+      "description": [""]
     }
   ],
   "gifts": {
-    "regalos": "",
+    "icon": "dist/img/gift.svg",
+    "title": "Regalos",
+    "description": "No hay mejor regalo que celebrar juntos. Pero si deseas tener un detalle con nosotros.",
+    "phrase": "¡Suma kilómetros a nuestro viaje!",
     "bank-account": [
       {
-        "bank": "Banco BCP",
-        "account": "N° de cuenta: 19492034572012",
-        "cci": "CCI: 00219419203457201290",
-        "owner": "Rebeca Chancahuaña Pfuyo"
+        "bank": "Bcp Soles",
+        "account": "N° de cuenta: 19397846175017",
+        "cci": "CCI: 00219319784617501712",
+        "owner": "Kuga María O Salvatierra Luis"
       },
       {
-        "bank": "Banco BCP",
-        "account": "N° de cuenta: 19492034572012",
-        "cci": "CCI: 00219419203457201290",
-        "owner": "David Vivas Huamaní​"
+        "bank": "Bcp Dolares",
+        "account": "N° de cuenta: 19397846743191",
+        "cci": "CCI: 00219319784674319118",
+        "owner": "Kuga María O Salvatierra Luis"
       }
     ]
   }

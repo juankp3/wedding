@@ -47,6 +47,17 @@ export class Couple {
     `;
   }
 
+  renderWeddingDate(weddingDate) {
+    return `
+      <h3>¡Nos Casamos!</h3>
+      <p>${weddingDate.day} de ${weddingDate.month} ${weddingDate.year}</p>
+      <button>
+        <i class="fa-regular fa-calendar-plus"></i>
+        <p>Agregar a Calendario</p>
+      </button>
+    `;
+  }
+
   renderParents(paretns) {
     let html = ''
     $.each(paretns, function (key, value) {
@@ -60,23 +71,48 @@ export class Couple {
     return html
   }
 
-  renderGifts(accounts) {
+  renderLocation(itinerary) {
     let html = ''
-    $.each(accounts, function (key, value) {
-      html += `<div class="account--group">
-        <b>${value.bank}</b>
-        <p>${value.account}</p>
-        <p>${value.cci}</p>
-        <p>${value.owner}</p>`
-      html += `</div>`
+    html += `<h3>Ubicaciones</h3>`
+    $.each(itinerary, function (key, value) {
+      html += `<div class="locations-group">
+      <b>${value.title}</b>
+      <p>${value.hour}</p>        
+      <img src="${value.locationimg}">
+      <p class="title-place">${value.locationname}</p>
+      <p class="descrip-place">${value.locationaddress}</p>
+      <button>
+        <i class="fa-solid ${value.locationiconbtn}"></i>
+        <p>${value.locationtxtbtn}</p>
+      </button>
+      </div>`
     });
     return html
   }
+  
+  renderGifts(gifts) {
+    let html = ''
+    html += `<img class="svg" src="${gifts.icon}" />
+             <h3>${gifts.title}</h3>
+             <p>${gifts.description}</p>
+             <p class="phrase">${gifts.phrase}</p>
+             <div class="gifts-accounts">`
+              $.each(gifts['bank-account'], function (key, value) {
+                html += `<div class="account--group">
+                          <b>${value.bank}</b>
+                          <p>${value.account}</p>
+                          <p>${value.cci}</p>
+                          <p>${value.owner}</p>
+                        </div>`
+              });
+    html += `</div>`
+    return html
+  }
+
 
   test(){
     return 'Hola';
   }
-
 
 
 }
