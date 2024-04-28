@@ -22,7 +22,6 @@ $(document).ready(async function () {
   $(".locations").html(locationRender)
 
 
-  
   let gifts = couple.renderGifts(data.gifts)
   $(".couple-gift").html(gifts)
 

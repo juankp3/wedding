@@ -81,7 +81,7 @@ export class Couple {
       <img src="${value.locationimg}">
       <p class="title-place">${value.locationname}</p>
       <p class="descrip-place">${value.locationaddress}</p>
-      <button>
+      <button class="popup-maps-show">
         <i class="fa-solid ${value.locationiconbtn}"></i>
         <p>${value.locationtxtbtn}</p>
       </button>

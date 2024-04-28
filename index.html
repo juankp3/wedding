@@ -19,11 +19,11 @@
   <img src="dist/img/flowers.webp" class="topbanner" />
   
 
-  <div class="popup-maps-bg ">
-    <div class="popup-maps-content ">
+  <div class="popup-maps-bg">
+    <div class="popup-maps-content">
       <div class="map-header">
         <h1>Basilica Maria Auxiliadora</h1>
-        <div><i class="fa-solid fa-xmark"></i></div>
+        <div class="popup-maps-close"><i class="fa-solid fa-xmark"></i></div>
       </div>
       <hr>
       <div class="map-body">
@@ -216,6 +216,19 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
+  });
+
+
+  $(document).ready(function () {
+
+    $(".popup-maps-show").click(function(){
+		  $(".popup-maps-bg").addClass('active');
+	  });
+
+    $(".popup-maps-close").click(function(){
+      $(".popup-maps-bg").removeClass('active');
+    });
 
   });
 </script>
