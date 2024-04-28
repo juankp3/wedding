@@ -25,7 +25,5 @@ $(document).ready(async function () {
   
   let gifts = couple.renderGifts(data.gifts)
   $(".couple-gift").html(gifts)
-  //console.log(data.gifts['bank-account'])
-  //let accounts = couple.renderGifts(data.gifts['bank-account'])
-  //$(".gifts-accounts").html(accounts)
+
 });
