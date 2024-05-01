@@ -6,7 +6,9 @@ export class Modal {
       <div class="popup-maps-content">
         <div class="map-header">
           <h1>Basilica Maria Auxiliadora</h1>
-          <div class="popup-maps-close"><i class="fa-solid fa-xmark"></i></div>
+          <a href="#" class="popup-maps-close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
         </div>
         <hr>
         <div class="map-body">
