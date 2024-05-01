@@ -25,15 +25,7 @@ $(document).ready(async function () {
   let gifts = couple.renderGifts(data.gifts)
   $(".couple-gift").html(gifts)
 
-  $(".popup-maps-show").on("click", function() {
-    $(".popup-maps-bg").addClass('active')
-  });
   
-  $("a.popup-maps-close").on("click", function (e) {
-    console.log('cerrar')
-    $(".popup-maps-bg").removeClass('active')
-    return false
-  });
-  
+
 
 });

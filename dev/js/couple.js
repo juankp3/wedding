@@ -9,15 +9,6 @@ export class Couple {
         <h1>${couple.boyfriend}</h1>
       </div>
       ${this.renderBody(couple)}` ;
-    // return `
-    // <div class="couple-names">
-    //     <p>Nuestra Boda</p>
-    //     <h1>${couple.bride}</h1>
-    //     <p class="--y">&</p>
-    //     <h1>${couple.boyfriend}</h1>
-    //   </div>
-    //   ${this.renderMusic()}
-    //   ${this.renderBody(couple)}` ;
   }
 
   renderMusic() {
@@ -81,7 +72,7 @@ export class Couple {
       <img src="${value.locationimg}">
       <p class="title-place">${value.locationname}</p>
       <p class="descrip-place">${value.locationaddress}</p>
-      <button class="popup-maps-show">
+      <button class="popup-maps-show" data-modal="${value.modal}">
         <i class="fa-solid ${value.locationiconbtn}"></i>
         <p>${value.locationtxtbtn}</p>
       </button>
