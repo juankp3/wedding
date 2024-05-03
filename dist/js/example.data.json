@@ -2,7 +2,7 @@
   "couple": {
     "boyfriend": "Luis Angel",
     "bride": "M. Angelica",
-    "image": "https://invitaciones-meraki.my.canva.site/4-rebeca-y-david/images/5c6ad9d0fb1826efef9e6e940375c31b.jpg",
+    "image": "./dist/img/couple.png",
     "verse": "El amor nunca se da por vencido, jamás ​​​​​​​​​​pierde la fe, siempre tiene esperanzas y ​​​​​se ​​​​​mantiene firme en toda circunstancia",
     "chapter": "12 Corintios 13:7"
   },

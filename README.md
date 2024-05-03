@@ -42,6 +42,10 @@ Retorna el color de un hexa a un filter CSS
 
 https://codepen.io/sosuke/pen/Pjoqqp
 
+# Paralax
+https://www.youtube.com/watch?v=2yBk1giIfqE
+
+
 # Documentation
 Animación con CSS
 
