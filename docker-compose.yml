@@ -1,0 +1,36 @@
+version: "2"
+services:
+    apache:
+        build: docker/apache
+        container_name: pd_shop_seller_ws_apache
+        ports:
+            - "4000:80"
+        volumes:
+            - ./:/var/www/html/
+            - ./docker/apache/virtualhost.conf:/etc/apache2/sites-enabled/000-default.conf
+        networks:
+            - front-tier
+            - back-tier
+        restart: always
+    mysql:
+        image: mysql:5.7
+        platform: linux/amd64
+        container_name: pd_shop_seller_ws_mysql
+        hostname: db-server
+        ports:
+            - "4400:3306"
+        volumes:
+            - ./docker/mysql/database:/docker-entrypoint-initdb.d
+        networks:
+            - back-tier
+        env_file:
+            - ./docker/environments.env
+        restart: always
+        command: mysqld --sql_mode=""
+
+networks:
+    front-tier:
+        driver: bridge
+    back-tier:
+        driver: bridge
+
