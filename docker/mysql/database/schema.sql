@@ -42,6 +42,26 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
+-- Table `tables`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `tables`;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `tables` (
+  `id_tables` INT NOT NULL AUTO_INCREMENT,
+  `id_event`  INT NOT NULL,
+  `id_guest`  INT NOT NULL,
+  `table_number` INT NOT NULL,
+  `qyt_tickets`  INT NULL,
+  `deleted`   INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_tables`))
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
 -- Table `guest`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `guest` ;
@@ -49,12 +69,15 @@ DROP TABLE IF EXISTS `guest` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `guest` (
   `id_guest`  INT NOT NULL AUTO_INCREMENT,
-  `id_couple` INT NOT NULL,
+  `id_event`  INT NOT NULL,
   `names`     VARCHAR(200) NULL,
-  `tickets`   INT NULL,
+  `qyt_tickets`   INT NULL,
   `confirmation` ENUM('pending', 'cancelled', 'confirmed') NULL DEFAULT 'pending',
   `phone`     VARCHAR(10) NULL,
   `qr`        VARCHAR(200) NULL,
+  `wsp_calltoaction` INT NULL,
+  `openinvitation_calltoaction` INT NULL,
+  `openinvitation_lastdate` DATETIME NULL,
   `deleted`   INT NOT NULL,
   `date_add`  DATETIME NULL,
   `date_upd`  DATETIME NULL,
@@ -64,24 +87,46 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `couple`
+-- Table `event`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `couple` ;
+DROP TABLE IF EXISTS `event`;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `couple` (
-  `id_couple` INT NOT NULL AUTO_INCREMENT,
-  `id_user`   INT NULL,
-  `names`     VARCHAR(100) NULL,
-  `phone`     VARCHAR(10) NULL,
-  `template`  VARCHAR(100) NULL,
+CREATE TABLE IF NOT EXISTS `event` (
+  `id_event`  INT NOT NULL AUTO_INCREMENT,
+  `name`      VARCHAR(200) NULL,
+  `description`   TEXT NOT NULL,
+  `category`  ENUM('boda', 'cumpleaños', 'quinceañero', 'entierro') NULL,
+  `template`  VARCHAR(200) NULL,
+  `msj_template`  VARCHAR(500) NULL,  
   `uri`       VARCHAR(200) NULL,
   `json`      JSON NULL,
   `active`    INT NULL,
   `deleted`   INT NOT NULL,
   `date_add`  DATETIME NULL,
   `date_upd`  DATETIME NULL,
-  PRIMARY KEY (`id_couple`))
+  PRIMARY KEY (`id_event`))
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `customer`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `customer` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id_customer` INT NOT NULL AUTO_INCREMENT,
+  `id_user`   INT NULL,
+  `firstname` VARCHAR(100) NULL,
+  `lastname` VARCHAR(100) NULL,
+  `phone`     VARCHAR(10) NULL,
+  `active`    INT NULL,
+  `deleted`   INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_customer`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;

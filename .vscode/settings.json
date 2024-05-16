@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "modal",
-    "cm"
+    "cm",
+    "database"
   ]
 }
