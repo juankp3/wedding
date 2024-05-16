@@ -24,146 +24,63 @@ SHOW WARNINGS;
 USE `web` ;
 
 -- -----------------------------------------------------
--- Table `order_detail`
+-- Table `wishes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `order_detail` ;
+DROP TABLE IF EXISTS `wishes`;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `order_detail` (
-  `id_order_detail` INT NOT NULL AUTO_INCREMENT,
-  `id_order` INT NOT NULL,
-  `id_product` INT NOT NULL,
-  `product_name` VARCHAR(45) NULL,
-  `product_reference` VARCHAR(45) NULL,
-  `product_quantity` VARCHAR(45) NULL,
-  `product_price` DECIMAL(6,2) NULL,
-  `tax_rate` DECIMAL(6,2) NULL,
-  `total_price_tax_incl` DECIMAL(6,2) NULL,
-  `total_price_tax_excl` DECIMAL(6,2) NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_order_detail`))
+CREATE TABLE IF NOT EXISTS `wishes` (
+  `id_wishes` INT NOT NULL AUTO_INCREMENT,
+  `id_guest`  INT NOT NULL,
+  `message`   TEXT NULL,
+  `deleted`   INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_wishes`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `orders`
+-- Table `guest`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `orders` ;
+DROP TABLE IF EXISTS `guest` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `orders` (
-  `id_order` INT NOT NULL AUTO_INCREMENT,
-  `id_cart` INT NOT NULL,
-  `id_payment` INT NOT NULL,
-  `id_shop` INT NOT NULL,
-  `id_user` INT NOT NULL,
-  `id_customer` INT  NULL,
-  `total_paid` DECIMAL(6,2) NULL,
-  `total_products` DECIMAL(6,2) NULL,
-  `total_paid_tax_incl` DECIMAL(6,2) NULL,
-  `total_paid_tax_excl` DECIMAL(6,2) NULL,
-  `total_discount_tax_excl` DECIMAL(6,2) NULL,
-  `total_discount_tax_incl` DECIMAL(6,2) NULL,
-  `note` VARCHAR(500) NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_order`))
+CREATE TABLE IF NOT EXISTS `guest` (
+  `id_guest`  INT NOT NULL AUTO_INCREMENT,
+  `id_couple` INT NOT NULL,
+  `names`     VARCHAR(200) NULL,
+  `tickets`   INT NULL,
+  `confirmation` ENUM('pending', 'cancelled', 'confirmed') NULL DEFAULT 'pending',
+  `phone`     VARCHAR(10) NULL,
+  `qr`        VARCHAR(200) NULL,
+  `deleted`   INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_guest`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `payment`
+-- Table `couple`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `payment` ;
+DROP TABLE IF EXISTS `couple` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `payment` (
-  `id_payment` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_payment`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `shop_payment`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `shop_payment` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `shop_payment` (
-  `id_shop_payment` INT NOT NULL AUTO_INCREMENT,
-  `id_payment` INT,
-  `id_shop` INT,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_shop_payment`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `category`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `category` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `category` (
-  `id_category` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(200) NULL,
-  `description` TEXT NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_category`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `product`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `product` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `product` (
-  `id_product` INT NOT NULL AUTO_INCREMENT,
-  `id_category` INT NULL,
-  `name` VARCHAR(200) NOT NULL,
-  `description` TEXT NULL,
-  `price` DECIMAL(6,2) NULL,
-  `price_tax_incl` DECIMAL(6,2) NULL,
-  `price_tax_excl` DECIMAL(6,2) NULL,
-  `cost_price_tax_incl` DECIMAL(6,2) NULL,
-  `cost_price_tax_excl` DECIMAL(6,2) NULL,
-  `barcode` VARCHAR(200) NULL,
-  `active` INT NOT NULL,
-  `deleted` INT NOT NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_product`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `shop`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `shop` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `shop` (
-  `id_shop` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `ruc` VARCHAR(45) NULL,
-  `address` VARCHAR(200) NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_shop`))
+CREATE TABLE IF NOT EXISTS `couple` (
+  `id_couple` INT NOT NULL AUTO_INCREMENT,
+  `id_user`   INT NULL,
+  `names`     VARCHAR(100) NULL,
+  `phone`     VARCHAR(10) NULL,
+  `template`  VARCHAR(100) NULL,
+  `json`      JSON NULL,
+  `active`    INT NULL,
+  `deleted`   INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_couple`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -180,48 +97,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `passwd` VARCHAR(200) NULL,
-  `type` ENUM('superadmin', 'admin', 'seller') NULL DEFAULT 'admin',
+  `type` ENUM('superadmin', 'admin') NULL DEFAULT 'admin',
   `active` INT NULL,
   `deleted` INT NOT NULL,
   `date_add` DATETIME NULL,
   `date_upd` DATETIME NULL,
   PRIMARY KEY (`id_user`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `shop_user`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `shop_user` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `shop_user` (
-  `id_shop_user` INT NOT NULL AUTO_INCREMENT,
-  `id_user` INT NOT NULL,
-  `id_shop` INT NOT NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_shop_user`))
-ENGINE = InnoDB;
-
-SHOW WARNINGS;
-
--- -----------------------------------------------------
--- Table `customer`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `customer` ;
-
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `customer` (
-  `id_customer` INT NOT NULL AUTO_INCREMENT,
-  `firstname` VARCHAR(45) NULL,
-  `lastname` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
-  `dni` VARCHAR(200) NULL,
-  `date_add` DATETIME NULL,
-  `date_upd` DATETIME NULL,
-  PRIMARY KEY (`id_customer`))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
