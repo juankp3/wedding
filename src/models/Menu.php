@@ -4,6 +4,9 @@ class Menu
 {
     public function getMenuDashboard()
     {
+		// echo "<pre>";
+		// var_dump($_SESSION['loggedInUser']['type']);
+		// echo "</pre>";exit;
         $dashboard = array(
             'dashboard' => array(
                 'id' => 'dashboard',
@@ -27,11 +30,6 @@ class Menu
                 'name' => 'Pedido',
                 'link' => BASE_URL . '/dashboard/order',
             ),
-            // 'cart' => array(
-            //     'id' => 'cart',
-            //     'name' => 'Carrito',
-            //     'link' => BASE_URL . '/dashboard/cart',
-            // ),
         );
 
         return array(
@@ -80,6 +78,33 @@ class Menu
         );
     }
 
+    public function getMenuGuest()
+    {
+        $guest = array(
+            'guest' => array(
+                'id' => 'guest',
+                'name' => 'Invitados',
+                'link' => BASE_URL . '/dashboard/guest',
+            ),
+			'table' => array(
+                'id' => 'table',
+                'name' => 'Mesas',
+                'link' => BASE_URL . '/dashboard/table',
+            ),
+			'wishes' => array(
+                'id' => 'wishes',
+                'name' => 'Buenos deseos',
+                'link' => BASE_URL . '/dashboard/wishes',
+            ),
+        );
+
+        return array(
+            'icon' => 'fa-circle-user',
+            'name' => 'Invitados',
+            'items' => $guest
+        );
+    }
+
     public function getMenuConfig()
     {
         $config = array(
@@ -88,15 +113,10 @@ class Menu
                 'name' => 'Usuarios',
                 'link' => BASE_URL . '/dashboard/user',
             ),
-            'shop' => array(
-                'id' => 'shop',
-                'name' => 'Tienda',
-                'link' => BASE_URL . '/dashboard/shop',
-            ),
-            'payment' => array(
-                'id' => 'payment',
-                'name' => 'Método de pago',
-                'link' => BASE_URL . '/dashboard/payment',
+			'customer' => array(
+                'id' => 'customer',
+                'name' => 'Cliente',
+                'link' => BASE_URL . '/dashboard/customer',
             ),
         );
 
@@ -113,10 +133,14 @@ class Menu
     {
         $menu = array();
         $menu['dashboard']  =   $this->getMenuDashboard();
-        $menu['ordres']     =   $this->getMenuOrder();
-        $menu['catalog']    =   $this->getMenuCatalog();
-        $menu['customer']   =   $this->getMenuCustomer();
-        $menu['config']     =   $this->getMenuConfig();
+        // $menu['ordres']     =   $this->getMenuOrder();
+        // $menu['catalog']    =   $this->getMenuCatalog();
+
+        $menu['guest']   =   $this->getMenuGuest();
+		if (UserTypeModel::SUPERADMIN == $_SESSION['loggedInUser']['type']){
+			// $menu['customer']   =   $this->getMenuCustomer();
+			$menu['config']     =   $this->getMenuConfig();
+		}
 
         return $menu;
     }

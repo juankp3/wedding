@@ -1,7 +1,7 @@
 <?php
 require_once dirname(__FILE__) . '/config.php';
 if (!defined('BASE_URL')) {
-    define('BASE_URL', 'http://localhost:4000');
+    define('BASE_URL', 'http://localhost:4002');
 }
 if (!defined('DB_HOST')) {
     define('DB_HOST', 'mysql');

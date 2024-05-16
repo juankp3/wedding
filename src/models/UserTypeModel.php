@@ -23,7 +23,6 @@ class UserTypeModel
         return array(
             self::SUPERADMIN => 'SuperAdmin',
             self::ADMIN => 'Administrador',
-            self::SELLER => 'Vendedor',
         );
     }
 

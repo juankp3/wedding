@@ -2,3 +2,8 @@ node_modules/
 
 dist/js/data.json
 dist/css/style.css
+
+
+uploads/*
+config/env.php
+config/config.php

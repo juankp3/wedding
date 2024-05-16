@@ -16,6 +16,7 @@ date_default_timezone_set('America/Lima');
 
 require 'src/app/route.php';
 require 'src/api/index.php';
+require 'public/index.php';
 
 Flight::map('notFound', function () {
     $request = Flight::request();

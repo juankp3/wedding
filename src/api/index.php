@@ -12,5 +12,5 @@ require_once 'v1/UserApiController.php';
 // Flight::route('GET /api/v1/users', ['UserApiController', 'getUsers']);
 // Flight::route('GET /v1/users', ['UserApiController', 'getUsers']);
 
-Flight::start();
+
 

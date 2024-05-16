@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost:4000');
+define('BASE_URL', 'http://localhost:4002');
 define('DB_HOST', 'mysql');
 define('DB_USER', 'docker');
 define('DB_PASS', 'computadora');

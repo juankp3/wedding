@@ -63,6 +63,7 @@ img.svg {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 4%;
   background-color: #FFFFFF;
 }
@@ -74,6 +75,7 @@ img.svg {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 10%;
 }
 .popup-maps-bg .popup-maps-content .map-header h1 {
   width: 85%;
@@ -81,8 +83,12 @@ img.svg {
 .popup-maps-bg .popup-maps-content .map-header i {
   font-size: 20px;
 }
-.popup-maps-bg .popup-maps-content iframe {
+.popup-maps-bg .popup-maps-content .map-body {
+  height: 80%;
+}
+.popup-maps-bg .popup-maps-content .map-body iframe {
   width: 100%;
+  height: 100%;
 }
 
 .popup-maps-bg.active {
@@ -170,6 +176,46 @@ img.svg {
 }
 .weddingdate-wrapper .weddingdate button p {
   color: #FFFFFF;
+}
+
+.passes-wrapper {
+  background: #FFFFFF;
+}
+.passes-wrapper .passes {
+  padding: 0;
+  text-align: center;
+}
+.passes-wrapper .passes h3 {
+  color: #AE6836;
+  font-family: "DancingScriptMedium";
+  font-size: 45px;
+}
+.passes-wrapper .passes p {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #343434;
+  text-align: center;
+}
+.passes-wrapper .passes .passes-family {
+  margin: 30px 0;
+}
+.passes-wrapper .passes .passes-family p {
+  color: #343434;
+  font-family: DancingScriptMedium;
+  font-size: 45px;
+  line-height: 45px;
+}
+.passes-wrapper .passes .passes-number {
+  font-size: 45px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: solid 1px #AE6836;
+  border-radius: 50px;
 }
 
 .parents-wrapper {
