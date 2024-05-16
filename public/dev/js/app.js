@@ -25,7 +25,7 @@ $(document).ready(async function () {
   let gifts = couple.renderGifts(data.gifts)
   $(".couple-gift").html(gifts)
 
-  
+
 
 
 });
