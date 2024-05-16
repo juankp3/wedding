@@ -1,0 +1,62 @@
+    .form-date {
+        display: flex;
+    }
+    
+    #order-processing {
+        display: none;
+    }
+    
+    #order-processing.enable {
+        display: block !important;
+    }
+    
+    #compare {
+        display: none;
+    }
+    
+    #compare.active {
+        display: flex !important;
+    }
+    
+    .form-date .btn {
+        position: absolute;
+        right: 4px;
+        color: #2c7be5
+    }
+    
+    #daterange {
+        width: 226px;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        border-bottom: solid 1px red;
+        border-radius: 0px;
+        font-weight: 500;
+        border-bottom: solid 1px #2c7be5;
+        z-index: 999;
+    }
+    
+    .spinner-border {
+        display: none
+    }
+    
+    .spinner-border.active {
+        display: inline-block
+    }
+    
+    @media (max-width: 575.98px) {
+        .align-items-end {
+            display: flex;
+            flex-direction: column;
+        }
+        .align-items-end .col-auto {
+            width: 100%;
+            margin-top: 8px;
+        }
+        #daterange {
+            width: 100%;
+        }
+        .chart.chart-appended {
+            height: 350px !important;
+        }
+    }
