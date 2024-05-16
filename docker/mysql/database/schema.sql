@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `couple` (
   `names`     VARCHAR(100) NULL,
   `phone`     VARCHAR(10) NULL,
   `template`  VARCHAR(100) NULL,
+  `uri`       VARCHAR(200) NULL,
   `json`      JSON NULL,
   `active`    INT NULL,
   `deleted`   INT NOT NULL,
