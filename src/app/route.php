@@ -9,6 +9,7 @@ require_once 'controllers/CategoryController.php';
 require_once 'controllers/CustomerController.php';
 require_once 'controllers/PaymentController.php';
 require_once 'controllers/OrderController.php';
+require_once 'controllers/GuestController.php';
 
 
 // Elsewhere in your application
