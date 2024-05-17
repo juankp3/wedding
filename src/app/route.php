@@ -11,6 +11,7 @@ require_once 'controllers/PaymentController.php';
 require_once 'controllers/OrderController.php';
 require_once 'controllers/GuestController.php';
 require_once 'controllers/EventController.php';
+require_once 'controllers/TableController.php';
 
 
 // Elsewhere in your application

@@ -14,7 +14,7 @@ services:
         restart: always
     mysql:
         image: mysql:5.7
-        platform: linux/amd64
+        #platform: linux/amd64
         container_name: wedding_ws_mysql
         hostname: db-server
         ports:
