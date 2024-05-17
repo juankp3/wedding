@@ -46,17 +46,14 @@ class Conexion
         $query = "UPDATE $table SET ";
         unset($data['date_add']);
         foreach($data as $key => $value) {
-            if(!empty($value)){
-                if (is_numeric($value)){
-                    $query.= $key."=$value, ";
-                } else {
-                    $query.= $key."='$value', ";
-                }
-            }
+			if(empty($value) && !is_numeric($value))
+				continue;
 
-            // if (is_numeric($value)){
-            //     $query.= $key."=$value, ";
-            // }
+			if (is_numeric($value)){
+				$query.= $key."=$value, ";
+			} else {
+				$query.= $key."='$value', ";
+			}
         }
 
         $query = substr($query, 0, -2);

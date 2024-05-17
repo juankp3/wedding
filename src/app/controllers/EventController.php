@@ -76,6 +76,7 @@ class EventController extends FrontController implements Repository, UITableView
 
         if (isset($_POST['name'])) {
             $data = Flight::request()->data->getData();
+			$data['active'] = Flight::request()->data->active ? 1 : 0;
 
 			$eventModel->id_user = Flight::request()->data->id_user;
             $eventModel->name = Flight::request()->data->name; // $data['firstname'];
@@ -86,7 +87,7 @@ class EventController extends FrontController implements Repository, UITableView
             $eventModel->uri = Flight::request()->data->uri;
             $eventModel->json = json_encode([]);
             $eventModel->qty_table = Flight::request()->data->qty_table;
-            $eventModel->active = 1;
+            $eventModel->active = Flight::request()->data->active ? 1 : 0;
             $eventModel->deleted = 0;
             $response = $eventModel->updateEvent($id);
 
@@ -179,6 +180,14 @@ class EventController extends FrontController implements Repository, UITableView
             'name' => 'id_user',
             'type' => 'select',
             'options' => $result
+        );
+
+		$form[] = array(
+            'label' => 'Estado',
+            'name' => 'active',
+            'type' => 'checkbox',
+            'summary' => 'a If you are available for hire outside of the current situation, you can encourage others to hire you.',
+            'options' => true
         );
 
         return $form;
