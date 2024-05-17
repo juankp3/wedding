@@ -82,6 +82,18 @@ class UserModel extends Model
         return $this->executeS($query);
     }
 
+    public function getUsersByType($type, $offset = null, $limit = null)
+    {
+        $table = $this->definition['table'];
+        $query = "SELECT * from $table WHERE type='$type' order by id_user desc";
+
+        if (isset($offset) && isset($limit)) {
+            $query.= " limit $offset, $limit";
+        }
+
+        return $this->executeS($query);
+    }
+
     public function getUserByEmail($email)
     {
         $table = $this->definition['table'];

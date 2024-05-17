@@ -108,9 +108,9 @@ class Menu
     public function getMenuConfig()
     {
         $config = array(
-            'user' => array(
+			'user' => array(
                 'id' => 'user',
-                'name' => 'Usuarios',
+                'name' => 'Usuario',
                 'link' => BASE_URL . '/dashboard/user',
             ),
 			'customer' => array(
@@ -118,6 +118,12 @@ class Menu
                 'name' => 'Cliente',
                 'link' => BASE_URL . '/dashboard/customer',
             ),
+			'event' => array(
+                'id' => 'event',
+                'name' => 'Evento',
+                'link' => BASE_URL . '/dashboard/event',
+            ),
+
         );
 
         return array(
@@ -133,12 +139,8 @@ class Menu
     {
         $menu = array();
         $menu['dashboard']  =   $this->getMenuDashboard();
-        // $menu['ordres']     =   $this->getMenuOrder();
-        // $menu['catalog']    =   $this->getMenuCatalog();
-
         $menu['guest']   =   $this->getMenuGuest();
 		if (UserTypeModel::SUPERADMIN == $_SESSION['loggedInUser']['type']){
-			// $menu['customer']   =   $this->getMenuCustomer();
 			$menu['config']     =   $this->getMenuConfig();
 		}
 

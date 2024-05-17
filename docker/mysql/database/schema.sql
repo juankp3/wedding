@@ -94,14 +94,15 @@ DROP TABLE IF EXISTS `event`;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `event` (
   `id_event`  INT NOT NULL AUTO_INCREMENT,
+  `id_user`  INT NOT NULL,
   `name`      VARCHAR(200) NULL,
   `description`   TEXT NOT NULL,
   `category`  ENUM('boda', 'cumpleaños', 'quinceañero', 'entierro') NULL,
   `template`  VARCHAR(200) NULL,
-  `msj_template`  VARCHAR(500) NULL, 
+  `msj_template`  VARCHAR(500) NULL,
   `uri`       VARCHAR(200) NULL,
   `json`      JSON NULL,
-  `qty_table` INT NOT NULL, 
+  `qty_table` INT NOT NULL,
   `active`    INT NULL,
   `deleted`   INT NOT NULL,
   `date_add`  DATETIME NULL,

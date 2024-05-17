@@ -39,7 +39,7 @@
     <?php if ($input['type'] == 'select'): ?>
         <div class="form-group">
                 <label class="form-label"><?php echo $input['label']?></label>
-                <select  name="type"  class="form-select <?php echo !empty($error['fields'][$input['name']])?'is-invalid':'' ?>" data-choices>
+                <select name="<?php echo $input['name']?>"  class="form-select <?php echo !empty($error['fields'][$input['name']])?'is-invalid':'' ?>" data-choices>
                     <option value="" >Seleccionar</option>
                     <?php foreach($input['options'] as $key => $value): ?>
                         <option value="<?php echo $key?>" <?php echo (!empty($data[$input['name']]) == $key ? 'selected' : '') ?>  ><?php echo $value ?></option>
