@@ -22,17 +22,17 @@ class GuestController extends FrontController implements Repository, UITableView
         $customGuests = $this->datasource($rawdataGuests);
         $userTable = $this->tableView($customGuests);
 
-        $this->params['title'] = 'Usuarios';
+        $this->params['title'] = 'Invitados';
         $this->params['data'] = $userTable;
         $this->params['header'] = $this->willDisplayHeaderView();
 
-        Flight::render('user/index', $this->params, 'body_content');
+        Flight::render('guest/index', $this->params, 'body_content');
         Flight::render('_layout/template');
     }
 
     public function create()
     {
-        $this->params['title'] = 'Nuevo Usuario';
+        $this->params['title'] = 'Nuevo Invitado';
         $this->params['form'] = $this->form();
 
         if (isset($_POST['firstname'])) {
@@ -54,7 +54,7 @@ class GuestController extends FrontController implements Repository, UITableView
                 $this->params['error'] = $response['error'];
 
             if ($response['success'])
-                Flight::redirect('/dashboard/user');
+                Flight::redirect('/dashboard/guest');
         }
 
         Flight::render('_partials/form/index', $this->params, 'body_content');
@@ -105,39 +105,30 @@ class GuestController extends FrontController implements Repository, UITableView
 
     public function form($viewForm = null)
     {
-        $oUserTypeModel = new UserTypeModel();
         $form = array();
         $form[] = array(
-            'label' => 'Nombres',
-            'name' => 'firstname',
+            'label' => 'Nombre',
+            'name' => 'names',
             'type' => 'text',
         );
 
         $form[] = array(
-            'label' => 'Apellidos',
-            'name' => 'lastname',
+            'label' => 'Telefono',
+            'name' => 'phone',
             'type' => 'text',
         );
 
         $form[] = array(
-            'label' => 'Email',
-            'name' => 'email',
-            'type' => 'email',
-        );
-
-        if ($viewForm != self::EDIT) {
-            $form[] = array(
-                'label' => 'Contraseña',
-                'name' => 'passwd',
-                'type' => 'password',
-            );
-        }
-
-        $form[] = array(
-            'label' => 'Tipo',
+            'label' => 'Cantidad de pases',
             'name' => 'type',
             'type' => 'select',
-            'options' => $oUserTypeModel->getUserTypeModel(),
+            'options' => array(
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+				5 => 5,
+			),
         );
 
         return $form;
