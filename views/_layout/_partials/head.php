@@ -42,4 +42,14 @@
         margin-left: auto;
         transition: transform .2s;
     }
+	table.table th a{
+		color: #95aac9;
+		font-size: 10px;
+	}
+	table.table td{
+		font-size: 13px;
+	}
+	table.table td .dropdown{
+		position: inherit;
+	}
 </style>

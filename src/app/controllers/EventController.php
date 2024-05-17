@@ -207,6 +207,7 @@ class EventController extends FrontController implements Repository, UITableView
                 $event['template'],
                 $event['uri'],
                 $event['qty_table'],
+                $event['email'],
                 $event['active'],
                 // $event['active'],
             );
@@ -232,6 +233,7 @@ class EventController extends FrontController implements Repository, UITableView
             'Plantilla',
             'Uri',
             'Cant. Mesas',
+			'Usuario',
             'Estado',
         );
     }

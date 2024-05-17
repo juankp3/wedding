@@ -40,7 +40,6 @@ class Conexion
         return mysqli_query($this->_CON, $query);
     }
 
-    // TODO: revisar
     public function update($table, $data, $where)
     {
         $query = "UPDATE $table SET ";
@@ -92,7 +91,9 @@ class Conexion
         $data = [];
         foreach($this->execute($query) as $key => $fields) {
             foreach($fields as $k => $v) {
-                $type = $describe[$k];
+
+				if (!empty($describe[$k]))
+					$type = $describe[$k];
 
                 $dato[$k] = $v;
                 if (strstr($type, 'int')) {

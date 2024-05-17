@@ -36,7 +36,9 @@ class EventModel extends Model
     public function getEvent($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
-        $query = "SELECT * from $table order by id_event desc";
+        $query = "SELECT e.*, u.email from $table e
+		LEFT JOIN user u ON e.id_user = u.id_user
+		order by id_event desc";
 
         if (isset($offset) && isset($limit)) {
             $query.= " limit $offset, $limit";

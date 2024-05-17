@@ -1,5 +1,8 @@
 <?php
 // echo "<pre>";
+// var_dump($header);
+// echo "</pre>";
+// echo "<pre>";
 // var_dump($data);
 // echo "</pre>";
 ?>
@@ -19,7 +22,7 @@
                 <?php
                 $countColumn = 0;
                 foreach($header as $head): $countColumn++; ?>
-                    <th <?php echo $countColumn == count($header)? 'colspan="2"' : 0 ?>>
+                    <th <?php echo $countColumn == count($header)? 'colspan="2"' : '' ?>>
                         <a class="list-sort text-body-secondary" data-sort="item-name" href="#"><?php echo $head?></a>
                     </th>
                 <?php endforeach ?>
@@ -36,9 +39,17 @@
                             </div>
                         </td>
                     <?php endif?>
-                    <?php foreach($item as $field): ?>
+                    <?php foreach($item as $key => $field): ?>
                         <td>
-                            <span class="item-title"><?php echo $field?></span>
+                            <span class="item-title">
+								<?php
+								if (is_numeric($field) && $header[$key] == 'Estado'){
+									echo ($field)?'<span class="text-success">●</span> Activo':'<span class="text-danger">●</span> Inactivo';
+								}else {
+									echo $field;
+								}
+								?>
+							</span>
                         </td>
                     <?php endforeach ?>
                     <td class="text-end">
