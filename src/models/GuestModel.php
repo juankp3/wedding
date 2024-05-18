@@ -56,14 +56,11 @@ class GuestModel extends Model
     public function validateGuest()
     {
         $error = array();
-        if (empty($this->firstname))
-            $error['firstname'] = "Ingrese nombre del usuario";
+        if (empty($this->names))
+            $error['names'] = "Ingrese nombre";
 
-        if (empty($this->lastname))
-            $error['lastname'] = "Ingrese nombre del apellido";
-
-        if (empty($this->passwd))
-            $error['passwd'] = "Ingrese nombre del password";
+        if (empty($this->phone))
+            $error['phone'] = "Ingrese telefono";
 
         return $error;
     }
@@ -99,12 +96,7 @@ class GuestModel extends Model
     {
         $response = array();
         try {
-            $error = array();
-            if (empty($this->firstname))
-                $error['firstname'] = "Ingrese nombre del usuario";
-
-            if (empty($this->lastname))
-                $error['lastname'] = "Ingrese nombre del apellido";
+            $error = $this->validateGuest();
 
             if(count($error) > 0) {
                 $errorResponse['success'] = false;

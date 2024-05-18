@@ -35,7 +35,7 @@
                 <?php if ($permissions['create']): ?>
                     <a href="<?php echo $current_page . '/new
                     ' ?>" class="btn btn-primary ms-2">
-                        Nuevo usuario
+                        Nuevo
                     </a>
                 <?php endif ?>
             </div>

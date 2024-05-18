@@ -33,6 +33,14 @@ class EventModel extends Model
         $this->table = $this->definition['table'];
     }
 
+    public function getActiveEvent($id_user)
+    {
+        $table = $this->definition['table'];
+        $query = "SELECT * from $table e
+		WHERE active = 1 and id_user = $id_user";
+        return $this->getRow($query);
+    }
+
     public function getEvent($offset = null, $limit = null)
     {
         $table = $this->definition['table'];

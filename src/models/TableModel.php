@@ -26,7 +26,7 @@ class TableModel extends Model
         $this->table = $this->definition['table'];
     }
 
-    public function getTable($offset = null, $limit = null)
+    public function getTables($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
         $query = "SELECT * from $table order by id_tables desc";
