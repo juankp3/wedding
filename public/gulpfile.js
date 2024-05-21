@@ -6,11 +6,11 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 
 // Tarea para compilar Sass a CSS
-// gulp.task('sass', () => {
-//     return gulp.src('dev/sass/**/*.{sass,scss}')
-//         .pipe(sass().on('error', sass.logError))
-//         .pipe(gulp.dest('dist/css'));
-// });
+gulp.task('sass', () => {
+    return gulp.src('dev/sass/**/*.{sass,scss}')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('scripts', () => {
     return gulp.src('dev/js/**/*.js')
