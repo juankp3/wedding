@@ -1,3 +1,7 @@
+.wrapper {
+  margin: auto 30px;
+}
+
 @font-face {
   font-family: "NovaQuinta";
   src: url(../fonts/NovaQuinta.otf);
@@ -16,51 +20,6 @@
   font-weight: normal;
   font-style: normal;
 }
-h3 {
-  color: red;
-}
-
-.couple-wrapper {
-  text-align: center;
-}
-.couple-wrapper .couple-names {
-  color: #AE6836;
-  text-align: center;
-  padding: 32px 0px;
-}
-.couple-wrapper .couple-names p {
-  color: #AE6836;
-  padding: 0px 0px 16px;
-}
-.couple-wrapper .couple-names p.--y {
-  font-size: 1rem;
-  padding: 8px;
-  margin: 0;
-}
-.couple-wrapper .couple-names h1 {
-  font-family: "NovaQuinta";
-  font-size: 2.8rem;
-  font-style: italic;
-  line-height: 4rem;
-  margin: 0;
-  padding: 0;
-}
-.couple-wrapper .couple-verse {
-  width: 80%;
-  text-align: center;
-  margin: 0 auto;
-}
-.couple-wrapper .couple-verse p {
-  text-align: center;
-}
-.couple-wrapper .couple-chapter {
-  padding: 0;
-}
-.couple-wrapper .couple-chapter p {
-  color: #AE6836;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-.couple-wrapper img {
-  width: 70%;
+.profile-wrapper img {
+  width: 100%;
 }

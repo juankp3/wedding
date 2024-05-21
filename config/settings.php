@@ -23,6 +23,8 @@ define('IMG_FILES', BASE_URL . '/assets/files');
 define('APP_UPLOAD_FILE', BASE_URL.'/uploads/');
 define('APP_UPLOAD_FILE_RELATIVE', './uploads/');
 
+define('DIST_IMG_URL', BASE_URL . '/public/dist/img');
+
 // GOOGLE
 define('GOOGLE_CLIENT_ID', '1077359957652-no1d8dtejbfojpjtosr0cmtdumc3rk9n.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '6LQEOkjs8mGt7F2l7LSwG5jl');
