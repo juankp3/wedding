@@ -1,3 +1,43 @@
-.profile-wrapper
-  img
+.profile
+  overflow: hidden
+  img.profile__image
     width: 100%
+  &__top
+    position: relative
+    img
+      position: absolute
+      width: 100%
+    &--background
+      left: -84px
+      top: -21px
+      width: 140% !important
+  &__seal
+    display: flex
+    flex-direction: column
+    align-items: start
+    justify-content: center
+    position: relative
+    margin-top: -140px
+    background: url('http://localhost:4002/public/dist/img/terracota/seal-below.svg') no-repeat center
+    background-position: center 82px
+    background-size: 100% auto
+    h1
+      color: $color-grey-text
+    p
+      text-align: center
+      width: 80%
+      margin: 0 auto
+      color: $color-grey-text
+    &--gold
+      color: $color-primary !important
+  &__name
+    background: url('http://localhost:4002/public/dist/img/terracota/seal.svg') no-repeat center
+    height: 323px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    align-content: center
+    flex-direction: column
+    p
+      font-size: 12px

@@ -1,4 +1,4 @@
-<section class="py-5 passes-wrapper">
+<section class="passes-wrapper">
     <div class="--box passes">
 		<h3>Están invitados</h3>
 		<div class="passes-family">
