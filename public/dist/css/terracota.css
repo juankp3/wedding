@@ -133,6 +133,48 @@
   width: 26px;
 }
 
+.attendance {
+  background-color: transparent;
+}
+.attendance .attendance__top {
+  align-items: center;
+  background-size: contain;
+  background: url("../img/terracota/bgtop_attendance.svg") no-repeat;
+  flex-direction: column;
+  height: 363px;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 85px;
+}
+.attendance .attendance__top p {
+  font-family: HearthStone;
+  font-size: 36px;
+  color: #D99E3B;
+  line-height: 152.8%;
+  margin: 0;
+  padding: 0;
+}
+.attendance .attendance__message {
+  width: 286px;
+  margin: 0 auto;
+  text-align: center;
+}
+.attendance .attendance__message p {
+  font-family: HelveticaNeueLTCom-LtCn;
+  font-size: 20px;
+  color: #5B5B5F;
+}
+.attendance .attendance__thanks {
+  display: flex;
+  justify-content: center;
+}
+.attendance .attendance__thanks p {
+  font-family: HearthStone;
+  font-size: 36px;
+  color: #D99E3B;
+  margin-top: 30px;
+}
+
 .footer {
   align-items: flex-end;
   background-size: contain;
