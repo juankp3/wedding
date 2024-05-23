@@ -1,2 +1,40 @@
 .footer
-  background: url('../img/terracota/bg_footer.svg') no-repeat
+    align-items: flex-end
+    background-size: contain
+    background: url('../img/terracota/bg_footer.svg') no-repeat
+    display: flex
+    height: 400px
+    justify-content: center
+    padding-bottom: 40px
+    width: 100%
+    .footer__info
+        display: flex
+        flex-direction: column
+        gap: 23px
+        .info__socialmedia
+            padding: 0
+            text-align: center
+            ul
+                display: flex
+                gap: 2rem
+                justify-content: center
+                list-style: none
+                margin: 0
+                padding: 0
+                li a i
+                    color: $color-primary
+                    font-size: 28px
+                    font-weight: 400
+        .info__copyright
+            padding: 0
+            text-align: center
+            p
+                color: $color-grey-text
+                font-family: HelveticaNeueLTCom-LtCn
+                font-size: .875rem
+                line-height: 21px
+                margin: 0
+                padding: 0
+
+
+
