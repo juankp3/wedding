@@ -45,7 +45,7 @@
   justify-content: center;
   position: relative;
   margin-top: -140px;
-  background: url("http://localhost:4002/public/dist/img/terracota/seal-below.svg") no-repeat center;
+  background: url("../img/terracota/seal-below.svg") no-repeat center;
   background-position: center 82px;
   background-size: 100% auto;
 }
@@ -69,7 +69,7 @@
   padding-top: 30px !important;
 }
 .profile__name {
-  background: url("http://localhost:4002/public/dist/img/terracota/seal.svg") no-repeat center;
+  background: url("../img/terracota/seal.svg") no-repeat center;
   height: 323px;
   width: 100%;
   display: flex;
@@ -88,7 +88,7 @@
 }
 
 .divider {
-  background: url("http://localhost:4002/public/dist/img/terracota/sheet.svg") no-repeat center;
+  background: url("../img/terracota/sheet.svg") no-repeat center;
   height: 60px;
   border: 0;
   opacity: 1;
@@ -126,5 +126,5 @@
   width: 26px;
   height: 26px;
   display: block;
-  background: url("http://localhost:4002/public/dist/img/terracota/icon_calendar.svg") no-repeat;
+  background: url("../img/terracota/icon_calendar.svg") no-repeat;
 }
