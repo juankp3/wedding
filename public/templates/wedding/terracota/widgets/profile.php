@@ -18,6 +18,4 @@
 			toda circunstancia”</p>
 		<p class="profile__seal--gold">12 Corintios 13:7</p>
 	</div>
-
-
 </section>
