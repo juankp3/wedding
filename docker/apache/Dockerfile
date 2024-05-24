@@ -1,7 +1,7 @@
-FROM php:7.3-apache
-#FROM php:5.6-apache
+# Usar la imagen base oficial de PHP 8.0 con Apache
+FROM php:8.0-apache
 
-
+# Actualizar el índice de paquetes e instalar dependencias
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     software-properties-common \
@@ -11,7 +11,6 @@ RUN apt-get update \
     libicu-dev \
     libssl-dev \
     libjpeg62-turbo-dev \
-    libmcrypt-dev \
     libedit-dev \
     libedit2 \
     libpq-dev \
@@ -29,12 +28,12 @@ RUN apt-get update \
     tar \
     cron \
     bash-completion \
-    && apt-get clean
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# /etc/init.d/apache2 restart
-#Install Dependencies
+# Configurar e instalar extensiones de PHP
 RUN docker-php-ext-configure \
-    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
+    gd --with-freetype --with-jpeg; \
     docker-php-ext-install \
     pdo \
     pdo_mysql \
@@ -46,16 +45,18 @@ RUN docker-php-ext-configure \
     mbstring \
     soap \
     xsl \
-    xmlrpc \
     zip
 
+# Establecer permisos y propietario para /var/www
 RUN chmod 777 -R /var/www \
     && chown -R www-data:www-data /var/www \
     && usermod -u 1000 www-data \
     && chsh -s /bin/bash www-data
 
-RUN a2enmod rewrite
-RUN a2enmod headers
+# Habilitar módulos de Apache
+RUN a2enmod rewrite \
+    && a2enmod headers
 
+# Redirigir logs de Apache a stdout y stderr
 RUN ln -sf /dev/stdout /var/log/apache2/access.log \
     && ln -sf /dev/stderr /var/log/apache2/error.log
