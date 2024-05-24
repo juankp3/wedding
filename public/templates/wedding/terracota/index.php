@@ -8,6 +8,7 @@
 <hr class="divider" />
 
 <?php Flight::render('widgets/ourhistory.php') ?>
+<?php Flight::render('widgets/gifts.php') ?>
 <?php Flight::render('widgets/nochildren.php') ?>
 <?php Flight::render('widgets/dresscode.php') ?>
 <?php Flight::render('widgets/attendance.php') ?>

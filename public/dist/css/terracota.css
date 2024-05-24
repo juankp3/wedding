@@ -175,6 +175,40 @@
   padding: 0;
 }
 
+.gifts {
+  background: url("../img/terracota/bg_gifts.svg") no-repeat center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 1010px;
+  justify-content: flex-start;
+  margin-top: 100px;
+  width: 100%;
+  gap: 30px;
+  padding-top: 130px;
+}
+.gifts__info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 360px;
+}
+.gifts__info p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.gifts__info h2 {
+  margin: 20px 50px;
+}
+.gifts__info img {
+  margin-bottom: 10px;
+}
+.gifts .witnesses__item {
+  margin-bottom: 30px !important;
+}
+
 .nochildren {
   display: flex;
   flex-direction: column;
@@ -265,6 +299,11 @@
   padding-top: 60px;
   text-align: center;
   width: 80%;
+}
+@media screen and (min-width: 768px) {
+  .profile__seal p {
+    display: none;
+  }
 }
 .profile__seal--gold {
   color: #D99E3B !important;
