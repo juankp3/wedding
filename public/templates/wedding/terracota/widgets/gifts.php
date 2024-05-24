@@ -1,9 +1,9 @@
-<div class="gifts">
+<section class="gifts">
 	<div class="gifts__info">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/gifts.svg" alt="">
 		<h2>Regalos</h1>
-		<p>No hay mejor regalo que celebrar juntos. Pero si deseas tener un detalle con nosotros.</p>
-		<p><b>¡Suma kilómetros a nuestro viaje!</b></p>
+			<p>No hay mejor regalo que celebrar juntos. Pero si deseas tener un detalle con nosotros.</p>
+			<p><b>¡Suma kilómetros a nuestro viaje!</b></p>
 	</div>
 	<div class="witnesses__item">
 		<h3>Bcp Soles</h3>
@@ -17,4 +17,4 @@
 		<p>CCI: 00219319784674319118</p>
 		<p>Kuga María O Salvatierra Luis</p>
 	</div>
-</div>
+</section>
