@@ -5,5 +5,7 @@
 <?php Flight::render('widgets/tickets.php') ?>
 <hr class="divider" />
 
+<?php Flight::render('widgets/nochildren.php') ?>
+<?php Flight::render('widgets/dresscode.php') ?>
 <?php Flight::render('widgets/attendance.php') ?>
 <?php Flight::render('widgets/footer.php') ?>
