@@ -8,10 +8,10 @@ class WeddingController
 
     public function terracota()
     {
-        $this->params['title'] = 'Usuarios';
+        $params['title'] = 'Usuarios';
 
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
-        Flight::render('index', $this->params, 'body_content');
+        Flight::render('index', $params, 'body_content');
         Flight::render('_layout/template');
     }
 
