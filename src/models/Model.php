@@ -1,6 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/Conexion.php';
-require_once dirname(__FILE__).'/../../library/helper/HttpResponse.php';
+require_once dirname(__FILE__).'/../helpers/HttpResponse.php';
 
 class Model
 {

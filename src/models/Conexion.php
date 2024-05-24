@@ -1,12 +1,11 @@
 <?php
-require_once dirname(__FILE__) . '/../../config/settings.php';
 class Conexion
 {
     private $_CON;
 
     public function __construct()
     {
-        $conex = array(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conex = array($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
         $this->_CON =  mysqli_connect($conex[0], $conex[1], $conex[2], $conex[3]);
     }
 

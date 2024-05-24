@@ -54,14 +54,6 @@ class CustomerModel extends Model
         return $this->getRow($query);
     }
 
-    public function isCustomerExist()
-    {
-        $table = $this->definition['table'];
-        $query = "SELECT * from $table WHERE name = '".$this->name."'";
-
-        return ($this->executeS($query))? true : false;
-    }
-
     public function getCustomerByEmail($email)
     {
         $table = $this->definition['table'];

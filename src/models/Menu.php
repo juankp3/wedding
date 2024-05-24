@@ -2,6 +2,7 @@
 
 class Menu
 {
+
     public function getMenuDashboard()
     {
 		// echo "<pre>";
@@ -11,7 +12,7 @@ class Menu
             'dashboard' => array(
                 'id' => 'dashboard',
                 'name' => 'Default',
-                'link' => BASE_URL . '/dashboard',
+                'link' =>  BASE_URL . '/dashboard',
             ),
         );
 
@@ -20,6 +21,7 @@ class Menu
             'name' => 'Dashboard',
             'items' => $dashboard
         );
+		exit;
     }
 
     public function getMenuOrder()
@@ -28,7 +30,7 @@ class Menu
             'order' => array(
                 'id' => 'order',
                 'name' => 'Pedido',
-                'link' => BASE_URL . '/dashboard/order',
+                'link' =>  BASE_URL . '/dashboard/order',
             ),
         );
 
@@ -45,12 +47,12 @@ class Menu
             'category' => array(
                 'id' => 'category',
                 'name' => 'Categoria',
-                'link' => BASE_URL . '/dashboard/category',
+                'link' =>  BASE_URL . '/dashboard/category',
             ),
             'product' => array(
                 'id' => 'product',
                 'name' => 'Producto',
-                'link' => BASE_URL . '/dashboard/product',
+                'link' =>  BASE_URL . '/dashboard/product',
             ),
         );
 
@@ -67,7 +69,7 @@ class Menu
             'customer' => array(
                 'id' => 'customer',
                 'name' => 'Cliente',
-                'link' => BASE_URL . '/dashboard/customer',
+                'link' =>  BASE_URL . '/dashboard/customer',
             ),
         );
 
@@ -84,17 +86,17 @@ class Menu
             'guest' => array(
                 'id' => 'guest',
                 'name' => 'Invitados',
-                'link' => BASE_URL . '/dashboard/guest',
+                'link' =>  BASE_URL . '/dashboard/guest',
             ),
 			'table' => array(
                 'id' => 'table',
                 'name' => 'Mesas',
-                'link' => BASE_URL . '/dashboard/table',
+                'link' =>  BASE_URL . '/dashboard/table',
             ),
 			'wishes' => array(
                 'id' => 'wishes',
                 'name' => 'Buenos deseos',
-                'link' => BASE_URL . '/dashboard/wishes',
+                'link' =>  BASE_URL . '/dashboard/wishes',
             ),
         );
 
@@ -111,17 +113,17 @@ class Menu
 			'user' => array(
                 'id' => 'user',
                 'name' => 'Usuario',
-                'link' => BASE_URL . '/dashboard/user',
+                'link' =>  BASE_URL . '/dashboard/user',
             ),
 			'customer' => array(
                 'id' => 'customer',
                 'name' => 'Cliente',
-                'link' => BASE_URL . '/dashboard/customer',
+                'link' =>  BASE_URL . '/dashboard/customer',
             ),
 			'event' => array(
                 'id' => 'event',
                 'name' => 'Evento',
-                'link' => BASE_URL . '/dashboard/event',
+                'link' =>  BASE_URL . '/dashboard/event',
             ),
 
         );

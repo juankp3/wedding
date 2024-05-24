@@ -1,5 +1,5 @@
 # Usar la imagen base oficial de PHP 8.0 con Apache
-FROM php:8.0-apache
+FROM php:8.2-apache
 
 # Actualizar el índice de paquetes e instalar dependencias
 RUN apt-get update \
@@ -16,6 +16,7 @@ RUN apt-get update \
     libpq-dev \
     libxslt1-dev \
     libzip-dev \
+    libonig-dev \
     apt-utils \
     gnupg \
     git \

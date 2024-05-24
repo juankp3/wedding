@@ -7,3 +7,5 @@ dist/css/style.css
 uploads/*
 config/env.php
 config/config.php
+vendor/
+.env
