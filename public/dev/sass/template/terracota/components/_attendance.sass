@@ -1,34 +1,51 @@
 .attendance
-    background-color: transparent
-    .attendance__top
-        align-items: center
-        background-size: contain
-        background: url('../img/terracota/bgtop_attendance.svg') no-repeat
-        flex-direction: column
-        height: 363px
-        display: flex
-        justify-content: flex-end
-        padding-bottom: 85px
-        p
-            font-family: HearthStone
-            font-size: 36px
-            color: $color-primary
-            line-height: 152.8%
-            margin: 0
-            padding: 0
-    .attendance__message
-        width: 286px
-        margin: 0 auto
-        text-align: center
-        p
-            font-family: HelveticaNeueLTCom-LtCn
-            font-size: 20px
-            color: $color-grey-text
-    .attendance__thanks
-        display: flex
-        justify-content: center
-        p
-            font-family: HearthStone
-            font-size: 36px
-            color: $color-primary
-            margin-top: 30px
+  background-color: transparent
+  &__top
+    align-items: center
+    background: url('../img/terracota/topbg_attendance.svg') no-repeat
+    background-size: contain
+    flex-direction: column
+    height: 451px
+    display: flex
+    justify-content: flex-end
+    padding-bottom: 87px
+    p
+      font-family: HearthStone
+      font-size: 36px
+      color: $color-primary
+      line-height: 152.8%
+      margin: 0
+      padding: 0
+  &__contact
+    display: flex
+    flex-direction: column
+    gap: 40px
+    margin-top: -45px
+    .contact__container
+      align-items: flex-end
+      display: flex
+      height: 171px
+      justify-content: center
+      &--bride
+        background: url('../img/terracota/bride.svg') no-repeat
+        background-position: center
+      &--fiance
+        background: url('../img/terracota/fiance.svg') no-repeat
+        background-position: center 14px
+  &__message
+    width: 286px
+    margin: 80px auto 0 auto
+    text-align: center
+    p
+      font-family: HelveticaNeueLTCom-LtCn
+      font-size: 20px
+      color: $color-grey-text
+  &__thanks
+    display: flex
+    justify-content: center
+    p
+      font-family: HearthStone
+      font-size: 36px
+      color: $color-primary
+      margin-top: 30px
+

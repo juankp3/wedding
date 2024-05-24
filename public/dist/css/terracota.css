@@ -23,17 +23,17 @@
 .attendance {
   background-color: transparent;
 }
-.attendance .attendance__top {
+.attendance__top {
   align-items: center;
+  background: url("../img/terracota/topbg_attendance.svg") no-repeat;
   background-size: contain;
-  background: url("../img/terracota/bgtop_attendance.svg") no-repeat;
   flex-direction: column;
-  height: 363px;
+  height: 451px;
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 85px;
+  padding-bottom: 87px;
 }
-.attendance .attendance__top p {
+.attendance__top p {
   font-family: HearthStone;
   font-size: 36px;
   color: #D99E3B;
@@ -41,21 +41,41 @@
   margin: 0;
   padding: 0;
 }
-.attendance .attendance__message {
+.attendance__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: -45px;
+}
+.attendance__contact .contact__container {
+  align-items: flex-end;
+  display: flex;
+  height: 171px;
+  justify-content: center;
+}
+.attendance__contact .contact__container--bride {
+  background: url("../img/terracota/bride.svg") no-repeat;
+  background-position: center;
+}
+.attendance__contact .contact__container--fiance {
+  background: url("../img/terracota/fiance.svg") no-repeat;
+  background-position: center 14px;
+}
+.attendance__message {
   width: 286px;
-  margin: 0 auto;
+  margin: 80px auto 0 auto;
   text-align: center;
 }
-.attendance .attendance__message p {
+.attendance__message p {
   font-family: HelveticaNeueLTCom-LtCn;
   font-size: 20px;
   color: #5B5B5F;
 }
-.attendance .attendance__thanks {
+.attendance__thanks {
   display: flex;
   justify-content: center;
 }
-.attendance .attendance__thanks p {
+.attendance__thanks p {
   font-family: HearthStone;
   font-size: 36px;
   color: #D99E3B;
@@ -63,6 +83,7 @@
 }
 
 .button {
+  align-items: center;
   background: linear-gradient(175deg, rgb(255, 199, 128) 0%, rgb(217, 158, 59) 87%);
   border-radius: 5px;
   border: 0px;
@@ -82,6 +103,13 @@
   height: 26px;
   width: 26px;
 }
+.button__whatsapp {
+  align-items: center;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  width: 25px;
+}
 
 .divider {
   background: url("../img/terracota/sheet.svg") no-repeat center;
@@ -100,16 +128,16 @@
   padding-bottom: 40px;
   width: 100%;
 }
-.footer .footer__info {
+.footer__info {
   display: flex;
   flex-direction: column;
   gap: 23px;
 }
-.footer .footer__info .info__socialmedia {
+.footer__info .info__socialmedia {
   padding: 0;
   text-align: center;
 }
-.footer .footer__info .info__socialmedia ul {
+.footer__info .info__socialmedia ul {
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -117,16 +145,16 @@
   margin: 0;
   padding: 0;
 }
-.footer .footer__info .info__socialmedia ul li a i {
+.footer__info .info__socialmedia ul li a i {
   color: #D99E3B;
   font-size: 28px;
   font-weight: 400;
 }
-.footer .footer__info .info__copyright {
+.footer__info .info__copyright {
   padding: 0;
   text-align: center;
 }
-.footer .footer__info .info__copyright p {
+.footer__info .info__copyright p {
   color: #5B5B5F;
   font-family: HelveticaNeueLTCom-LtCn;
   font-size: 0.875rem;
