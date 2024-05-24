@@ -1,12 +1,10 @@
 <section class="tickets">
-	<div class="--box passes">
-		<h2>Están invitados</h2>
-
-		<div class="tickets__family">
-			<p>Familia López</p>
-		</div>
-		<p>Pase para</p>
-		<div class="passes-number">2</div>
-		<p>¡Los esperamos!</p>
+	<h2>Están Invitados</h2>
+	<div class="tickets__family">
+		<p class="big">Familia López</p>
 	</div>
+	<div class="tickets__number">
+		<p>Pase para <span>2</span> personas</p>
+	</div>
+	<p>¡Los esperamos!</p>
 </section>

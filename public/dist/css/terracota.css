@@ -196,7 +196,7 @@
   margin: 0 auto;
   padding-top: 60px;
   text-align: center;
-  width: 70%;
+  width: 80%;
 }
 .profile__seal--gold {
   color: #D99E3B !important;
@@ -232,6 +232,12 @@ h2 {
   font-size: 36px;
 }
 
+h3 {
+  color: #D99E3B;
+  font-family: "HelveticaNeueLTCom-MdCn";
+  font-size: 28px;
+}
+
 p {
   color: #5B5B5F;
   font-family: "HelveticaNeueLTCom-LtCn";
@@ -245,10 +251,31 @@ p.secondary {
 }
 
 .tickets {
-  background: url("../img/terracota/b1.svg") no-repeat center;
-  height: 614px;
-  width: 100%;
+  align-items: center;
+  background: url("../img/terracota/bg_ticket.svg") no-repeat center;
+  display: flex;
+  flex-direction: column;
+  height: 662px;
+  justify-content: center;
   margin-top: 100px;
+  width: 100%;
+  gap: 30px;
+}
+.tickets h2 {
+  padding-top: 25px;
+}
+.tickets__number {
+  background: url("../img/terracota/tickets.svg") no-repeat center;
+  width: 310px;
+  height: 134px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tickets__number span {
+  color: #D99E3B;
+  font-family: "HearthStone";
+  font-size: 36px;
 }
 
 .wemarried {
@@ -258,4 +285,37 @@ p.secondary {
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: center;
+}
+
+.witnesses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.witnesses p.big {
+  width: 90%;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.witnesses__item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  position: relative;
+  width: 90%;
+}
+.witnesses__item p {
+  margin: 0;
+}
+.witnesses__item::before {
+  background: #5B5B5F;
+  bottom: -20px;
+  content: " ";
+  height: 1px;
+  position: absolute;
+  width: 48px;
+}
+.witnesses__item--last-child::before {
+  display: none;
 }
