@@ -27,6 +27,7 @@
   align-items: center;
   background: url("../img/terracota/topbg_attendance.svg") no-repeat;
   background-size: contain;
+  background-position: center;
   flex-direction: column;
   height: 451px;
   display: flex;
@@ -134,8 +135,9 @@
 
 .footer {
   align-items: flex-end;
-  background-size: contain;
   background: url("../img/terracota/bg_footer.svg") no-repeat;
+  background-position: center;
+  background-size: contain;
   display: flex;
   height: 400px;
   justify-content: center;
@@ -401,7 +403,7 @@
   position: absolute;
   width: 100%;
   z-index: 1;
-  bottom: 0;
+  bottom: 27px;
 }
 
 h1 {

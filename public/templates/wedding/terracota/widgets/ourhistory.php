@@ -2,7 +2,7 @@
 
 	<img class="ourhistory__photo" src="<?php echo DIST_IMG_URL ?>/terracota/al/ourhistory.png" alt="">
 
-	<img class="ourhistory__filtro" src="<?php echo DIST_IMG_URL ?>/terracota/bg_ourhistory.svg" alt="">
+	<img class="ourhistory__filtro" src="<?php echo DIST_IMG_URL ?>/terracota/bg_ourhistory_3.svg" alt="">
 
 	<div class="ourhistory__info">
 		<div class="ourhistory__top">
