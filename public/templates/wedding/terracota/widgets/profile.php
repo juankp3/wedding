@@ -9,7 +9,7 @@
 			<p>NUESTRA BODA</p>
 			<h1>M.Angélica</h1>
 			<h1>y</h1>
-			<h1>Luis Ángel</h1>
+			<h1>Luis Angel</h1>
 		</div>
 
 		<p>“El amor nunca se da por vencido,
