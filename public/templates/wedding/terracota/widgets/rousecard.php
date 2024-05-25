@@ -16,14 +16,14 @@
 		<p>Av. Brasil 210, Breña</p>
 		<p><b>3:30 P M</b></p>
 		<button class="button">
-			<i class="button__whatsapp fa-brands fa-whatsapp"></i>
+			<i class="button__whatsapp fa-solid fa-location-dot"></i>
 			Ver Ubicación
 		</button>
 	</div>
 </section>
 
 <section class="rosecard">
-	<h2>Ceremonia Religiosa</h2>
+	<h2>Recepción</h2>
 	<div class="rosecard_multimedia">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_top.svg" class="rosecard_multimedia__img_top">
 		<div class="rosecard_multimedia__embed">
@@ -38,7 +38,7 @@
 		<p>(Mamacona Alta - Lurín)</p>
 		<p><b>7:00 P M</b></p>
 		<button class="button">
-			<i class="button__whatsapp fa-brands fa-whatsapp"></i>
+			<i class="button__whatsapp fa-solid fa-location-dot"></i>
 			Ver Ubicación
 		</button>
 	</div>

@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="dresscode__text">
-		<p>Elegante</p>
+		<p><b>Elegante</b></p>
 	</div>
 
 </section>

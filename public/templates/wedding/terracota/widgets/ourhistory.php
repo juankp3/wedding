@@ -1,8 +1,8 @@
 <section class="ourhistory">
 
-	<img class="ourhistory__photo" src="<?php echo DIST_IMG_URL ?>/terracota/al/ourhistory.png" alt="">
+	<div class="ourhistory__photo" ></div>
 
-	<img class="ourhistory__filtro" src="<?php echo DIST_IMG_URL ?>/terracota/bg_ourhistory_3.svg" alt="">
+	<div class="ourhistory__filtro" ></div>
 
 	<div class="ourhistory__info">
 		<div class="ourhistory__top">
@@ -13,6 +13,5 @@
 			<p>Nos conocimos </br>  <b>Enero 2024</b></p>
 		</div>
 	</div>
-
 
 </section>

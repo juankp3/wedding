@@ -1,7 +1,7 @@
 <section class="attendance">
 
 	<div class="attendance__top">
-		<h2>Confirma tu Asistencia</h2>
+		<h2>Confirma </br> tu Asistencia</h2>
 	</div>
 
 	<div class="attendance__contact">
@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="attendance__message">
-		<p>Con mucha ilusión queremos vivir este momento rodeados de personas que han formdo parte de nuestra historia.</p>
+		<p>Con mucha ilusión queremos vivir este momento rodeados de personas que han formado parte de nuestra historia.</p>
 	</div>
 
 	<div class="attendance__thanks">

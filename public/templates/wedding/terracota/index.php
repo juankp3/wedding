@@ -7,6 +7,7 @@
 <?php Flight::render('widgets/witnesses.php') ?>
 <hr class="divider" />
 <?php Flight::render('widgets/rousecard.php') ?>
+<hr class="divider">
 <?php Flight::render('widgets/ourhistory.php') ?>
 <?php Flight::render('widgets/gifts.php') ?>
 <?php Flight::render('widgets/nochildren.php') ?>
