@@ -1,5 +1,5 @@
 <section class="witnesses">
-	<p class="big">Con la bendición de Dios y nuestros padres</p>
+	<p class="big">Con la bendición </br> de Dios y nuestros padres</p>
 
 	<div class="witnesses__item">
 		<h3>Padres de la Novia</h3>

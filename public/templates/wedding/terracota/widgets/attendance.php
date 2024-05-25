@@ -1,7 +1,7 @@
 <section class="attendance">
 
 	<div class="attendance__top">
-		<h2>Confirma tu Asistencia</h2>
+		<h2>Confirma </br> tu Asistencia</h2>
 	</div>
 
 	<div class="attendance__contact">
