@@ -48,7 +48,9 @@
 		</div>
     <?php endif ?>
 
-	<?php if ($input['type'] == 'checkbox'): ?>
+	<?php if ($input['type'] == 'checkbox'):
+		$isActive =  isset($data[$input['name']]) && $data[$input['name']]  ? 'checked' : '';
+		?>
         <div class="form-group">
 			<label class="form-label mb-1">
 				<?php echo $input['label']?>
@@ -57,7 +59,7 @@
 				<?php echo $input['summary']?>
 			</small>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" name="<?php echo $input['name']?>" id="<?php echo $input['name']?>" <?php echo $data[$input['name']]?'checked':'' ?> >
+				<input class="form-check-input" type="checkbox" name="<?php echo $input['name']?>" id="<?php echo $input['name']?>" <?php echo $isActive ?> >
 				<label class="form-check-label" for="switchOne"></label>
 			</div>
 		</div>

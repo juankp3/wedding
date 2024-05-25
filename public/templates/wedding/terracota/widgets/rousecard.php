@@ -4,7 +4,7 @@
 	<div class="rosecard_multimedia">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_top.svg" class="rosecard_multimedia__img_top">
 		<div class="rosecard_multimedia__embed">
-			<video autoplay muted loop>
+			<video autoplay muted loop playsinline>
 				<source src="<?php echo DIST_IMG_URL ?>/terracota/al/ceremonia.mp4" type="video/mp4">
 			</video>
 		</div>
