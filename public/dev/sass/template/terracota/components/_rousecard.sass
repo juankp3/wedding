@@ -13,6 +13,10 @@
     top: 80px
     z-index: 3
     line-height: 74px
+    @media screen and (min-width: 320px)
+      text-align: center
+      line-height: 50px
+      top: 60px
   &__info
     align-items: center
     display: flex
@@ -26,7 +30,6 @@
     button
       margin-top: 20px
 
-
 .rosecard_multimedia
   align-items: center
   display: flex
@@ -35,10 +38,8 @@
   width: 100%
   overflow: hidden
   position: relative
-  // max-width: 430px
   width: 430px
   height: 853px
-  // background: red
   &__img_top
     position: absolute
     width: 100%
@@ -60,7 +61,6 @@
       left: 50%
       height: auto
       transform: translate(-50%, -50%)
-      width: 130%
   &__img_bottom
     position: absolute
     width: 100%

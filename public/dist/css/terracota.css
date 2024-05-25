@@ -376,6 +376,13 @@ body {
   z-index: 3;
   line-height: 74px;
 }
+@media screen and (min-width: 320px) {
+  .rosecard h2 {
+    text-align: center;
+    line-height: 50px;
+    top: 60px;
+  }
+}
 .rosecard__info {
   align-items: center;
   display: flex;
@@ -427,7 +434,6 @@ body {
   left: 50%;
   height: auto;
   transform: translate(-50%, -50%);
-  width: 130%;
 }
 .rosecard_multimedia__img_bottom {
   position: absolute;
