@@ -1,5 +1,13 @@
+body {
+  overflow-x: hidden;
+}
+
 .wrapper {
   margin: auto 30px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
