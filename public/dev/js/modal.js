@@ -7,24 +7,28 @@ function modal() {
   }
 
   suscribeEvents = function () {
-    $(document).on('click', '.popup-maps-show', fn.open)
-    $(document).on('click', '.popup-maps-close', fn.close)
+    $(document).on('click', '[data-toggle="modal"]', fn.open)
+    $(document).on('click', '.modal__close', fn.close)
   }
 
   events = {}
-  events.onClickBtn = function() {
+  events.onClickBtn = function () {
   }
 
   fn = {}
   fn.open = function () {
-    let modal = $(this).data('modal')
-    console.log(modal)
+    console.log('es modal XD')
+    let modal = $(this).data('target')
     $(`#${modal}`).addClass('active')
+    $('body').css('overflow','hidden')
   }
 
   fn.close = function () {
-    let modal = $(this).closest('.popup-maps-bg').attr('id')
+    console.log('cierra modal')
+    let modal = $(this).closest('.modal').attr('id')
+    console.log('id', modal)
     $(`#${modal}`).removeClass('active')
+    $('body').css('overflow', '')
     return false
   }
 

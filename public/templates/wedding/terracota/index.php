@@ -14,3 +14,4 @@
 <?php Flight::render('widgets/dresscode.php') ?>
 <?php Flight::render('widgets/attendance.php') ?>
 <?php Flight::render('widgets/footer.php') ?>
+<?php Flight::render('widgets/modal.php') ?>
