@@ -67,6 +67,9 @@ body {
   height: 171px;
   justify-content: center;
 }
+.attendance__contact .contact__container a {
+  text-decoration: none;
+}
 .attendance__contact .contact__container--bride {
   background: url("../img/terracota/bride.svg") no-repeat;
   background-position: 100px center;
