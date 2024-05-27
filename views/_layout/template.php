@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <?php Flight::render('_layout/_partials/head.php') ?>
         <title><?php echo $title; ?></title>

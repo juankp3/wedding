@@ -62,39 +62,34 @@ class GuestController extends FrontController implements Repository, UITableView
             $response = $guestModel->createGuest();
 
 
-            if ($response['success']) {
-                $guestParentId = $response['data']['id_guest'];
-                foreach($data['guest'] as $item) {
-                    $guestModel = new GuestModel();
-                    $guestModel->name = $item;
-                    $guestModel->qyt_tickets = 0;
-                    $guestModel->deleted = 0;
-                    $guestModel->confirmation = 'pending';
-                    $guestModel->id_guest_parent = $guestParentId;
-                    $guestModel->wsp_calltoaction = 0;
-                    $guestModel->openinvitation_calltoaction = 0;
-                    $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
-                    $guestModel->id_event = $this->getIdEvent();
-                    $response = $guestModel->createGuest();
-                }
-            }
-
-            echo "<pre>";
-            var_dump($data);
-            echo "</pre>";
-
-            echo "<pre>";
-            var_dump($response);
-            echo "</pre>";
-            exit;
-
             $this->params['data'] = $data;
-
             if (!empty($response['error']))
                 $this->params['error'] = $response['error'];
 
-            if ($response['success'])
-                Flight::redirect('/dashboard/guest');
+            if ($response['success']) {
+                $guestParentId = $response['data']['id_guest'];
+                foreach($data['guest'] as $item) {
+                    if (!empty($item)) {
+                        $guestModel = new GuestModel();
+                        $guestModel->name = $item;
+                        $guestModel->qyt_tickets = 0;
+                        $guestModel->deleted = 0;
+                        $guestModel->confirmation = 'pending';
+                        $guestModel->id_guest_parent = $guestParentId;
+                        $guestModel->wsp_calltoaction = 0;
+                        $guestModel->openinvitation_calltoaction = 0;
+                        $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
+                        $guestModel->id_event = $this->getIdEvent();
+                        $guestModel->createGuest();
+                    }
+                }
+
+                if (isset($data['saveAndExitButton']))
+                    Flight::redirect('/dashboard/guest');
+                
+                if (isset($data['continueButton']))
+                    Flight::redirect('/dashboard/guest/new?last-id=' . $guestParentId);
+            }
         }
 
         // Flight::render('_partials/form/index', $this->params, 'body_content');
@@ -129,7 +124,8 @@ class GuestController extends FrontController implements Repository, UITableView
 
         $this->params['data'] = $data;
 
-        Flight::render('_partials/form/index', $this->params, 'body_content');
+        // Flight::render('_partials/form/index', $this->params, 'body_content');
+        Flight::render('guest/form', $this->params, 'body_content');
         Flight::render('_layout/template');
     }
 

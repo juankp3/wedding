@@ -2,20 +2,34 @@
 // echo "<pre>";
 // var_dump($current_page);
 // echo "</pre>";
+$invitation = $_ENV['BASE_URL']. '/boda/angelica-y-luis';
 ?>
 <div class="header">
-    <div class="header-body">
+    <div class="header-body" style="padding-top: 8px;">
+        <div class="row align-items-center">
+            <div class="col">
+                <a href="<?php echo $invitation?>" target="_blank" class="btn btn-outline-primary mb-2 btn-sm"> Ver invitación 
+                    <i class="fas fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <hr class="mt-1 mb-4">
+        </div>
         <div class="row align-items-center">
             <div class="col">
                 <!-- Pretitle -->
+                <!-- <h6 class="header-pretitle">
+                    <a href="#" target="_blank" class="btn btn-outline-primary mb-2 btn-sm"> Ver invitación </a>
+                </h6> -->
                 <h6 class="header-pretitle">
-                    Overview
+                    OVERVIEW
                 </h6>
                 <!-- Title -->
                 <h1 class="header-title text-truncate">
                     <?php echo $title ?>
                 </h1>
+
             </div>
+        
             <div class="col-auto">
                 <!-- Navigation (button group) -->
 

@@ -120,8 +120,8 @@
 				</button>
 
 				<hr class="mt-5 mb-5">
-				<button type="submit" class="btn btn-primary mb-2 w-100">Guardar y Salir </button>
-				<button type="submit" class="btn btn-secondary mb-2 w-100">Guardar y Agregar otro invitado</button>
+				<button name="saveAndExitButton" type="submit" class="btn btn-primary mb-2 w-100">Guardar y Salir </button>
+				<button name="continueButton" type="submit" class="btn btn-secondary mb-2 w-100">Guardar y Agregar otro invitado</button>
 				<a href="<?php echo $current_page ?>" class="btn w-100 btn-link text-muted mt-2">
 					Cancelar
 				</a>
