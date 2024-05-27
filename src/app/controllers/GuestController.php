@@ -55,6 +55,8 @@ class GuestController extends FrontController implements Repository, UITableView
             $guestModel->deleted = 0;
             $guestModel->confirmation = 'pending';
             $guestModel->id_guest_parent = 0;
+            $guestModel->wsp_calltoaction = 0;
+            $guestModel->openinvitation_calltoaction = 0;
             $guestModel->id_event = $this->getIdEvent();
             $response = $guestModel->createGuest();
 
@@ -68,6 +70,8 @@ class GuestController extends FrontController implements Repository, UITableView
                     $guestModel->deleted = 0;
                     $guestModel->confirmation = 'pending';
                     $guestModel->id_guest_parent = $guestParentId;
+                    $guestModel->wsp_calltoaction = 0;
+                    $guestModel->openinvitation_calltoaction = 0;
                     $guestModel->id_event = $this->getIdEvent();
                     $response = $guestModel->createGuest();
                 }
