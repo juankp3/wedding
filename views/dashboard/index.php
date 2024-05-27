@@ -1,69 +1,73 @@
 <div data-bs-theme="dark">
-    <div class="header pb-5">
-        <div class="container-fluid">
-            <div class="header-body">
-                <div class="row align-items-end">
-                    <div class="col">
-                        <!-- <h6 class="header-pretitle">
+	<div class="header pb-5">
+		<div class="container-fluid">
+			<div class="header-body">
+				<div class="row align-items-end">
+					<div class="col">
+						<!-- <h6 class="header-pretitle">
                             Annual
                         </h6> -->
 
-                        <h1 class="header-title">
-                            Invitados
-                        </h1>
+						<h1 class="header-title">
+							Invitados
+						</h1>
 
-                    </div>
-                    <div class="col-auto">
+					</div>
+					<div class="col-auto">
 
-                        <!-- Nav -->
-                        <ul class="nav nav-tabs header-tabs" role="tablist">
-                            <li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click"
-                                data-action="toggle" data-dataset="0" role="presentation">
-                                <a href="#" class="nav-link text-center active" data-bs-toggle="tab"
-                                    aria-selected="true" role="tab">
-                                    <h6 class="header-pretitle">
-                                        Confirmados
-                                    </h6>
-                                    <h3 class="mb-0">
-                                        45
-                                    </h3>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click"
-                                data-action="toggle" data-dataset="1" role="presentation">
-                                <a href="#" class="nav-link text-center" data-bs-toggle="tab" aria-selected="false"
-                                    tabindex="-1" role="tab">
-                                    <h6 class="header-pretitle">
-                                        Pendientes
-                                    </h6>
-                                    <h3 class="mb-0">
-                                        38
-                                    </h3>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click"
-                                data-action="toggle" data-dataset="2" role="presentation">
-                                <a href="#" class="nav-link text-center" data-bs-toggle="tab" aria-selected="false"
-                                    tabindex="-1" role="tab">
-                                    <h6 class="header-pretitle">
-                                        Cancelados
-                                    </h6>
-                                    <h3 class="mb-0">
-                                        17
-                                    </h3>
-                                </a>
-                            </li>
-                        </ul>
+						<!-- Nav -->
+						<ul class="nav nav-tabs header-tabs" role="tablist">
+							<li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click" data-action="toggle" data-dataset="0" role="presentation">
+								<a href="#" class="nav-link text-center active" data-bs-toggle="tab" aria-selected="true" role="tab">
+									<h6 class="header-pretitle">
+										Confirmados
+									</h6>
+									<h3 class="mb-0">
+										45
+									</h3>
+								</a>
+							</li>
+							<li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click" data-action="toggle" data-dataset="1" role="presentation">
+								<a href="#" class="nav-link text-center" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">
+									<h6 class="header-pretitle">
+										Pendientes
+									</h6>
+									<h3 class="mb-0">
+										38
+									</h3>
+								</a>
+							</li>
+							<li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click" data-action="toggle" data-dataset="2" role="presentation">
+								<a href="#" class="nav-link text-center" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">
+									<h6 class="header-pretitle">
+										Totales
+									</h6>
+									<h3 class="mb-0">
+										17
+									</h3>
+								</a>
+							</li>
+							<li class="nav-item" data-toggle="chart" data-target="#audienceChart" data-trigger="click" data-action="toggle" data-dataset="2" role="presentation">
+								<a href="#" class="nav-link text-center" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">
+									<h6 class="header-pretitle">
+										No podra asistir
+									</h6>
+									<h3 class="mb-0">
+										17
+									</h3>
+								</a>
+							</li>
+						</ul>
 
-                    </div>
-                </div><!-- / .row -->
-            </div> <!-- / .header-body -->
+					</div>
+				</div><!-- / .row -->
+			</div> <!-- / .header-body -->
 
-            <!-- Footer -->
-            <div class="header-footer">
+			<!-- Footer -->
+			<div class="header-footer">
 
-                <!-- Chart -->
-                <!-- <div class="chart">
+				<!-- Chart -->
+				<!-- <div class="chart">
                     <div id="chart-tooltip" role="tooltip" class="popover bs-popover-top"
                         style="visibility: hidden; left: 318.523px; top: 216.075px; transform: translateX(-50%) translateY(-100%) translateY(-1rem);">
                         <div class="popover-arrow translate-middle-x"></div>
@@ -80,10 +84,10 @@
                     </div>
                 </div> -->
 
-            </div>
+			</div>
 
-        </div>
-    </div> <!-- / .header -->
+		</div>
+	</div> <!-- / .header -->
 </div>
 
 <div class="container-fluid mt-n6">
@@ -104,7 +108,7 @@ Carlos y María" style="overflow: hidden; overflow-wrap: break-word; text-align:
 						</form>
 						<div class="row align-items-center">
 							<div class="col">
-							<small class="text-body-secondary">0/500</small>
+								<small class="text-body-secondary">0/500</small>
 							</div>
 							<div class="col-auto"></div>
 						</div>

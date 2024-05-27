@@ -66,7 +66,8 @@ class GuestController extends FrontController implements Repository, UITableView
                 Flight::redirect('/dashboard/guest');
         }
 
-        Flight::render('_partials/form/index', $this->params, 'body_content');
+        // Flight::render('_partials/form/index', $this->params, 'body_content');
+        Flight::render('guest/form', $this->params, 'body_content');
         Flight::render('_layout/template');
     }
 
@@ -112,13 +113,17 @@ class GuestController extends FrontController implements Repository, UITableView
     {
         $form = array();
         $form[] = array(
-            'label' => 'Nombre',
+            'label' => 'Titulo de la tarjeta <span>(Nombre de la familia)</span>',
+			'placeholder' => 'Ej: Familia lopez, Carlos y esposa, Srta. Maria',
             'name' => 'names',
             'type' => 'text',
+			'required' => true
         );
 
         $form[] = array(
-            'label' => 'Telefono',
+            'label' => 'Teléfono <span>(Opcional)<span>',
+			'placeholder' => 'Ej: 51953184284',
+			'description' => 'Ingrese el número de teléfono incluyendo el código del país. Esto nos permitirá enviar la invitación virtual por WhatsApp.',
             'name' => 'phone',
             'type' => 'text',
         );
@@ -127,13 +132,19 @@ class GuestController extends FrontController implements Repository, UITableView
             'label' => 'Cantidad de pases',
             'name' => 'qyt_tickets',
             'type' => 'select',
+            'defaultValue' => true,
+            'required' => true,
             'options' => array(
-				0 => 0,
 				1 => 1,
 				2 => 2,
 				3 => 3,
 				4 => 4,
 				5 => 5,
+				6 => 6,
+				7 => 7,
+				8 => 8,
+				9 => 9,
+				10 => 10,
 			),
         );
 
@@ -173,10 +184,10 @@ class GuestController extends FrontController implements Repository, UITableView
         return array(
             'id',
             'Nombre',
-            'Cantidad',
+            'Pases',
             'Estado',
             'Telefono',
-            // 'Activo',
+            'opciones',
         );
     }
 }

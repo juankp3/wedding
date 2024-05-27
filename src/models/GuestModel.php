@@ -59,8 +59,8 @@ class GuestModel extends Model
         if (empty($this->names))
             $error['names'] = "Ingrese nombre";
 
-        if (empty($this->phone))
-            $error['phone'] = "Ingrese telefono";
+        if (empty($this->qyt_tickets))
+            $error['names'] = "Ingrese la cantidad de pases";
 
         return $error;
     }

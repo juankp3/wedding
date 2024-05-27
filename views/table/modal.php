@@ -1,97 +1,171 @@
+<div class="modal fade" id="modalMembers" tabindex="-1" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-card card" data-list="{&quot;valueNames&quot;: [&quot;name&quot;]}">
+					<div class="card-header">
 
-<div class="modal fade" id="modalKanbanTask" tabindex="-1" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content bg-lighter">
-          <div class="modal-body">
+						<!-- Title -->
+						<h4 class="card-header-title" id="exampleModalCenterTitle">
+							Add a member
+						</h4>
 
-            <!-- Header -->
-            <div class="row">
-              <div class="col">
+						<!-- Close -->
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                <!-- Prettitle -->
-                <h6 class="text-uppercase text-body-secondary mb-3">
-                  <a href="#!" class="text-reset">How to Use Kanban</a>
-                </h6>
+					</div>
+					<div class="card-header">
 
-                <!-- Title -->
-                <h2 class="mb-2">
-                  Update Dashkit to include new components!
-                </h2>
+						<!-- Form -->
+						<form>
+							<div class="input-group input-group-flush input-group-merge input-group-reverse">
+								<input class="form-control list-search" type="search" placeholder="Search">
+								<div class="input-group-text">
+									<span class="fe fe-search"></span>
+								</div>
+							</div>
+						</form>
 
-                <!-- Subtitle -->
-                <p class="text-body-secondary mb-0">
-                  This is a description of this task. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna nisi, ultrices ut pharetra eget.
-                </p>
+					</div>
+					<div class="card-body">
 
-              </div>
-              <div class="col-auto">
+						<!-- List group -->
+						<ul class="list-group list-group-flush list my-n3">
+							<li class="list-group-item">
+								<div class="row align-items-center">
+									<div class="col-auto">
 
-                <!-- Close -->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<!-- Avatar -->
+										<a href="../profile-posts.html" class="avatar">
+											<img src="../assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+										</a>
 
-              </div>
-            </div> <!-- / .row -->
+									</div>
+									<div class="col ms-n2">
 
-            <!-- Divider -->
-            <hr class="my-4">
+										<!-- Title -->
+										<h4 class="mb-1 name">
+											<a href="../profile-posts.html">Miyah Myles</a>
+										</h4>
 
-            <!-- Buttons -->
-            <div class="mb-4">
-              <div class="row">
-                <div class="col">
+										<!-- Time -->
+										<p class="small mb-0">
+											<span class="text-success">●</span> Online
+										</p>
 
-                  <!-- Reaction -->
-                  <a href="#!" class="btn btn-sm btn-white">
-                    😬 1
-                  </a>
-                  <a href="#!" class="btn btn-sm btn-white">
-                    👍 2
-                  </a>
-                  <a href="#!" class="btn btn-sm btn-white">
-                    Add Reaction
-                  </a>
+									</div>
+									<div class="col-auto">
 
-                </div>
-                <div class="col-auto me-n3">
+										<!-- Button -->
+										<a href="#!" class="btn btn-sm btn-white">
+											Add
+										</a>
 
-                  <!-- Avatar group -->
-                  <div class="avatar-group d-none d-sm-flex">
-                    <a href="./profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" aria-label="Ab Hadley" data-bs-original-title="Ab Hadley">
-                      <img src="./assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
-                    </a>
-                    <a href="./profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" aria-label="Adolfo Hess" data-bs-original-title="Adolfo Hess">
-                      <img src="./assets/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
-                    </a>
-                    <a href="./profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" aria-label="Daniela Dewitt" data-bs-original-title="Daniela Dewitt">
-                      <img src="./assets/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
-                    </a>
-                    <a href="./profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" aria-label="Miyah Myles" data-bs-original-title="Miyah Myles">
-                      <img src="./assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
-                    </a>
-                  </div>
+									</div>
+								</div> <!-- / .row -->
+							</li>
+							<li class="list-group-item">
+								<div class="row align-items-center">
+									<div class="col-auto">
 
-                </div>
-                <div class="col-auto">
+										<!-- Avatar -->
+										<a href="../profile-posts.html" class="avatar">
+											<img src="../assets/img/avatars/profiles/avatar-6.jpg" alt="..." class="avatar-img rounded-circle">
+										</a>
 
-                  <!-- Button -->
-                  <a href="#!" class="btn btn-sm btn-white">
-                    Share
-                  </a>
+									</div>
+									<div class="col ms-n2">
 
-                </div>
-              </div> <!-- / .row -->
-            </div>
+										<!-- Title -->
+										<h4 class="mb-1 name">
+											<a href="../profile-posts.html">Ryu Duke</a>
+										</h4>
 
-            <!-- Card -->
+										<!-- Time -->
+										<p class="small mb-0">
+											<span class="text-success">●</span> Online
+										</p>
 
+									</div>
+									<div class="col-auto">
 
+										<!-- Button -->
+										<a href="#!" class="btn btn-sm btn-white">
+											Add
+										</a>
 
+									</div>
+								</div> <!-- / .row -->
+							</li>
+							<li class="list-group-item">
+								<div class="row align-items-center">
+									<div class="col-auto">
 
+										<!-- Avatar -->
+										<a href="../profile-posts.html" class="avatar">
+											<img src="../assets/img/avatars/profiles/avatar-7.jpg" alt="..." class="avatar-img rounded-circle">
+										</a>
 
+									</div>
+									<div class="col ms-n2">
 
+										<!-- Title -->
+										<h4 class="mb-1 name">
+											<a href="../profile-posts.html">Glen Rouse</a>
+										</h4>
 
+										<!-- Time -->
+										<p class="small mb-0">
+											<span class="text-warning">●</span> Busy
+										</p>
 
-          </div>
-        </div>
-      </div>
-    </div>
+									</div>
+									<div class="col-auto">
+
+										<!-- Button -->
+										<a href="#!" class="btn btn-sm btn-white">
+											Add
+										</a>
+
+									</div>
+								</div> <!-- / .row -->
+							</li>
+							<li class="list-group-item">
+								<div class="row align-items-center">
+									<div class="col-auto">
+
+										<!-- Avatar -->
+										<a href="../profile-posts.html" class="avatar">
+											<img src="../assets/img/avatars/profiles/avatar-8.jpg" alt="..." class="avatar-img rounded-circle">
+										</a>
+
+									</div>
+									<div class="col ms-n2">
+
+										<!-- Title -->
+										<h4 class="mb-1 name">
+											<a href="../profile-posts.html">Grace Gross</a>
+										</h4>
+
+										<!-- Time -->
+										<p class="small mb-0">
+											<span class="text-danger">●</span> Offline
+										</p>
+
+									</div>
+									<div class="col-auto">
+
+										<!-- Button -->
+										<a href="#!" class="btn btn-sm btn-white">
+											Add
+										</a>
+
+									</div>
+								</div> <!-- / .row -->
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
