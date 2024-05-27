@@ -57,6 +57,7 @@ class GuestController extends FrontController implements Repository, UITableView
             $guestModel->id_guest_parent = 0;
             $guestModel->wsp_calltoaction = 0;
             $guestModel->openinvitation_calltoaction = 0;
+            $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
             $guestModel->id_event = $this->getIdEvent();
             $response = $guestModel->createGuest();
 
@@ -72,6 +73,7 @@ class GuestController extends FrontController implements Repository, UITableView
                     $guestModel->id_guest_parent = $guestParentId;
                     $guestModel->wsp_calltoaction = 0;
                     $guestModel->openinvitation_calltoaction = 0;
+                    $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
                     $guestModel->id_event = $this->getIdEvent();
                     $response = $guestModel->createGuest();
                 }
