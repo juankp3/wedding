@@ -45,17 +45,42 @@ class GuestController extends FrontController implements Repository, UITableView
         $this->params['title'] = 'Nuevo Invitado';
         $this->params['form'] = $this->form();
 
-        if (isset($_POST['names'])) {
+        if (isset($_POST['name'])) {
             $data = Flight::request()->data->getData();
 
 			$guestModel = new GuestModel();
-            $guestModel->names = Flight::request()->data->names; // $data['firstname'];
+            $guestModel->name = Flight::request()->data->name; // $data['firstname'];
             $guestModel->qyt_tickets = Flight::request()->data->qyt_tickets;
             $guestModel->phone = Flight::request()->data->phone;
             $guestModel->deleted = 0;
             $guestModel->confirmation = 'pending';
+            $guestModel->id_guest_parent = 0;
             $guestModel->id_event = $this->getIdEvent();
             $response = $guestModel->createGuest();
+
+
+            if ($response['success']) {
+                $guestParentId = $response['data']['id_guest'];
+                foreach($data['guest'] as $item) {
+                    $guestModel = new GuestModel();
+                    $guestModel->name = $item;
+                    $guestModel->qyt_tickets = 0;
+                    $guestModel->deleted = 0;
+                    $guestModel->confirmation = 'pending';
+                    $guestModel->id_guest_parent = $guestParentId;
+                    $guestModel->id_event = $this->getIdEvent();
+                    $response = $guestModel->createGuest();
+                }
+            }
+
+            echo "<pre>";
+            var_dump($data);
+            echo "</pre>";
+
+            echo "<pre>";
+            var_dump($response);
+            echo "</pre>";
+            exit;
 
             $this->params['data'] = $data;
 
@@ -80,9 +105,9 @@ class GuestController extends FrontController implements Repository, UITableView
         $guestModel = new GuestModel($id);
         $data = (array)$guestModel;
 
-        if (isset($_POST['names'])) {
+        if (isset($_POST['name'])) {
             $data = Flight::request()->data->getData();
-			$guestModel->names = Flight::request()->data->names; // $data['firstname'];
+			$guestModel->name = Flight::request()->data->name; // $data['firstname'];
             $guestModel->qyt_tickets = Flight::request()->data->qyt_tickets;
             $guestModel->phone = Flight::request()->data->phone;
             $guestModel->deleted = 0;
@@ -115,7 +140,7 @@ class GuestController extends FrontController implements Repository, UITableView
         $form[] = array(
             'label' => 'Titulo de la tarjeta <span>(Nombre de la familia)</span>',
 			'placeholder' => 'Ej: Familia lopez, Carlos y esposa, Srta. Maria',
-            'name' => 'names',
+            'name' => 'name',
             'type' => 'text',
 			'required' => true
         );
@@ -160,7 +185,7 @@ class GuestController extends FrontController implements Repository, UITableView
         return array_map(function($guest){
             $data = array(
                 $guest['id_guest'],
-                $guest['names'],
+                $guest['name'],
                 $guest['qyt_tickets'],
                 $guest['confirmation'],
                 $guest['phone'],

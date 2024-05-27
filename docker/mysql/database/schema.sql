@@ -70,7 +70,8 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `guest` (
   `id_guest`  INT NOT NULL AUTO_INCREMENT,
   `id_event`  INT NOT NULL,
-  `names`     VARCHAR(200) NULL,
+  `id_guest_parent`  INT NULL,
+  `name`     VARCHAR(200) NULL,
   `qyt_tickets`   INT NULL,
   `confirmation` ENUM('pending', 'cancelled', 'confirmed') NULL DEFAULT 'pending',
   `phone`     VARCHAR(10) NULL,

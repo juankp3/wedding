@@ -5,7 +5,8 @@ class GuestModel extends Model
 {
     public $id;
     public $id_event;
-    public $names;
+    public $id_guest_parent;
+    public $name;
     public $qyt_tickets;
     public $confirmation;
     public $phone;
@@ -34,7 +35,9 @@ class GuestModel extends Model
     public function getGuest($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
-        $query = "SELECT * from $table order by id_guest desc";
+        $query = "SELECT * from $table 
+                  WHERE id_guest_parent = 0
+                    order by id_guest desc";
 
         if (isset($offset) && isset($limit)) {
             $query.= " limit $offset, $limit";
@@ -56,11 +59,11 @@ class GuestModel extends Model
     public function validateGuest()
     {
         $error = array();
-        if (empty($this->names))
-            $error['names'] = "Ingrese nombre";
+        if (empty($this->name))
+            $error['name'] = "Ingrese nombre";
 
-        if (empty($this->qyt_tickets))
-            $error['names'] = "Ingrese la cantidad de pases";
+        // if (empty($this->qyt_tickets))
+        //     $error['name'] = "Ingrese la cantidad de pases";
 
         return $error;
     }

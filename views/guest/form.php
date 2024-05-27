@@ -11,7 +11,7 @@
 		const inputblock = (number) => {
 			return `<div  class="form-group row">
 						<div class="col-10 col-sm-10 col-lg-11">
-							<input type="text" name="names" class="form-control " placeholder="Invitado ${number}" value="" tabindex="${number}">
+							<input type="text" name="guest[]" class="form-control " placeholder="Invitado ${number}" value="" tabindex="${number}">
 						</div>
 						<div class="col-2 col-sm-2 col-lg-1">
 							<a href="#" class="btn btn-white closeguest">
@@ -99,7 +99,7 @@
 					<small class="form-text text-body-secondary">
 						Agregue los nombres de los invitados para confirmar asistencia. Si se deja en blanco, el invitado principal elegirá a los otros.
 					</small>
-					<input id="mainGuest" type="text" name="names" class="form-control " placeholder="Nombre del invitado principal" value="" tabindex="1">
+					<input id="mainGuest" type="text" name="guest[]" class="form-control " placeholder="Nombre del invitado principal" value="" tabindex="1">
 				</div>
 				<div id="contentguest">
 					<!-- <div  class="form-group row">
