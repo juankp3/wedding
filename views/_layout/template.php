@@ -11,6 +11,7 @@
         <div class="main-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
+					<?php Flight::render('_layout/_partials/notification.php') ?>
                     <?php echo $body_content; ?>
                 </div>
             </div>

@@ -11,7 +11,7 @@
 		<p>CCI: 00219319784617501712</p>
 		<p>Kuga María O Salvatierra Luis</p>
 	</div>
-	<div class="witnesses__item witnesses__item--last-child">
+	<div class="witnesses__item witnesses__item--last-child gifts__topspace">
 		<h3>Bcp Dólares</h3>
 		<p>N° de cuenta: 19397846743191</p>
 		<p>CCI: 00219319784674319118</p>

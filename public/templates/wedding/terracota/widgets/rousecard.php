@@ -22,7 +22,7 @@
 	</div>
 </section>
 
-<section class="rosecard">
+<section class="rosecard rosecard--recepcion">
 	<h2>Recepción</h2>
 	<div class="rosecard_multimedia">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_top.svg" class="rosecard_multimedia__img_top">

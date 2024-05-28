@@ -219,12 +219,14 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 360px;
-  width: 80%;
+  width: 88%;
 }
 .gifts__info p {
   padding: 0;
   margin: 0;
   text-align: center;
+  font-size: 19px;
+  line-height: 25px;
 }
 .gifts__info h2 {
   margin: 20px 50px;
@@ -234,6 +236,9 @@ body {
 }
 .gifts .witnesses__item {
   margin-bottom: 0px !important;
+}
+.gifts__topspace {
+  margin-top: 25px;
 }
 
 .nochildren {
@@ -263,7 +268,7 @@ body {
   justify-content: center;
   position: relative;
   height: 1032px;
-  margin: -218px 0 0 0;
+  margin: -180px 0 0 0;
 }
 .ourhistory__filtro {
   background: url("../img/terracota/bg_ourhistory_3.svg") no-repeat center;
@@ -383,7 +388,6 @@ body {
 @media screen and (min-width: 320px) {
   .rosecard h2 {
     text-align: center;
-    line-height: 50px;
     top: 60px;
   }
 }
@@ -401,6 +405,9 @@ body {
 }
 .rosecard__info button {
   margin-top: 20px;
+}
+.rosecard--recepcion {
+  margin: 0 0 80px 0;
 }
 
 .rosecard_multimedia {
@@ -437,7 +444,7 @@ body {
   top: 50%;
   left: 50%;
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -51%);
 }
 .rosecard_multimedia__img_bottom {
   position: absolute;
@@ -540,10 +547,11 @@ p.secondary {
 }
 .witnesses__item p {
   margin: 0;
+  line-height: 25px;
 }
 .witnesses__item::before {
   background: #5B5B5F;
-  bottom: -20px;
+  bottom: -25px;
   content: " ";
   height: 1px;
   position: absolute;
