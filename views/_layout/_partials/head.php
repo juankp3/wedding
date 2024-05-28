@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="<?php echo CSS_URL ?>/libs.bundle.css">
 <link rel="stylesheet" href="<?php echo CSS_URL ?>/theme.bundle.css" id="stylesheetLight">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link rel="stylesheet" href="<?php echo CSS_URL ?>/style.css?v=1" >
+<link rel="stylesheet" href="<?php echo CSS_URL ?>/style.css?v=2" >
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js?v=1"></script>

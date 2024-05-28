@@ -1,29 +1,29 @@
-    .form-date {
+    /*.form-date {
         display: flex;
     }
-    
+
     #order-processing {
         display: none;
     }
-    
+
     #order-processing.enable {
         display: block !important;
     }
-    
+
     #compare {
         display: none;
     }
-    
+
     #compare.active {
         display: flex !important;
     }
-    
+
     .form-date .btn {
         position: absolute;
         right: 4px;
         color: #2c7be5
     }
-    
+
     #daterange {
         width: 226px;
         border: 0;
@@ -35,15 +35,15 @@
         border-bottom: solid 1px #2c7be5;
         z-index: 999;
     }
-    
+
     .spinner-border {
         display: none
     }
-    
+
     .spinner-border.active {
         display: inline-block
     }
-    
+
     @media (max-width: 575.98px) {
         .align-items-end {
             display: flex;
@@ -59,4 +59,22 @@
         .chart.chart-appended {
             height: 350px !important;
         }
-    }
+    }*/
+
+.custom-notification{
+	width: auto;
+	position: fixed;
+	bottom: 4px;
+	right: 16px;
+	z-index: 1;
+}
+
+@media (max-width: 640px) {
+
+	.custom-notification {
+		width: 94%;
+		right: auto;
+		bottom: 0;
+	}
+
+}
