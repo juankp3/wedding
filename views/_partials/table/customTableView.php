@@ -8,7 +8,7 @@
 ?>
 <script>
 	$(document).ready(function() {
-		$(".btn-clipboard").hover(
+		$(".btn-link").hover(
 			function() {
 				$(this).find('.tooltip').css('display', 'block');
 			},
@@ -88,13 +88,22 @@
 							<i class="fas fa-check" style="font-size: 18px;"></i>
 						</a> -->
 
-						<a href="http://localhost:4002/boda/angelica-y-luis" class="btn-clipboard" aria-describedby="tooltip476679" target="_blank" style="color:#6e84a3;padding: 4px 6px;margin: 0px 2px;display:inline-flex;position:relative">
+						<a href="http://localhost:4002/boda/angelica-y-luis" class="btn-link" aria-describedby="tooltip476679" target="_blank" style="color:#6e84a3;padding: 4px 6px;margin: 0px 2px;display:inline-flex;position:relative">
 							<div class="tooltip bs-tooltip-auto fade show" role="tooltip" id="tooltip476679" data-popper-placement="top" style="position: absolute; inset: auto auto 29px -24px; margin: 0px;display:none">
 								<div class="tooltip-arrow" style="position: absolute; left: 0px; transform: translate(34px, 0px);"></div>
 								<div class="tooltip-inner">Copiar&nbsp;link</div>
 								<!-- <div class="tooltip-inner">Copiado</div> -->
 							</div>
 							<i class="fas fa-link" style="font-size: 18px;"></i>
+						</a>
+
+						<a href="#" target="_blank" class="btn-link" style="color:#6e84a3;padding: 4px 6px;margin: 0px 2px;display:inline-flex;position:relative">
+							<div class="tooltip bs-tooltip-auto fade show" role="tooltip" id="tooltip476679" data-popper-placement="top" style="position: absolute; inset: auto auto 29px -24px; margin: 0px;display:none">
+								<div class="tooltip-arrow" style="position: absolute; left: 0px; transform: translate(34px, 0px);"></div>
+								<div class="tooltip-inner">Vista&nbsp;Previa</div>
+								<!-- <div class="tooltip-inner">Copiado</div> -->
+							</div>
+							<i class="fas fa-eye" style="font-size: 18px;"></i>
 						</a>
 
 
