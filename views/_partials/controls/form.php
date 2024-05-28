@@ -71,14 +71,17 @@
 
 	<?php if ($input['type'] == 'checkbox') :
 		$isActive =  isset($data[$input['name']]) && $data[$input['name']]  ? 'checked' : '';
+		$description = isset($input['description']) ? true : '';
 	?>
 		<div class="form-group">
 			<label class="form-label mb-1">
 				<?php echo $input['label'] ?>
 			</label>
-			<small class="form-text text-body-secondary">
-				<?php echo $input['summary'] ?>
-			</small>
+			<?php if ($description): ?>
+				<small class="form-text text-body-secondary">
+					<?php echo $input['description'] ?>
+				</small>
+			<?php endif ?>
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" name="<?php echo $input['name'] ?>" id="<?php echo $input['name'] ?>" <?php echo $isActive ?>>
 				<label class="form-check-label" for="switchOne"></label>

@@ -126,6 +126,11 @@ class Conexion
         return $data;
     }
 
+    public function executeNonQuery($query)
+    {
+        return mysqli_query($this->_CON, $query);
+    }
+
     public function getRow($query, $table)
     {
         $data = [];

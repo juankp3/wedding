@@ -61,26 +61,27 @@ class GuestController extends FrontController implements Repository, UITableView
             $guestModel->id_event = $this->getIdEvent();
             $response = $guestModel->createGuest();
 
-
             $this->params['data'] = $data;
             if (!empty($response['error']))
                 $this->params['error'] = $response['error'];
 
             if ($response['success']) {
                 $guestParentId = $response['data']['id_guest'];
-                foreach($data['guest'] as $item) {
-                    if (!empty($item)) {
-                        $guestModel = new GuestModel();
-                        $guestModel->name = $item;
-                        $guestModel->qyt_tickets = 0;
-                        $guestModel->deleted = 0;
-                        $guestModel->confirmation = 'pending';
-                        $guestModel->id_guest_parent = $guestParentId;
-                        $guestModel->wsp_calltoaction = 0;
-                        $guestModel->openinvitation_calltoaction = 0;
-                        $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
-                        $guestModel->id_event = $this->getIdEvent();
-                        $guestModel->createGuest();
+                if (!empty($data['guest'])) {
+                    foreach($data['guest']['name'] as $name) {
+                        if (!empty($name)) {
+                            $guestModel = new GuestModel();
+                            $guestModel->name = $name;
+                            $guestModel->qyt_tickets = 0;
+                            $guestModel->deleted = 0;
+                            $guestModel->confirmation = 'pending';
+                            $guestModel->id_guest_parent = $guestParentId;
+                            $guestModel->wsp_calltoaction = 0;
+                            $guestModel->openinvitation_calltoaction = 0;
+                            $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
+                            $guestModel->id_event = $this->getIdEvent();
+                            $res = $guestModel->createGuest();
+                        }
                     }
                 }
 
@@ -100,20 +101,55 @@ class GuestController extends FrontController implements Repository, UITableView
     public function update($id)
     {
         $data = array();
-        $this->params['title'] = 'Editar Usuario';
+        $this->params['title'] = 'Editar Invitado';
         $this->params['form'] = $this->form(self::EDIT);
 
         $guestModel = new GuestModel($id);
         $data = (array)$guestModel;
 
+        $guest = $guestModel->getGuestByParentId($id);
+        $data['guest'] = $guest;
+
         if (isset($_POST['name'])) {
             $data = Flight::request()->data->getData();
+
 			$guestModel->name = Flight::request()->data->name; // $data['firstname'];
             $guestModel->qyt_tickets = Flight::request()->data->qyt_tickets;
             $guestModel->phone = Flight::request()->data->phone;
             $guestModel->deleted = 0;
             $guestModel->id_event = $this->getIdEvent();
             $response = $guestModel->updateGuest($id);
+
+            $guestModel->deleteGuestByParentId($id);
+            if (!empty($data['guest'])) {
+                // $guestModel = new GuestModel($id);
+                foreach($data['guest']['name'] as $key => $name) {
+                    $idx = $data['guest']['id'][$key];
+                    if (!empty($idx)){
+                        $guestModel = new GuestModel($idx);
+                        $guestModel->name = $name;
+                        $guestModel->deleted = 0;
+                        $guestModel->updateGuest($idx);
+                    } else {
+                        $guestModel = new GuestModel();
+                        $guestModel->name = $name;
+                        $guestModel->qyt_tickets = 0;
+                        $guestModel->deleted = 0;
+                        $guestModel->confirmation = 'pending';
+                        $guestModel->id_guest_parent = $id;
+                        $guestModel->wsp_calltoaction = 0;
+                        $guestModel->openinvitation_calltoaction = 0;
+                        $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
+                        $guestModel->id_event = $this->getIdEvent();
+                        $guestModel->createGuest();
+                    }
+                }
+
+                $guestModel = new GuestModel($id);
+                $data = (array)$guestModel;
+                $guest = $guestModel->getGuestByParentId($id);
+                $data['guest'] = $guest;
+            }
 
             if (!empty($response['error']))
                 $this->params['error'] = $response['error'];
@@ -140,7 +176,7 @@ class GuestController extends FrontController implements Repository, UITableView
     {
         $form = array();
         $form[] = array(
-            'label' => 'Titulo de la tarjeta <span>(Nombre de la familia)</span>',
+            'label' => 'Nombre <span>(Invitado principal)</span>',
 			'placeholder' => 'Ej: Familia lopez, Carlos y esposa, Srta. Maria',
             'name' => 'name',
             'type' => 'text',
@@ -174,6 +210,13 @@ class GuestController extends FrontController implements Repository, UITableView
 				10 => 10,
 			),
         );
+
+        // $form[] = array(
+        //     'label' => 'Mostrar mensaje "NO NIÑOS"',
+        //     'name' => 'active',
+        //     'type' => 'checkbox',
+        //     'options' => true
+        // );
 
         return $form;
     }

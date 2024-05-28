@@ -77,6 +77,19 @@ class Model
         return $cn->executeS($query, $table);
     }
 
+    public function execute($query)
+    {
+        $cn = new Conexion();
+        $table = Model::getTable($this);
+        return $cn->executeS($query, $table);
+    }
+
+    public function executeNonQuery($query)
+    {
+        $cn = new Conexion();
+        return $cn->executeNonQuery($query);
+    }
+
     public function getRow($query)
     {
         $cn = new Conexion();

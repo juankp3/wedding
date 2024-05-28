@@ -36,12 +36,31 @@ class GuestModel extends Model
     {
         $table = $this->definition['table'];
         $query = "SELECT * from $table 
-                  WHERE id_guest_parent = 0
-                    order by id_guest desc";
+                  WHERE id_guest_parent = 0 AND deleted = 0
+                  ORDER BY id_guest desc";
 
         if (isset($offset) && isset($limit)) {
             $query.= " limit $offset, $limit";
         }
+
+        return $this->executeS($query);
+    }
+
+    public function deleteGuestByParentId($guestParentId)
+    {
+        $table = $this->definition['table'];
+        $query = "UPDATE $table SET deleted = 1 
+                  WHERE id_guest_parent =  $guestParentId ";
+
+        return $this->executeNonQuery($query);
+    }
+
+    public function getGuestByParentId($guestParentId)
+    {
+        $table = $this->definition['table'];
+        $query = "SELECT * from $table 
+                  WHERE id_guest_parent = $guestParentId AND deleted = 0
+                  ORDER BY id_guest asc";
 
         return $this->executeS($query);
     }

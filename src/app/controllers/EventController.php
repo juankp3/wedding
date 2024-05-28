@@ -186,7 +186,7 @@ class EventController extends FrontController implements Repository, UITableView
             'label' => 'Estado',
             'name' => 'active',
             'type' => 'checkbox',
-            'summary' => 'a If you are available for hire outside of the current situation, you can encourage others to hire you.',
+            'description' => 'a If you are available for hire outside of the current situation, you can encourage others to hire you.',
             'options' => true
         );
 
