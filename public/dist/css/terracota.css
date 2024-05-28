@@ -263,7 +263,7 @@ body {
   justify-content: center;
   position: relative;
   height: 1032px;
-  margin: -218px 0 0 0;
+  margin: -180px 0 0 0;
 }
 .ourhistory__filtro {
   background: url("../img/terracota/bg_ourhistory_3.svg") no-repeat center;
@@ -401,6 +401,9 @@ body {
 .rosecard__info button {
   margin-top: 20px;
 }
+.rosecard--recepcion {
+  margin: 0 0 80px 0;
+}
 
 .rosecard_multimedia {
   align-items: center;
@@ -436,7 +439,7 @@ body {
   top: 50%;
   left: 50%;
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -51%);
 }
 .rosecard_multimedia__img_bottom {
   position: absolute;
