@@ -22,7 +22,7 @@
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 	<link rel="stylesheet" href="<?php echo BASE_URL ?>/public/dist/css/terracota.min.css?v=47">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Incluye jQuery -->
-	<script type="module" src="<?php echo BASE_URL ?>/public/dist/js/bundle.min.js?v=31"></script>
+	<script type="module" src="<?php echo BASE_URL ?>/public/dist/js/bundle.min.js?v=33"></script>
 	<script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 	<title><?php echo $title; ?></title>
 </head>
