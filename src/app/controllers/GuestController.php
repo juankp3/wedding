@@ -17,14 +17,18 @@ class GuestController extends FrontController implements Repository, UITableView
     {
 
         $guestModel = new GuestModel();
-        $rawdataGuests = $guestModel->getGuest();
+        $rawdata = $guestModel->getGuest();
+
+		$ids = array_column($rawdata, 'id_guest');
+		$rawdataGuests = array_combine($ids, $rawdata);
 
         // UITableView
         $customGuests = $this->datasource($rawdataGuests);
         $userTable = $this->tableView($customGuests);
 
         $this->params['title'] = 'Invitados';
-        $this->params['data'] = $userTable;
+        $this->params['raw'] = $rawdataGuests;
+		$this->params['data'] = $userTable;
         $this->params['header'] = $this->willDisplayHeaderView();
 
         Flight::render('guest/index', $this->params, 'body_content');
@@ -59,6 +63,10 @@ class GuestController extends FrontController implements Repository, UITableView
             $guestModel->openinvitation_calltoaction = 0;
             $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
             $guestModel->id_event = $this->getIdEvent();
+
+			$token = $guestModel->name.'-'.$guestModel->qyt_tickets;
+			$guestModel->token = md5($token);
+
             $response = $guestModel->createGuest();
 
             $this->params['data'] = $data;
@@ -87,7 +95,7 @@ class GuestController extends FrontController implements Repository, UITableView
 
                 if (isset($data['saveAndExitButton']))
                     Flight::redirect('/dashboard/guest');
-                
+
                 if (isset($data['continueButton']))
                     Flight::redirect('/dashboard/guest/new?last-id=' . $guestParentId);
             }

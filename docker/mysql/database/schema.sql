@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `guest` (
   `qyt_tickets`   INT NULL,
   `confirmation` ENUM('pending', 'cancelled', 'confirmed') NULL DEFAULT 'pending',
   `phone`     VARCHAR(30) NULL,
-  `qr`        VARCHAR(200) NULL,
+  `token`        VARCHAR(500) NULL,
   `wsp_calltoaction` INT NULL,
   `openinvitation_calltoaction` INT NULL,
   `openinvitation_lastdate` DATETIME NULL,

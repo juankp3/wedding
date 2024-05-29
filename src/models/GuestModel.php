@@ -10,7 +10,7 @@ class GuestModel extends Model
     public $qyt_tickets;
     public $confirmation;
     public $phone;
-    public $qr;
+    public $token;
     public $wsp_calltoaction;
     public $openinvitation_calltoaction;
     public $openinvitation_lastdate;
@@ -35,7 +35,7 @@ class GuestModel extends Model
     public function getGuest($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
-        $query = "SELECT * from $table 
+        $query = "SELECT * from $table
                   WHERE id_guest_parent = 0 AND deleted = 0
                   ORDER BY id_guest desc";
 
@@ -49,7 +49,7 @@ class GuestModel extends Model
     public function deleteGuestByParentId($guestParentId)
     {
         $table = $this->definition['table'];
-        $query = "UPDATE $table SET deleted = 1 
+        $query = "UPDATE $table SET deleted = 1
                   WHERE id_guest_parent =  $guestParentId ";
 
         return $this->executeNonQuery($query);
@@ -58,7 +58,7 @@ class GuestModel extends Model
     public function getGuestByParentId($guestParentId)
     {
         $table = $this->definition['table'];
-        $query = "SELECT * from $table 
+        $query = "SELECT * from $table
                   WHERE id_guest_parent = $guestParentId AND deleted = 0
                   ORDER BY id_guest asc";
 

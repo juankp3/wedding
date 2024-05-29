@@ -97,7 +97,16 @@
 							<i class="fas fa-link" style="font-size: 18px;"></i>
 						</a>
 
-						<a href="#" target="_blank" class="btn-link" style="color:#6e84a3;padding: 4px 6px;margin: 0px 2px;display:inline-flex;position:relative">
+						<?php
+						$token = '';
+						foreach ($item as $key => $field){
+							if (is_numeric($field) && $header[$key] == 'id') {
+										$token = $raw[$field]['token'];
+							}
+						}
+						$url = $_ENV['BASE_URL'].'/boda/angelica-y-luis?token=' . $token;
+						?>
+						<a href="<?php echo $url?>" target="_blank" class="btn-link" style="color:#6e84a3;padding: 4px 6px;margin: 0px 2px;display:inline-flex;position:relative">
 							<div class="tooltip bs-tooltip-auto fade show" role="tooltip" id="tooltip476679" data-popper-placement="top" style="position: absolute; inset: auto auto 29px -24px; margin: 0px;display:none">
 								<div class="tooltip-arrow" style="position: absolute; left: 0px; transform: translate(34px, 0px);"></div>
 								<div class="tooltip-inner">Vista&nbsp;Previa</div>
