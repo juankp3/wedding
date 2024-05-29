@@ -40,11 +40,8 @@ body {
 }
 .attendance__top {
   align-items: center;
-  background: url("../img/terracota/topbg_attendance.svg") no-repeat;
-  background-size: contain;
-  background-position: center;
   flex-direction: column;
-  height: 451px;
+  height: 250px;
   display: flex;
   justify-content: flex-end;
   padding-bottom: 87px;
@@ -134,6 +131,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 0 60px 0;
 }
 .dresscode__top {
   display: flex;
