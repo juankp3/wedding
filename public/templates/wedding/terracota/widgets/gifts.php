@@ -7,14 +7,14 @@
 	</div>
 	<div class="witnesses__item">
 		<h3>Bcp Soles</h3>
-		<p>N° de cuenta: 19397846175017</p>
-		<p>CCI: 00219319784617501712</p>
+		<p>N° de cuenta: <span class="witness__nolink">19397846175017</span></p>
+		<p>CCI: <span class="witness__nolink">00219319784617501712</span></p>
 		<p>Kuga María O Salvatierra Luis</p>
 	</div>
 	<div class="witnesses__item witnesses__item--last-child gifts__topspace">
 		<h3>Bcp Dólares</h3>
-		<p>N° de cuenta: 19397846743191</p>
-		<p>CCI: 00219319784674319118</p>
+		<p>N° de cuenta: <span class="witness__nolink">19397846743191</span></p>
+		<p>CCI: <span class="witness__nolink">00219319784674319118</span></p>
 		<p>Kuga María O Salvatierra Luis</p>
 	</div>
 </section>
