@@ -46,6 +46,13 @@ class GuestModel extends Model
         return $this->executeS($query);
     }
 
+	public function getGuestByToken($token)
+	{
+		$table = $this->definition['table'];
+		$query = "SELECT * from $table WHERE token = '$token'";
+		return $this->getRow($query);
+	}
+
     public function deleteGuestByParentId($guestParentId)
     {
         $table = $this->definition['table'];

@@ -1,5 +1,5 @@
 <?php
-
+require_once dirname(__FILE__) . '/../../src/models/GuestModel.php';
 use Endroid\QrCode\Color\Color;
 use Endroid\QrCode\Encoding\Encoding;
 use Endroid\QrCode\ErrorCorrectionLevel;
@@ -20,6 +20,22 @@ class WeddingController
     public function terracota()
     {
         $params['title'] = 'Angelica y Luis';
+		$guestModel = new GuestModel();
+
+		$paramsUrl = Flight::request()->query->getData();
+		if (!empty($paramsUrl['token'])) {
+			$token = $paramsUrl['token'];
+			$guest = $guestModel->getGuestByToken($token);
+			$params['guest'] = $guest;
+			$params['name'] = $guest['name'];
+		}
+
+		if (empty($paramsUrl['preview'])) {
+			// TODO: cantidad de veces al entrar
+			// echo "Holaaaa";
+			// exit;
+		}
+
 
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
         Flight::render('index', $params, 'body_content');
