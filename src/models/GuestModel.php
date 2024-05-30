@@ -94,7 +94,7 @@ class GuestModel extends Model
     public function updateOpenInvitation($openinvitation, $token)
     {
         $table = $this->definition['table'];
-        $query = "UPDATE $table SET openinvitation_calltoaction = $openinvitation
+        $query = "UPDATE $table SET openinvitation_calltoaction = $openinvitation , openinvitation_lastdate = now()
                 WHERE token = '$token' ";
 
         return $this->executeNonQuery($query);

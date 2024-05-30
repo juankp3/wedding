@@ -18,6 +18,25 @@
 </section>
 
 <section class="rosecard">
+	<h2>Ceremonia Religiosa</h2>
+
+	<div class="rosecard__cardimg" >
+		<div class="cardimg__photo2"></div>
+		<div class="cardimg__filtro" ></div>
+	</div>
+
+	<div class="rosecard__info">
+		<p><b>Basílica María Auxiliadora</b></p>
+		<p>Av. Brasil 210, Breña</p>
+		<p><b>3:30 P M</b></p>
+		<button class="button" data-toggle="modal" data-target="modal__basilica">
+			<i class="button__whatsapp fa-solid fa-location-dot"></i>
+			Ver Ubicación
+		</button>
+	</div>
+</section>
+
+<section class="rosecard">
 	<h2>Recepción</h2>
 
 	<div class="rosecard__cardimg" >
