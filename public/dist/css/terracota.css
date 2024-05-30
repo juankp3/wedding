@@ -462,7 +462,7 @@ body {
 }
 
 .cardimg__photo {
-  width: 768px;
+  width: 100%;
   margin: -40px 0 0 0;
 }
 .cardimg__photo--recepcion {
