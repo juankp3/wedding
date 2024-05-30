@@ -3,14 +3,13 @@
 	<div class="footer__info">
 		<div class="info__socialmedia">
 			<ul>
-				<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-				<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+				<li><a href="https://bit.ly/3yBZ2Ux"><i class="fa-brands fa-whatsapp"></i></a></li>
 			</ul>
 		</div>
 		<div class="info__copyright">
-			<p>Copyright © 2024 PERU, Lima</p>
-			<p>Teinvitamos Premium</p>
+			<p>¿Te ha gustado esta tarjeta? Tú también puedes tener la tuya. </br>
+				Descubre la comodidad y elegancia de nuestras tarjetas virtuales personalizadas. </br>
+				¡Contáctanos y obtén la tuya hoy mismo!</p>
 		</div>
 	</div>
 

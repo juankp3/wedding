@@ -12,6 +12,7 @@
 <?php Flight::render('widgets/gifts.php') ?>
 <?php Flight::render('widgets/nochildren.php') ?>
 <?php Flight::render('widgets/dresscode.php') ?>
+<hr class="divider">
 <?php Flight::render('widgets/attendance.php') ?>
 <?php Flight::render('widgets/footer.php') ?>
 <?php Flight::render('widgets/modal.php') ?>
