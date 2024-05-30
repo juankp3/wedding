@@ -1,6 +1,6 @@
 <?php if (!empty($guest)): ?>
 	<section class="tickets">
-		<h2>Están Invitados</h2>
+		<h2>Estas Invitado</h2>
 		<div class="tickets__family">
 			<p class="big"><?php echo $guest['name']?></p>
 		</div>
