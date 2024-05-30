@@ -1,14 +1,9 @@
 <section class="rosecard">
 	<h2>Ceremonia Religiosa</h2>
 
-	<div class="rosecard_multimedia">
-		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_top.svg" class="rosecard_multimedia__img_top">
-		<div class="rosecard_multimedia__embed">
-			<video autoplay muted loop playsinline>
-				<source src="<?php echo DIST_IMG_URL ?>/terracota/al/ceremonia.mp4" type="video/mp4">
-			</video>
-		</div>
-		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_bottom.svg" class="rosecard_multimedia__img_bottom">
+	<div class="rosecard__cardimg" >
+		<img class="cardimg__photo" src="<?php echo DIST_IMG_URL ?>/terracota/al/ceremonia.gif" >
+		<div class="cardimg__filtro" ></div>
 	</div>
 
 	<div class="rosecard__info">
@@ -22,14 +17,12 @@
 	</div>
 </section>
 
-<section class="rosecard rosecard--recepcion">
+<section class="rosecard">
 	<h2>Recepción</h2>
-	<div class="rosecard_multimedia">
-		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_top.svg" class="rosecard_multimedia__img_top">
-		<div class="rosecard_multimedia__embed">
-			<img src="<?php echo DIST_IMG_URL ?>/terracota/al/club.png" >
-		</div>
-		<img src="<?php echo DIST_IMG_URL ?>/terracota/bg_rose_painting_bottom.svg" class="rosecard_multimedia__img_bottom">
+
+	<div class="rosecard__cardimg" >
+		<img class="cardimg__photo cardimg__photo--recepcion" src="<?php echo DIST_IMG_URL ?>/terracota/al/club.png" >
+		<div class="cardimg__filtro" ></div>
 	</div>
 
 	<div class="rosecard__info">
