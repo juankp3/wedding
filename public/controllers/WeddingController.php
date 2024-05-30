@@ -30,7 +30,7 @@ class WeddingController
 			$params['name'] = $guest['name'];
 		}
 
-		if (empty($paramsUrl['preview'])) {
+		if (empty($paramsUrl['preview']) && !empty($paramsUrl['token'])) {
 			$openinvitation = $guest['openinvitation_calltoaction'] + 1;
 			$guestModel->updateOpenInvitation($openinvitation, $token);
 		}
