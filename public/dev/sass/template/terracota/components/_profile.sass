@@ -1,33 +1,59 @@
 .profile
   overflow: hidden
-  img.profile__image
-    width: 100%
-  &__top
+  min-height: 533px
+  &__content
     position: relative
-    img
-      position: absolute
-      width: 100%
-    &--background
-      left: -84px
-      top: -21px
-      width: 140% !important
+    top: 0
+    width: 100%
+    height: 730px
+    display: flex
+    justify-content: center
+  &__image
+    background: url(../img/terracota/al/novios-v3.png) no-repeat top
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    background-size: 290%
+    @include md()
+      background-size: auto
+  &__shadown
+    background: url(../img/terracota/shadown-white.svg) no-repeat top
+    width: 100%
+    height: 100%
+    z-index: 2
+    background-size: 290%
+    @include md()
+      background-size: auto
+  &__top
+    position: absolute
+    background: url(../img/terracota/rosas-top.png) no-repeat center
+    height: 143px
+    top: -37px
+    z-index: 2
+    width: 100%
   &__seal
     align-items: start
-    background-position: center 82px
-    background-size: 100% auto
-    background: url('../img/terracota/seal-below.svg') no-repeat center
     display: flex
     flex-direction: column
     justify-content: center
-    margin-top: -170px
     position: relative
+    z-index: 2
+    width: 100%
+    margin-top: -460px
+    @include xs()
+      margin-top: -270px
+    @include sm()
+      margin-top: -200px
+    @include lg()
+      margin-top: -240px
     p
       margin: 0 auto
       padding-top: 60px
       text-align: center
       width: 80%
-      @include md()
-        display: none
     &--gold
       color: $color-primary !important
       padding-top: 30px !important
@@ -48,3 +74,8 @@
       top: 65px
     h1
       margin-bottom: .3rem
+  &__bottom
+    width: 90%
+    margin: 0 auto
+    @include sm()
+      width: 400px

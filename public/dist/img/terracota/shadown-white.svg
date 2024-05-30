@@ -1,0 +1,19 @@
+<svg width="1920" height="730" viewBox="0 0 1920 730" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1920 0H0V730H1920V0Z" fill="url(#paint0_radial_475_192)"/>
+<defs>
+<radialGradient id="paint0_radial_475_192" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(968.52 -11.9423) scale(2132.91 703.86)">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.37" stop-color="white" stop-opacity="0.01"/>
+<stop offset="0.51" stop-color="white" stop-opacity="0.03"/>
+<stop offset="0.6" stop-color="white" stop-opacity="0.08"/>
+<stop offset="0.68" stop-color="white" stop-opacity="0.15"/>
+<stop offset="0.75" stop-color="white" stop-opacity="0.23"/>
+<stop offset="0.8" stop-color="white" stop-opacity="0.34"/>
+<stop offset="0.86" stop-color="white" stop-opacity="0.47"/>
+<stop offset="0.91" stop-color="white" stop-opacity="0.61"/>
+<stop offset="0.95" stop-color="white" stop-opacity="0.78"/>
+<stop offset="0.99" stop-color="white" stop-opacity="0.96"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+</defs>
+</svg>

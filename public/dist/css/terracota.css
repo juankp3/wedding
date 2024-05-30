@@ -305,43 +305,81 @@ body {
 
 .profile {
   overflow: hidden;
+  min-height: 533px;
 }
-.profile img.profile__image {
+.profile__content {
+  position: relative;
+  top: 0;
   width: 100%;
+  height: 730px;
+  display: flex;
+  justify-content: center;
+}
+.profile__image {
+  background: url(../img/terracota/al/novios-v3.png) no-repeat top;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-size: 290%;
+}
+@media screen and (min-width: 768px) {
+  .profile__image {
+    background-size: auto;
+  }
+}
+.profile__shadown {
+  background: url(../img/terracota/shadown-white.svg) no-repeat top;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-size: 290%;
+}
+@media screen and (min-width: 768px) {
+  .profile__shadown {
+    background-size: auto;
+  }
 }
 .profile__top {
-  position: relative;
-}
-.profile__top img {
   position: absolute;
+  background: url(../img/terracota/rosas-top.png) no-repeat center;
+  height: 143px;
+  top: -37px;
+  z-index: 2;
   width: 100%;
-}
-.profile__top--background {
-  left: -84px;
-  top: -21px;
-  width: 140% !important;
 }
 .profile__seal {
   align-items: start;
-  background-position: center 82px;
-  background-size: 100% auto;
-  background: url("../img/terracota/seal-below.svg") no-repeat center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -170px;
   position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: -460px;
+}
+@media screen and (min-width: 480px) {
+  .profile__seal {
+    margin-top: -270px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .profile__seal {
+    margin-top: -200px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .profile__seal {
+    margin-top: -240px;
+  }
 }
 .profile__seal p {
   margin: 0 auto;
   padding-top: 60px;
   text-align: center;
   width: 80%;
-}
-@media screen and (min-width: 768px) {
-  .profile__seal p {
-    display: none;
-  }
 }
 .profile__seal--gold {
   color: #D99E3B !important;
@@ -366,6 +404,15 @@ body {
 }
 .profile__name h1 {
   margin-bottom: 0.3rem;
+}
+.profile__bottom {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 640px) {
+  .profile__bottom {
+    width: 400px;
+  }
 }
 
 .rosecard {

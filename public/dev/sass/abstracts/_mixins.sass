@@ -30,6 +30,9 @@
     @content
 
 // Media queries mobile first
+@mixin xs()
+  @media screen and (min-width: 480px)
+    @content
 // Small
 @mixin sm()
   @media screen and (min-width: 640px)
