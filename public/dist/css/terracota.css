@@ -158,10 +158,10 @@ body {
 
 .footer {
   align-items: flex-end;
-  background: url("../img/terracota/bg_footer_tablet.svg") no-repeat;
+  background: url("../img/terracota/bg_footer_tablet_2.svg") no-repeat;
   background-position: center top;
   display: flex;
-  height: 370px;
+  height: 420px;
   justify-content: center;
   padding-bottom: 40px;
   width: 100%;
@@ -418,36 +418,29 @@ body {
 }
 
 .rosecard {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 60px;
-  margin: 0 0 24px 0;
+  align-items: center;
+  padding: 50px 0;
 }
 .rosecard h2 {
-  position: absolute;
-  top: 80px;
-  z-index: 3;
   line-height: 74px;
+  text-align: center;
 }
-@media screen and (min-width: 320px) {
-  .rosecard h2 {
-    text-align: center;
-    top: 60px;
-  }
+.rosecard__cardimg {
+  position: relative;
+  height: 494px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .rosecard__info {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: absolute;
-  z-index: 3;
-  bottom: 0;
+  margin: 20px 0 0 0;
 }
 .rosecard__info p {
   margin: 0;
@@ -459,47 +452,22 @@ body {
   margin: 0 0 80px 0;
 }
 
-.rosecard_multimedia {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 430px;
-  height: 853px;
-}
-.rosecard_multimedia__img_top {
+.cardimg__filtro {
+  background: url("../img/terracota/bg_rosecard.svg") no-repeat center;
   position: absolute;
-  width: 100%;
   z-index: 1;
+  width: 768px;
+  height: 494px;
   top: 0;
 }
-.rosecard_multimedia__embed {
-  position: absolute;
-  top: 399px;
+
+.cardimg__photo {
+  width: 768px;
+  margin: -40px 0 0 0;
 }
-.rosecard_multimedia__embed video {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: auto;
-  transform: translate(-50%, -50%);
-  height: 440px;
-}
-.rosecard_multimedia__embed img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  transform: translate(-50%, -51%);
-}
-.rosecard_multimedia__img_bottom {
-  position: absolute;
+.cardimg__photo--recepcion {
   width: 100%;
-  z-index: 1;
-  bottom: 27px;
+  height: 464px;
 }
 
 h1 {
