@@ -2,7 +2,7 @@
 	<h2>Ceremonia Religiosa</h2>
 
 	<div class="rosecard__cardimg" >
-		<img class="cardimg__photo cardimg__photo--basilica" src="<?php echo DIST_IMG_URL ?>/terracota/basilicaauxiliadora.jpg" >
+		<div class="cardimg__photo cardimg__photo--basilica" ></div>
 		<div class="cardimg__filtro" ></div>
 	</div>
 
@@ -21,7 +21,7 @@
 	<h2>Recepción</h2>
 
 	<div class="rosecard__cardimg" >
-		<img class="cardimg__photo cardimg__photo--recepcion" src="<?php echo DIST_IMG_URL ?>/terracota/al/club.png" >
+		<div class="cardimg__photo cardimg__photo--recepcion" ></div>
 		<div class="cardimg__filtro" ></div>
 	</div>
 

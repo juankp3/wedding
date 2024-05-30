@@ -417,6 +417,54 @@ body {
   }
 }
 
+/*.rosecard
+ * display: flex
+ * flex-direction: column
+ * align-items: center
+ * padding: 50px 0
+ * h2
+ *  line-height: 74px
+ *  text-align: center
+ * &__cardimg
+ *  position: relative
+ *  height: 494px
+ *  display: flex
+ *  justify-content: center
+ *  align-items: center
+ *  overflow: hidden
+ * &__info
+ *  align-items: center
+ *  display: flex
+ *  flex-direction: column
+ *  justify-content: flex-start
+ *  margin: 20px 0 0 0
+ *  p
+ *    margin: 0
+ *  button
+ *    margin-top: 20px
+ * &--recepcion
+ *  margin: 0 0 80px 0*/
+/*.cardimg__filtro
+ *  background: url('../img/terracota/bg_rosecard.svg') no-repeat center
+ *  position: absolute
+ *  z-index: 1
+ *  width: 768px
+ *  height: 494px
+ *  top: 0*/
+/*.cardimg__photo
+ *  width: 100%
+ *  margin: -40px 0 0 0
+ *  &--basilica
+ *    width: auto
+ *    height: 660px
+ *    margin: 0
+ *  &--recepcion
+ *    width: 100%
+ *    height: 464px*/
+/*.cardimg__photo2
+ *  background: url('../img/terracota/ceremonia.gif') no-repeat center
+ *  width: 100%
+ *  height: 464px*/
 .rosecard {
   display: flex;
   flex-direction: column;
@@ -428,12 +476,14 @@ body {
   text-align: center;
 }
 .rosecard__cardimg {
-  position: relative;
-  height: 494px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 494px;
+  margin: 0;
 }
 .rosecard__info {
   align-items: center;
@@ -456,29 +506,32 @@ body {
   background: url("../img/terracota/bg_rosecard.svg") no-repeat center;
   position: absolute;
   z-index: 1;
-  width: 768px;
+  width: 100%;
   height: 494px;
   top: 0;
 }
 
 .cardimg__photo {
+  position: absolute;
+  z-index: 1;
   width: 100%;
-  margin: -40px 0 0 0;
+  height: 490px;
+  top: 1px;
+}
+@media screen and (min-width: 480px) {
+  .cardimg__photo {
+    width: 700px;
+  }
 }
 .cardimg__photo--basilica {
-  width: auto;
-  height: 660px;
-  margin: 0;
+  background: url("../img/terracota/al/ceremonia.gif") no-repeat;
+  background-position: center bottom;
+  background-size: cover;
 }
 .cardimg__photo--recepcion {
-  width: 100%;
-  height: 464px;
-}
-
-.cardimg__photo2 {
-  background: url("../img/terracota/ceremonia.gif") no-repeat center;
-  width: 100%;
-  height: 464px;
+  background: url("../img/terracota/al/club.png") no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 h1 {
