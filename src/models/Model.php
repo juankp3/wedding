@@ -90,6 +90,12 @@ class Model
         return $cn->executeNonQuery($query);
     }
 
+    public function executeRowQuery($query)
+    {
+        $cn = new Conexion();
+        return $cn->executeRowQuery($query);
+    }
+
     public function getRow($query)
     {
         $cn = new Conexion();
@@ -141,7 +147,7 @@ class Model
 
     public function getPagination(array $dataArray)
     {
-        $itemsPerPage = 4;
+        $itemsPerPage = 20;
         $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 
         $startIndex = ($currentPage - 1) * $itemsPerPage;

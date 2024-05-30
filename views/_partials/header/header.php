@@ -8,7 +8,7 @@ $invitation = $_ENV['BASE_URL']. '/boda/angelica-y-luis';
     <div class="header-body" style="padding-top: 8px;">
         <div class="row align-items-center">
             <div class="col">
-                <a href="<?php echo $invitation?>" target="_blank" class="btn btn-outline-primary mb-2 btn-sm"> Ver invitación 
+                <a href="<?php echo $invitation?>" target="_blank" class="btn btn-outline-primary mb-2 btn-sm"> Ver invitación
                     <i class="fas fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
@@ -29,7 +29,7 @@ $invitation = $_ENV['BASE_URL']. '/boda/angelica-y-luis';
                 </h1>
 
             </div>
-        
+
             <div class="col-auto">
                 <!-- Navigation (button group) -->
 

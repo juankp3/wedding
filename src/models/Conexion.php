@@ -131,6 +131,11 @@ class Conexion
         return mysqli_query($this->_CON, $query);
     }
 
+    public function executeRowQuery($query)
+    {
+		return mysqli_fetch_assoc(mysqli_query($this->_CON, $query));
+    }
+
     public function getRow($query, $table)
     {
         $data = [];

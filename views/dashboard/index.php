@@ -1,3 +1,8 @@
+<?php
+// echo "<pre>";
+// var_dump($guestConfirm);
+// echo "</pre>";
+?>
 <div data-bs-theme="dark">
 	<div class="header pb-5">
 		<div class="container-fluid">
@@ -23,7 +28,7 @@
 										Confirmados
 									</h6>
 									<h3 class="mb-0">
-										45
+										<?php echo !empty($guestConfirm['confirm']) ? $guestConfirm['confirm'] : 0 ?>
 									</h3>
 								</a>
 							</li>
@@ -33,7 +38,7 @@
 										Pendientes
 									</h6>
 									<h3 class="mb-0">
-										38
+										<?php echo !empty($guestConfirm['pending']) ? $guestConfirm['pending'] : 0 ?>
 									</h3>
 								</a>
 							</li>
@@ -43,7 +48,7 @@
 										Totales
 									</h6>
 									<h3 class="mb-0">
-										17
+										<?php echo !empty($guestConfirm['total']) ? $guestConfirm['total'] : 0 ?>
 									</h3>
 								</a>
 							</li>
@@ -53,7 +58,7 @@
 										No podra asistir
 									</h6>
 									<h3 class="mb-0">
-										17
+										<?php echo !empty($guestConfirm['cancelled']) ? $guestConfirm['cancelled'] : 0 ?>
 									</h3>
 								</a>
 							</li>

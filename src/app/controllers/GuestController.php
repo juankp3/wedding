@@ -75,21 +75,22 @@ class GuestController extends FrontController implements Repository, UITableView
 
             if ($response['success']) {
                 $guestParentId = $response['data']['id_guest'];
+
                 if (!empty($data['guest'])) {
+					$index = 1;
                     foreach($data['guest']['name'] as $name) {
-                        if (!empty($name)) {
-                            $guestModel = new GuestModel();
-                            $guestModel->name = $name;
-                            $guestModel->qyt_tickets = 0;
-                            $guestModel->deleted = 0;
-                            $guestModel->confirmation = 'pending';
-                            $guestModel->id_guest_parent = $guestParentId;
-                            $guestModel->wsp_calltoaction = 0;
-                            $guestModel->openinvitation_calltoaction = 0;
-                            $guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
-                            $guestModel->id_event = $this->getIdEvent();
-                            $res = $guestModel->createGuest();
-                        }
+						$index++;
+						$guestModel = new GuestModel();
+						$guestModel->name = !empty($name) ? $name : "Invitado $index";
+						$guestModel->qyt_tickets = 0;
+						$guestModel->deleted = 0;
+						$guestModel->confirmation = 'pending';
+						$guestModel->id_guest_parent = $guestParentId;
+						$guestModel->wsp_calltoaction = 0;
+						$guestModel->openinvitation_calltoaction = 0;
+						$guestModel->openinvitation_lastdate = date("Y-m-d H:i:s");
+						$guestModel->id_event = $this->getIdEvent();
+						$res = $guestModel->createGuest();
                     }
                 }
 
@@ -130,12 +131,14 @@ class GuestController extends FrontController implements Repository, UITableView
 
             $guestModel->deleteGuestByParentId($id);
             if (!empty($data['guest'])) {
-                // $guestModel = new GuestModel($id);
+				// $guestModel = new GuestModel($id);
+				$index = 1;
                 foreach($data['guest']['name'] as $key => $name) {
+					$index++;
                     $idx = $data['guest']['id'][$key];
                     if (!empty($idx)){
                         $guestModel = new GuestModel($idx);
-                        $guestModel->name = $name;
+                        $guestModel->name = !empty($name) ? $name : "Invitado $index";
                         $guestModel->deleted = 0;
                         $guestModel->updateGuest($idx);
                     } else {

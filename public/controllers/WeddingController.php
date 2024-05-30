@@ -31,11 +31,9 @@ class WeddingController
 		}
 
 		if (empty($paramsUrl['preview'])) {
-			// TODO: cantidad de veces al entrar
-			// echo "Holaaaa";
-			// exit;
+			$openinvitation = $guest['openinvitation_calltoaction'] + 1;
+			$guestModel->updateOpenInvitation($openinvitation, $token);
 		}
-
 
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
         Flight::render('index', $params, 'body_content');

@@ -32,6 +32,35 @@ class GuestModel extends Model
         $this->table = $this->definition['table'];
     }
 
+	public function getTotal()
+	{
+		$table = $this->definition['table'];
+		$query = "select sum(qyt_tickets) as cantidad from $table where deleted = 0";
+
+		return $this->executeRowQuery($query);
+	}
+
+	public function getTotalConfirm()
+	{
+		$table = $this->definition['table'];
+		$query = "select * from $table where confirmation = 'confirmed' and deleted = 0";
+		return $this->execute($query);
+	}
+
+	public function getTotalPending()
+	{
+		$table = $this->definition['table'];
+		$query = "select * from $table where confirmation = 'pending' and deleted = 0";
+		return $this->execute($query);
+	}
+
+	public function getTotalCancelled()
+	{
+		$table = $this->definition['table'];
+		$query = "select * from $table where confirmation = 'cancelled' and deleted = 0";
+		return $this->execute($query);
+	}
+
     public function getGuest($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
@@ -58,6 +87,15 @@ class GuestModel extends Model
         $table = $this->definition['table'];
         $query = "UPDATE $table SET deleted = 1
                   WHERE id_guest_parent =  $guestParentId ";
+
+        return $this->executeNonQuery($query);
+    }
+
+    public function updateOpenInvitation($openinvitation, $token)
+    {
+        $table = $this->definition['table'];
+        $query = "UPDATE $table SET openinvitation_calltoaction = $openinvitation
+                WHERE token = '$token' ";
 
         return $this->executeNonQuery($query);
     }
