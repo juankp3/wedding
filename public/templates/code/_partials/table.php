@@ -46,9 +46,9 @@
 		<?php
 		$index = 0;
 		foreach ($group_guest as $key => $guest) : $index++;
-		// echo "<pre>";
-		// var_dump($guest['items']);
-		// echo "</pre>"; exit;
+			// echo "<pre>";
+			// var_dump($guest['items']);
+			// echo "</pre>"; exit;
 		?>
 			<tr>
 				<th scope="row"><?php echo $index ?></th>
@@ -56,9 +56,11 @@
 					<a class="icon-link" href="#" data-name="<?php echo $guest['name'] ?>" data-status="<?php echo $guest['confirmation'] ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
 						<?php echo $guest['name'] ?>
 					</a>
-					<?php if(!empty($guest['parent_name'])): ?>
-						<span style="font-size: 12px;">
-							(<?php echo $guest['parent_name'] ?>)
+					<br>
+					<?php if (!empty($guest['parent_name'])) : ?>
+
+						<span class="secondary" style="font-size: 12px;">
+							<?php echo $guest['parent_name'] ?>
 						</span>
 					<?php endif ?>
 				</td>
