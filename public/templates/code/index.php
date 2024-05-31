@@ -88,56 +88,14 @@
 		</div>
 	</div>
 </div>
-<!-- <nav class="navbar bg-body-tertiary">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">
-			Lista de Invitados
-		</a>
-	</div>
-</nav> -->
 
-<nav class="navbar bg-body-tertiary fixed-top">
-	<div class="container-fluid">
-		<a class="navbar-brand">Lista de Invitados</a>
-		<form class="d-flex w-100" role="search">
-			<input class="form-control me-2 w-100" type="search" placeholder="Buscar Contacto" aria-label="Search">
-			<!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-		</form>
-	</div>
-</nav>
-
-
-
+<?php Flight::render('_partials/nav.php') ?>
 <div class="container-xl" style="margin-top: 80px;">
 	<br>
-	<ul class="nav nav-tabs d-flex">
-		<li class="nav-item">
-			<a class="nav-link active position-relative" aria-current="page" href="#">
-				Todos
-				<span class="badge text-bg-secondary">50</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link position-relative" href="#">Pendientes
-				<span class="badge text-bg-secondary">10</span>
-			</a>
 
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#">Confirmados
-				<span class="badge text-bg-secondary">30</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#">Cancelados
-				<span class="badge text-bg-secondary">5</span>
-			</a>
-		</li>
-
-	</ul>
 
 	<div class="table-responsive">
-		<?php Flight::render('table.php') ?>
+		<?php Flight::render('_partials/table.php') ?>
 	</div>
 </div>
 

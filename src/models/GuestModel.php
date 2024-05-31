@@ -64,15 +64,54 @@ class GuestModel extends Model
 	public function getAllGuest($offset = null, $limit = null)
 	{
 		$table = $this->definition['table'];
-		$query = "SELECT * from $table
-                  WHERE deleted = 0
-                  ORDER BY id_guest desc";
+		$query = "SELECT g.*,
+				pg.id_guest as parent_id,
+				pg.name as parent_name
+				from $table g
+				  LEFT JOIN $table pg ON pg.id_guest = g.id_guest_parent
+                  WHERE g.deleted = 0
+                  ORDER BY g.name asc";
 
 		if (isset($offset) && isset($limit)) {
 			$query .= " limit $offset, $limit";
 		}
 
-		return $this->executeS($query);
+		$guest = $this->executeS($query);
+		$keys = array_column($guest, 'id_guest');
+		return array_combine($keys, $guest);
+	}
+
+
+	public function getAllMainGuest($offset = null, $limit = null)
+	{
+		$table = $this->definition['table'];
+		$query = "SELECT * from $table
+                  WHERE id_guest_parent = 0 and deleted = 0
+                  ORDER BY name asc";
+
+		if (isset($offset) && isset($limit)) {
+			$query .= " limit $offset, $limit";
+		}
+
+		$guest = $this->executeS($query);
+		$keys = array_column($guest, 'id_guest');
+		return array_combine($keys, $guest);
+	}
+
+	public function getAlladitioalGuest($offset = null, $limit = null)
+	{
+		$table = $this->definition['table'];
+		$query = "SELECT * from $table
+                  WHERE id_guest_parent <> 0 and deleted = 0
+                  ORDER BY name asc";
+
+		if (isset($offset) && isset($limit)) {
+			$query .= " limit $offset, $limit";
+		}
+
+		$guest = $this->executeS($query);
+		$keys = array_column($guest, 'id_guest');
+		return array_combine($keys, $guest);
 	}
 
     public function getGuest($offset = null, $limit = null)
