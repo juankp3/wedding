@@ -25,23 +25,7 @@
 
 
 
-	<style>
-		.table-responsive {
-			height: 100vh;
-			overflow-y: auto;
-		}
 
-		.table thead th {
-			position: sticky;
-			top: 0;
-			background-color: #fff;
-			z-index: 1;
-		}
-
-		.aa {
-			width: 200px;
-		}
-	</style>
 	<title>Sistema</title>
 </head>
 

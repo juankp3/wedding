@@ -8,6 +8,35 @@
 		})
 	});
 </script>
+<style>
+	.table-responsive {
+		height: 100vh;
+		overflow-y: auto;
+	}
+
+	.table thead th {
+		position: sticky;
+		top: 0;
+		background-color: #fff;
+		z-index: 1;
+	}
+
+
+	.nav-tabs {
+		overflow-x: auto;
+		white-space: nowrap;
+		flex-wrap: nowrap;
+	}
+
+	.nav-item {
+		flex: 0 0 auto;
+	}
+
+	.nav-tabs::-webkit-scrollbar {
+		display: none;
+		/* Oculta la barra de desplazamiento en navegadores WebKit */
+	}
+</style>
 
 
 <!-- Modal -->
@@ -44,12 +73,21 @@
 		</div>
 	</div>
 </div>
-<nav class="navbar bg-body-tertiary">
+<!-- <nav class="navbar bg-body-tertiary">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#">
-			<!-- <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
 			Lista de Invitados
 		</a>
+	</div>
+</nav> -->
+
+<nav class="navbar bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="navbar-brand">Lista de Invitados</a>
+		<form class="d-flex w-100" role="search">
+			<input class="form-control me-2 w-100" type="search" placeholder="Buscar Contacto" aria-label="Search">
+			<!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+		</form>
 	</div>
 </nav>
 
@@ -57,25 +95,16 @@
 
 <div class="container-xl">
 	<br>
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs d-flex">
 		<li class="nav-item">
 			<a class="nav-link active position-relative" aria-current="page" href="#">
 				Todos
 				<span class="badge text-bg-secondary">50</span>
-				<!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-					99+
-					<span class="visually-hidden">unread messages</span>
-				</span> -->
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link position-relative" href="#">Pendientes
 				<span class="badge text-bg-secondary">10</span>
-				<!--
-				<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-					99+
-					<span class="visually-hidden">unread messages</span>
-				</span> -->
 			</a>
 
 		</li>
@@ -89,10 +118,9 @@
 				<span class="badge text-bg-secondary">5</span>
 			</a>
 		</li>
-		<!-- <li class="nav-item">
-			<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-		</li> -->
+
 	</ul>
+
 	<br>
 	<div class="table-responsive">
 		<?php Flight::render('table.php') ?>
