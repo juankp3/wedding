@@ -10,7 +10,7 @@
 		<p><b>Basílica María Auxiliadora</b></p>
 		<p>Av. Brasil 210, Breña</p>
 		<p><b>3:30 P M</b></p>
-		<button class="button" data-toggle="modal" data-target="modal__basilica">
+		<button onclick="window.open('https://maps.app.goo.gl/RE63TfWLxsU8rjZe8', '_blank');" class="button" data-toggle="" data-target="modal__basilica">
 			<i class="button__whatsapp fa-solid fa-location-dot"></i>
 			Ver Ubicación
 		</button>
@@ -30,7 +30,7 @@
 		<p>Mz. A Lt 2A Asoc. Agroganadería</p>
 		<p>(Mamacona Alta - Lurín)</p>
 		<p><b>7:00 P M</b></p>
-		<button class="button" data-toggle="modal" data-target="modal__recepcion">
+		<button onclick="window.open('https://maps.app.goo.gl/WXAD4aGAduXJ5K1i6', '_blank');" class="button" data-toggle="" data-target="modal__recepcion">
 			<i class="button__whatsapp fa-solid fa-location-dot"></i>
 			Ver Ubicación
 		</button>
