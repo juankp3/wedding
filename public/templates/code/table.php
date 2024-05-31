@@ -1,5 +1,5 @@
 <!-- <table class="table table-striped table-hover table table-bordered table-sm"> -->
-<table class="table table-striped table-hover table-bordered table-sm " style="min-width: 472px;margin-top: 30px;">
+<table class="table table-striped table-hover table-bordered table-sm " style="min-width: 472px;">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
