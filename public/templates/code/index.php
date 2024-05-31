@@ -9,7 +9,7 @@
 	});
 </script>
 <style>
-	.table-responsive {
+	/* .table-responsive {
 		height: 100vh;
 		overflow-y: auto;
 	}
@@ -19,7 +19,7 @@
 		top: 0;
 		background-color: #fff;
 		z-index: 1;
-	}
+	} */
 
 
 	.nav-tabs {
