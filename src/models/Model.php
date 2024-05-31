@@ -147,7 +147,7 @@ class Model
 
     public function getPagination(array $dataArray)
     {
-        $itemsPerPage = 20;
+        $itemsPerPage = 50;
         $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 
         $startIndex = ($currentPage - 1) * $itemsPerPage;

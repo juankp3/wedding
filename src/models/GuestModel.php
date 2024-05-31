@@ -61,6 +61,20 @@ class GuestModel extends Model
 		return $this->execute($query);
 	}
 
+	public function getAllGuest($offset = null, $limit = null)
+	{
+		$table = $this->definition['table'];
+		$query = "SELECT * from $table
+                  WHERE deleted = 0
+                  ORDER BY id_guest desc";
+
+		if (isset($offset) && isset($limit)) {
+			$query .= " limit $offset, $limit";
+		}
+
+		return $this->executeS($query);
+	}
+
     public function getGuest($offset = null, $limit = null)
     {
         $table = $this->definition['table'];
