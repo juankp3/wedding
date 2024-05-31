@@ -42,7 +42,31 @@
 		</tr>
 	</thead>
 	<tbody id="content">
+		<?php
+		$index = 0;
+		foreach ($guests as $key => $guest) : $index++;?>
+			<tr>
+				<th scope="row"><?php echo $index ?></th>
+				<td>
+					<a class="icon-link" href="#" data-name="<?php echo $guest['name'] ?>" data-status="<?php echo $guest['confirmation'] ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<?php echo $guest['name'] ?>
+					</a>
+					<br>
+					<?php if (!empty($guest['parent_name'])) : ?>
 
+						<span class="secondary" style="font-size: 12px;">
+							<?php echo $guest['parent_name'] ?>
+						</span>
+					<?php endif ?>
+				</td>
+				<td><?php echo $guest['qyt_tickets'] ?></td>
+				<td>
+					<a href="tel:+<?php echo $guest['phone'] ?>" class="icon-link">
+						<?php echo $guest['phone'] ?>
+					</a>
+				</td>
+			</tr>
+		<?php endforeach ?>
 
 	</tbody>
 </table>

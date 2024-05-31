@@ -76,9 +76,12 @@ class GuestModel extends Model
 			$query .= " limit $offset, $limit";
 		}
 
-		$guest = $this->executeS($query);
-		$keys = array_column($guest, 'id_guest');
-		return array_combine($keys, $guest);
+		return $this->executeS($query);
+
+		// $guest = $this->executeS($query);
+		// $keys = array_column($guest, 'id_guest');
+
+		// return array_combine($keys, $guest);
 	}
 
 

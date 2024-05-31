@@ -1,18 +1,3 @@
-<script>
-	$(document).ready(function() {
-		console.log("ready!");
-		$("a[data-bs-toggle").click(function() {
-			const data = $(this).data()
-			$("#exampleModalLabel").html(data.name)
-			console.log('data', data.name)
-		})
-
-		$(".nav-link").click(function() {
-			$(".nav-link").removeClass('active')
-			$(this).addClass('active')
-		})
-	});
-</script>
 <style>
 	/* .table-responsive {
 		height: 100vh;

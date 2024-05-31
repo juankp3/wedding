@@ -24,7 +24,7 @@ class Code
 		);
 
 
-		$params['group_guest'] = $guest;
+		$params['guests'] = $guest;
 		Flight::set('flight.views.path', 'public/templates/code');
 		Flight::render('index', $params, 'body_content');
 		Flight::render('_layout/template');
