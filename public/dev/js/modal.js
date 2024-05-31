@@ -17,16 +17,13 @@ function modal() {
 
   fn = {}
   fn.open = function () {
-    console.log('es modal XD')
     let modal = $(this).data('target')
     $(`#${modal}`).addClass('active')
     $('body').css('overflow','hidden')
   }
 
   fn.close = function () {
-    console.log('cierra modal')
     let modal = $(this).closest('.modal').attr('id')
-    console.log('id', modal)
     $(`#${modal}`).removeClass('active')
     $('body').css('overflow', '')
     return false
