@@ -29,6 +29,7 @@
 
 	.nav-tabs {
 		overflow-x: auto;
+		overflow-y: hidden;
 		white-space: nowrap;
 		flex-wrap: nowrap;
 		border: 0;
@@ -107,7 +108,7 @@
 
 
 
-<div class="container-xl" style="margin-top: 100px;">
+<div class="container-xl" style="margin-top: 80px;">
 	<br>
 	<ul class="nav nav-tabs d-flex">
 		<li class="nav-item">
