@@ -6,6 +6,11 @@
 			$("#exampleModalLabel").html(data.name)
 			console.log('data', data.name)
 		})
+
+		$(".nav-link").click(function() {
+			$(".nav-link").removeClass('active')
+			$(this).addClass('active')
+		})
 	});
 </script>
 <style>
@@ -26,6 +31,7 @@
 		overflow-x: auto;
 		white-space: nowrap;
 		flex-wrap: nowrap;
+		border: 0;
 	}
 
 	.nav-item {
@@ -35,6 +41,14 @@
 	.nav-tabs::-webkit-scrollbar {
 		display: none;
 		/* Oculta la barra de desplazamiento en navegadores WebKit */
+	}
+
+	.sticky-top {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+		/* Asegura que la barra de navegación esté por encima del contenido */
 	}
 </style>
 
@@ -81,7 +95,7 @@
 	</div>
 </nav> -->
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-body-tertiary fixed-top">
 	<div class="container-fluid">
 		<a class="navbar-brand">Lista de Invitados</a>
 		<form class="d-flex w-100" role="search">
@@ -121,7 +135,6 @@
 
 	</ul>
 
-	<br>
 	<div class="table-responsive">
 		<?php Flight::render('table.php') ?>
 	</div>
