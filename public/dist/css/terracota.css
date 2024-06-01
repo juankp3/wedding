@@ -668,7 +668,7 @@ p.secondary {
 .modal__header {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 22%;
@@ -676,10 +676,8 @@ p.secondary {
   gap: 12px;
 }
 .modal__header a {
-  position: absolute;
   font-size: 25px;
-  top: 20px;
-  right: 20px;
+  margin: 0 0 0 auto;
 }
 .modal__close {
   color: #8f8e8d;
