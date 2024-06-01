@@ -11,6 +11,10 @@
 				<p>Pase para <span>1</span> persona</p>
 			<?php endif ?>
 		</div>
+		<button class="button" data-toggle="modal" data-target="modal__ticket">
+			<i class="fa-solid fa-ticket"></i>
+			Confirmar Asistencia
+		</button>
 		<p>¡Los esperamos!</p>
 	</section>
 <?php endif ?>
