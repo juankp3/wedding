@@ -17,7 +17,6 @@ function modal() {
 
   fn = {}
   fn.open = function () {
-    console.log('abre modal')
     let modal = $(this).data('target')
     $(`#${modal}`).addClass('active')
     $('body').css('overflow','hidden')
