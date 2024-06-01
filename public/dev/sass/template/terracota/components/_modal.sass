@@ -64,6 +64,28 @@
           justify-content: space-between
           align-items: center
           width: 100%
+          cursor: pointer
+          input
+            display: none
+          input[type="checkbox"]:checked + .item__box::after
+            display: block
+          .item__box
+            position: relative
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 28px
+            height: 28px
+            background: url('../img/terracota/checkbox.svg')
+            &::after
+              display: none
+              content: ""
+              background: url('../img/terracota/check.svg')
+              width: 29px
+              height: 27px
+              position: absolute
+              top: -2px
+              right: -5px
   &__btns
     display: flex
     flex-direction: row

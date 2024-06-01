@@ -3,7 +3,7 @@ $(document).ready(function () {
   const eventDescription = "Únete a nosotros para celebrar el matrimonio de M. Angélica y Luis. Acompáñanos en una ceremonia llena de amor y alegría, seguida de una recepción con banquete, música y baile. ¡Esperamos contar con tu presencia en este día tan especial!";
   const eventLocation = "Basílica María Auxiliadora, Av. Brasil 210, Breña";
   const startDate = new Date("2024-08-24T15:30:00");
-  const endDate = new Date("2024-08-24T21:00:00");
+  const endDate = new Date("2024-08-25T00:00:00");
 
 
   // Formatear la fecha para Google Calendar (YYYYMMDDTHHmmssZ)

@@ -44,6 +44,7 @@
 							<label for="guest_item<?php echo $guest['id_guest'] ?>">
 								<span><?php echo $guest['name'] ?></span>
 								<input name="guest_item" id="guest_item<?php echo $guest['id_guest'] ?>" value="<?php echo $guest['id_guest'] ?>" class="modal__list" type="checkbox">
+								<div class="item__box"></div>
 							</label>
 						</li>
 					<?php endif ?>
@@ -52,7 +53,8 @@
 							<li>
 								<label for="guest_item<?php echo $item['id_guest'] ?>">
 									<span><?php echo $item['name'] ?></span>
-									<input name="guest_item" id="guest_item<?php echo $item['id_guest'] ?>" value="<?php echo $guest['id_guest'] ?>" class="modal__list" type="checkbox">
+									<input name="guest_item" id="guest_item<?php echo $item['id_guest'] ?>" value="<?php echo $item['id_guest'] ?>" class="modal__list" type="checkbox">
+									<div class="item__box"></div>
 								</label>
 							</li>
 						<?php endforeach ?>
