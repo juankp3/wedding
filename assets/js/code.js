@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready!");
+    var winStatus = 'all'
 
     let openModal = () => {
         const data = $(this).data()
@@ -7,9 +7,30 @@ $(document).ready(function () {
         console.log('data', data.name)
     }
 
-    let statusGuest = () => {
-        $(".nav-link").removeClass('active')
-        $(this).addClass('active')
+    let statusGuest = (status) => {
+        $("a.js-tab").removeClass('active')
+        $(`#${status}`).addClass('active')
+        search()
+    }
+
+    let allStatus = () => {
+        winStatus = 'all'
+        statusGuest(winStatus)
+    }
+
+    let pendingStatus = () => {
+        winStatus = 'pending'
+        statusGuest(winStatus)
+    }
+
+    let confirmStatus = () => {
+        winStatus = 'confirmed'
+        statusGuest(winStatus)
+    }
+
+    let cancelledStatus = () => {
+        winStatus = 'cancelled'
+        statusGuest(winStatus)
     }
 
     let load = () => {
@@ -33,11 +54,21 @@ $(document).ready(function () {
     }
 
     let search = () => {
-        let text = $("#search").val()
         $("#content").html('')
+        let text = $("#search").val()
         let guestFill  = fillerGuest(jsonData, text)
+        let cont = 0
         $.each(guestFill, function (index, guest) {
-            $("#content").append(table(index + 1, guest))
+
+            if (winStatus == 'all') {
+                cont++
+                $("#content").append(table(cont, guest))
+            }
+
+            if (winStatus == guest.confirmation) {
+                cont++
+                $("#content").append(table(cont, guest))
+            }
         });
     }
 
@@ -61,23 +92,18 @@ $(document).ready(function () {
                 ${guest.phone}
                 </a>
             </td>
-            </tr>`
+        </tr>`
 
         return tr
     }
 
 
-
-
-
-
-
-
     $(document).on('click', 'a[data-bs-toggle]', openModal)
-    $(document).on('click', '.nav-link', statusGuest)
+    $(document).on('click', '#all', allStatus)
+    $(document).on('click', '#pending', pendingStatus)
+    $(document).on('click', '#confirmed', confirmStatus)
+    $(document).on('click', '#cancelled', cancelledStatus)
     $(document).on('keyup', '#search', search)
-
-
     load()
 });
 

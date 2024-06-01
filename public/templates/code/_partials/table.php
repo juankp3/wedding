@@ -1,14 +1,14 @@
 <ul class="nav nav-tabs d-flex">
 	<li class="nav-item">
-		<a class="nav-link active position-relative" aria-current="page" href="#">
+		<a id="all" class="js-tab nav-link active position-relative" aria-current="page"  href="#">
 			Todos
 			<span class="badge text-bg-secondary">
 				<?php echo !empty($totals['total']) ? $totals['total'] : 0 ?>
 			</span>
 		</a>
 	</li>
-	<li class="nav-item">
-		<a class="nav-link position-relative" href="#">Pendientes
+	<li class="nav-item ">
+		<a id="pending" class="js-tab nav-link position-relative" href="#" >Pendientes
 			<span class="badge text-bg-secondary">
 				<?php echo !empty($totals['pending']) ? $totals['pending'] : 0 ?>
 			</span>
@@ -16,14 +16,14 @@
 
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="#">Confirmados
+		<a id="confirmed" class="js-tab nav-link" href="#" >Confirmados
 			<span class="badge text-bg-secondary">
 				<?php echo !empty($totals['confirm']) ? $totals['confirm'] : 0 ?>
 			</span>
 		</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="#">Cancelados
+		<a id="cancelled" class="js-tab nav-link" href="#">Cancelados
 			<span class="badge text-bg-secondary">
 				<?php echo !empty($totals['cancelled']) ? $totals['cancelled'] : 0 ?>
 			</span>
