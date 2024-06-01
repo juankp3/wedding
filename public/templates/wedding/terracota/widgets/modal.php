@@ -41,11 +41,11 @@
 
 	<div class="modal__container">
 		<div class="modal__header">
-			<h2>Confirmar Asistencia</h2>
-			<p>Marca la asistencia de los invitados</p>
 			<a href="#" class="modal__close">
 				<i class="fa-solid fa-xmark"></i>
 			</a>
+			<h2>Confirmar Asistencia</h2>
+			<p>Marca la asistencia de los invitados</p>
 		</div>
 		<div class="modal__body">
 			<div class="modal__list">
