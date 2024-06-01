@@ -26,6 +26,7 @@ class WeddingController
 		if (!empty($paramsUrl['token'])) {
 			$token = $paramsUrl['token'];
 			$guest = $guestModel->getGuestByToken($token);
+			$guest['items'] = $guestModel->getAditionalGuestById($guest['id_guest']);
 			$params['guest'] = $guest;
 			$params['name'] = $guest['name'];
 		}

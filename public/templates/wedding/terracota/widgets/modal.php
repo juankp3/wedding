@@ -1,3 +1,8 @@
+<?php
+echo "<pre>";
+var_dump($guest);
+echo "</pre>";
+?>
 <!-- Modal Basilica -->
 <div id="modal__basilica" class="modal">
 

@@ -138,6 +138,17 @@ class GuestModel extends Model
 		return $this->getRow($query);
 	}
 
+	public function getAditionalGuestById($guestId)
+	{
+		$table = $this->definition['table'];
+		$query = "SELECT g.*
+				FROM $table g
+				WHERE g.deleted = 0 AND g.id_guest_parent = $guestId
+				ORDER BY g.name asc";
+
+		return $this->executeS($query);
+	}
+
     public function deleteGuestByParentId($guestParentId)
     {
         $table = $this->definition['table'];
