@@ -711,11 +711,15 @@ p.secondary {
 }
 .modal__list ul li {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 56px;
   border: solid 1px #D99E3B;
   padding: 0 4%;
+}
+.modal__list ul li label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .modal__btns {
   display: flex;

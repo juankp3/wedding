@@ -50,10 +50,12 @@
 		<div class="modal__body">
 			<div class="modal__list">
 				<ul>
-					<?php for($x = 0; $x <= 10; $x++) { ?>
+					<?php for($x = 1; $x <= 10; $x++) { ?>
 					<li>
-						<span>Invitado</span>
-						<input class="modal__list" type="checkbox">
+						<label for="guest_item<?php echo $x ?>">
+							<span>Invitado</span>
+							<input id="guest_item<?php echo $x ?>" class="modal__list" type="checkbox">
+						</label>
 					</li>
 					<?php } ?>
 				</ul>
