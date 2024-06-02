@@ -74,3 +74,14 @@
 
 </div>
 <!-- Fin del Modal -->
+
+
+<div class="spinner-border" role="status">
+	<span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="overlay">
+	<div class="spinner-border" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>
+</div>
