@@ -23,6 +23,7 @@ define('IMG_FILES', BASE_URL . '/assets/files');
 define('APP_UPLOAD_FILE', BASE_URL . '/uploads/');
 define('APP_UPLOAD_FILE_RELATIVE', './uploads/');
 
+define('DIST_URL', BASE_URL . '/public/dist');
 define('DIST_IMG_URL', BASE_URL . '/public/dist/img');
 
 Flight::set('app_version', 'v1.0.0');

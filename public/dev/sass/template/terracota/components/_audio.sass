@@ -1,0 +1,29 @@
+.audio
+  position: fixed
+  bottom: 10px
+  right: 10px
+  button
+    background: $color-black-dark
+    opacity: .6
+    z-index: 1
+    border-radius: 25px
+    width: 50px
+    height: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    i
+      color: $color-white
+      opacity: 1
+    .fa-volume-high
+      display: none
+    .fa-volume-xmark
+      display: block
+    &.active
+      .fa-volume-high
+        display: block
+      .fa-volume-xmark
+        display: none
+  audio
+    display: none
+
