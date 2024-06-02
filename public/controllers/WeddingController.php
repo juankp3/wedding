@@ -36,45 +36,86 @@ class WeddingController
 		$result = $writer->write($qrCode);
 		$result->saveToFile(APP_UPLOAD_FILE_RELATIVE . "/$token.png");
 
-		Flight::json($data);
+		$response['token'] = $token;
+
+		Flight::json($response);
     }
+
+	function renderTemplate($templatePath, $data = [])
+	{
+		extract($data);
+		ob_start();
+		include $templatePath;
+		$content = ob_get_clean();
+		return $content;
+	}
 
     public function terracota()
     {
-        $params['title'] = 'Angelica y Luis';
+
 		$guestModel = new GuestModel();
 
 		$token = '';
 		$paramsUrl = Flight::request()->query->getData();
-		$showQR = true;
-		if (!empty($paramsUrl['token'])) {
-			$token = $paramsUrl['token'];
-			$params['token'] = $paramsUrl['token'];
-			$guest = $guestModel->getGuestByToken($params['token']);
-			$guest['items'] = $guestModel->getAditionalGuestById($guest['id_guest']);
 
-			$showQR = ($guest['confirmation'] != 'cancelled') ? true : false;
-			foreach ($guest['items'] as $g) {
-				if ($g['confirmation'] != 'cancelled') {
-					$showQR = true;
-				}
-			}
-		}
+		$params = $this->getDataGuest($paramsUrl['token']);
+		$params['title'] = 'Angelica y Luis';
+		// echo "<pre>";
+		// var_dump($data);
+		// echo "</pre>";
+		// exit;
+
+		// $showQR = true;
+		// if (!empty($paramsUrl['token'])) {
+		// 	$token = $paramsUrl['token'];
+		// 	$params['token'] = $paramsUrl['token'];
+		// 	$guest = $guestModel->getGuestByToken($params['token']);
+		// 	$guest['items'] = $guestModel->getAditionalGuestById($guest['id_guest']);
+
+		// 	$showQR = ($guest['confirmation'] != 'cancelled') ? true : false;
+		// 	foreach ($guest['items'] as $g) {
+		// 		if ($g['confirmation'] != 'cancelled') {
+		// 			$showQR = true;
+		// 		}
+		// 	}
+		// }
 
 		if (empty($paramsUrl['preview']) && !empty($paramsUrl['token'])) {
-			$openinvitation = $guest['openinvitation_calltoaction'] + 1;
+			$openinvitation = $params['guest']['openinvitation_calltoaction'] + 1;
 			$guestModel->updateOpenInvitation($openinvitation, $token);
 		}
 
-		$params['token'] = $token;
-		$params['showQR'] = $showQR;
-		$params['guest'] = !empty($guest) ? $guest : array();
-		$params['name'] = !empty($guest['name']) ? $guest['name'] : '';
+		// $params['token'] = $token;
+		// $params['showQR'] = $showQR;
+		// $params['guest'] = !empty($guest) ? $guest : array();
+		// $params['name'] = !empty($guest['name']) ? $guest['name'] : '';
 
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
         Flight::render('index', $params, 'body_content');
         Flight::render('_layout/template');
     }
+
+
+	public function getDataGuest($token)
+	{
+		$params['showQR'] = true;
+		$guestModel = new GuestModel();
+		if (!empty($token)) {
+			$params['token'] = $token;
+			$params['guest']  = $guestModel->getGuestByToken($token);
+			$params['guest']['items'] = $guestModel->getAditionalGuestById($params['guest']['id_guest']);
+
+			$params['showQR'] = ($params['guest']['confirmation'] != 'cancelled') ? true : false;
+			foreach ($params['guest']['items'] as $g) {
+				if ($g['confirmation'] != 'cancelled') {
+					$showQR = true;
+					$params['showQR'] = true;
+				}
+			}
+		}
+
+		return $params;
+	}
 
 
 	public function qr(){

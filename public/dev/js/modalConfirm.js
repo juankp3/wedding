@@ -31,10 +31,7 @@ function modalConfirm() {
 
     request.token = token
     request.result = result
-
     fn.ajax(request)
-    console.log(JSON.stringify(request, null, 4));
-    // fn.closeModal()
   }
 
   fn.ajax = function(data) {
@@ -46,7 +43,14 @@ function modalConfirm() {
       dataType: 'json',
       success: function(res) {
         console.log(res)
+        const html = `<div class="tickets__qr">
+						<p class="secondary">Gracias por confirmar tu asistencia</p>
+						<p class="small">Por favor presente este codigo QR en la entrada del evento</p>
+						<img src="${app.urls.base_url}/uploads/${res.token}.png">
+					</div>`
+        $(".tickets__body").html(html);
         window.overlay(false)
+        fn.closeModal()
       },
       error: function(res, a) {
         window.overlay(false)

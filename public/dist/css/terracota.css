@@ -719,6 +719,9 @@ p.big {
 p.secondary {
   font-family: "HelveticaNeueLTCom-MdCn";
 }
+p.small {
+  font-size: 16px;
+}
 
 .tickets {
   align-items: center;
@@ -734,18 +737,48 @@ p.secondary {
 .tickets h2 {
   padding-top: 25px;
 }
+.tickets__name p.big {
+  margin: 0;
+}
+.tickets__confirmed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+  gap: 30px;
+}
+.tickets__confirmed p {
+  margin: 0;
+}
 .tickets__number {
   background: url("../img/terracota/tickets.svg") no-repeat center;
   width: 310px;
   height: 134px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .tickets__number span {
   color: #D99E3B;
   font-family: "HearthStone";
   font-size: 36px;
+}
+.tickets__number p {
+  margin-top: 20px;
+  height: 84px;
+  line-height: 83px;
+}
+.tickets__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tickets__qr p {
+  margin: 0;
+  padding: 0;
+}
+.tickets__qr img {
+  width: 150px;
+  margin-top: 16px;
 }
 
 .wemarried {
