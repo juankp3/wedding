@@ -17,24 +17,59 @@ class WeddingController
 
     }
 
+    public function ajax()
+    {
+		$data = Flight::request()->data;
+		$token = $data['token'];
+		$url = BASE_URL . "/code?token=$token";
+
+		foreach($data['result'] as $guest) {
+			$guestModel = new GuestModel($guest['id']);
+			$guestModel->confirmation = ($guest['status'] == 1) ? 'confirmed' : 'cancelled';
+			$guestModel->date_upd = date("Y-m-d H:i:s");
+			$guestModel->update();
+		}
+
+		$writer = new PngWriter();
+		$qrCode = QrCode::create($url)
+				->setSize(300);
+		$result = $writer->write($qrCode);
+		$result->saveToFile(APP_UPLOAD_FILE_RELATIVE . "/$token.png");
+
+		Flight::json($data);
+    }
+
     public function terracota()
     {
         $params['title'] = 'Angelica y Luis';
 		$guestModel = new GuestModel();
 
+		$token = '';
 		$paramsUrl = Flight::request()->query->getData();
+		$showQR = true;
 		if (!empty($paramsUrl['token'])) {
 			$token = $paramsUrl['token'];
-			$guest = $guestModel->getGuestByToken($token);
+			$params['token'] = $paramsUrl['token'];
+			$guest = $guestModel->getGuestByToken($params['token']);
 			$guest['items'] = $guestModel->getAditionalGuestById($guest['id_guest']);
-			$params['guest'] = $guest;
-			$params['name'] = $guest['name'];
+
+			$showQR = ($guest['confirmation'] != 'cancelled') ? true : false;
+			foreach ($guest['items'] as $g) {
+				if ($g['confirmation'] != 'cancelled') {
+					$showQR = true;
+				}
+			}
 		}
 
 		if (empty($paramsUrl['preview']) && !empty($paramsUrl['token'])) {
 			$openinvitation = $guest['openinvitation_calltoaction'] + 1;
 			$guestModel->updateOpenInvitation($openinvitation, $token);
 		}
+
+		$params['token'] = $token;
+		$params['showQR'] = $showQR;
+		$params['guest'] = !empty($guest) ? $guest : array();
+		$params['name'] = !empty($guest['name']) ? $guest['name'] : '';
 
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
         Flight::render('index', $params, 'body_content');
@@ -45,22 +80,20 @@ class WeddingController
 	public function qr(){
 
 		$writer = new PngWriter();
-
-		// Create QR code
-		$qrCode = QrCode::create('Este es el texto del qr 1')
-			->setEncoding(new Encoding('UTF-8'))
-			->setErrorCorrectionLevel(ErrorCorrectionLevel::Low)
-			->setSize(300)
-			->setMargin(10)
-			->setRoundBlockSizeMode(RoundBlockSizeMode::Margin)
-			->setForegroundColor(new Color(0, 0, 0))
-			->setBackgroundColor(new Color(255, 255, 255));
+		$qrCode = QrCode::create('Holaaa mundo')
+				->setSize(300);
+			// ->setEncoding(new Encoding('UTF-8'))
+			// ->setErrorCorrectionLevel(ErrorCorrectionLevel::Low)
+			// ->setMargin(10)
+			// ->setRoundBlockSizeMode(RoundBlockSizeMode::Margin)
+			// ->setForegroundColor(new Color(0, 0, 0))
+			// ->setBackgroundColor(new Color(255, 255, 255));
 
 		$result = $writer->write($qrCode);
 
 		// Directly output the QR code
-		header('Content-Type: '.$result->getMimeType());
-		echo $result->getString();
+		// header('Content-Type: '.$result->getMimeType());
+		// echo $result->getString();
 
 		// Save it to a file
 		//echo APP_UPLOAD_FILE; exit;
@@ -96,6 +129,7 @@ class WeddingController
 
 $oWeddingController = new WeddingController();
 Flight::route('GET /boda', array($oWeddingController, 'index'));
+Flight::route('POST /ajax', array($oWeddingController, 'ajax'));
 Flight::route('GET /boda/angelica-y-luis', array($oWeddingController, 'terracota'));
 Flight::route('GET /boda/ladislao-y-luis', array($oWeddingController, 'rouse'));
 Flight::route('GET /boda/qr', array($oWeddingController, 'qr'));

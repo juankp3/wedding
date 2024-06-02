@@ -37,6 +37,7 @@
 			<p>Marca la asistencia de los invitados</p>
 		</div>
 		<div class="modal__body">
+			<input id="token" type="hidden" value="<?php echo $token ?>">
 			<div class="modal__list">
 				<ul>
 					<?php if (!empty($guest)) : ?>

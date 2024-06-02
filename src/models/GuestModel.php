@@ -158,6 +158,15 @@ class GuestModel extends Model
         return $this->executeNonQuery($query);
     }
 
+    // public function updateState($state)
+    // {
+    //     $table = $this->definition['table'];
+    //     $query = "UPDATE $table SET confirmation = $state
+    //               WHERE id_guest =  $guestParentId ";
+
+    //     return $this->executeNonQuery($query);
+    // }
+
     public function updateOpenInvitation($openinvitation, $token)
     {
         $table = $this->definition['table'];

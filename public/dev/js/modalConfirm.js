@@ -18,21 +18,40 @@ function modalConfirm() {
   fn = {}
   fn.confirm = function () {
     console.log('asistir')
-
     let checkboxes = $('input[name="guest_item"]');
+    let token = $("#token").val()
+    let request = {};
     let result = [];
-
     checkboxes.each(function () {
       result.push({
-        value: $(this).val(),
-        checked: $(this).is(':checked')
+        id: $(this).val(),
+        status: $(this).is(':checked') ? 1 : 0
       });
     });
 
-    // Mostrar el resultado
-    console.log(JSON.stringify(result, null, 4));
+    request.token = token
+    request.result = result
 
-    fn.closeModal()
+    fn.ajax(request)
+    console.log(JSON.stringify(request, null, 4));
+    // fn.closeModal()
+  }
+
+  fn.ajax = function(data) {
+    window.overlay(true)
+    $.ajax({
+      url: `${app.urls.base_url}/ajax`,
+      type: 'POST',
+      data: data,
+      dataType: 'json',
+      success: function(res) {
+        console.log(res)
+        window.overlay(false)
+      },
+      error: function(res, a) {
+        window.overlay(false)
+      }
+    });
   }
 
   fn.cancel = function () {
