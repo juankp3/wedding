@@ -95,6 +95,7 @@ body {
   position: fixed;
   bottom: 10px;
   right: 10px;
+  z-index: 3;
 }
 .audio button {
   background: #000;
@@ -718,6 +719,107 @@ body {
   background: url("../img/terracota/al/club.png") no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.body-envelope {
+  overflow: hidden;
+}
+.body-envelope .envelope-wrapper {
+  display: block;
+}
+
+.blanco {
+  background-color: transparent !important;
+}
+
+.envelope-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #eae3d5;
+  top: 0;
+  display: none;
+  transition: background-color 1s ease;
+  z-index: 3;
+}
+.envelope-wrapper .envelope {
+  top: 0;
+}
+.envelope-wrapper .envelope img {
+  top: 0;
+  height: calc(100vh - 10px);
+  max-width: 100%;
+}
+.envelope-wrapper .envelope .envelope1 {
+  position: absolute;
+  left: 0%;
+}
+.envelope-wrapper .envelope .envelope2 {
+  float: left;
+  position: absolute;
+  right: 0%;
+  width: 60%;
+}
+.envelope-wrapper .seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.envelope-wrapper .image-seal {
+  width: 170px;
+  height: 170px;
+}
+.envelope-wrapper .seal-content {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  height: 250px;
+  width: 100%;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+.envelope-wrapper .seal-content .tippy-content {
+  position: absolute;
+  background: #343434;
+  margin: 0 auto;
+  z-index: 900;
+  padding: 4px 8px;
+  border-radius: 8px;
+  top: calc(50% - 80px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.envelope-wrapper .seal-content .tippy-content p {
+  color: #FFFFFF;
+  font-size: 12px;
+  position: relative;
+}
+.envelope-wrapper .seal-content .tippy-content::before {
+  height: 1.2rem;
+  width: 1.2rem;
+  bottom: -0.4rem;
+  left: 0;
+  margin: auto;
+  right: 0;
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  background: #343434;
+}
+.envelope-wrapper .seal-content .tippy-content::after {
+  content: "";
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
+  bottom: -1.1rem;
+  left: 0;
+  margin: auto;
+  right: 0;
 }
 
 h1 {
