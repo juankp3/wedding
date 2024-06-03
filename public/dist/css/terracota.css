@@ -928,6 +928,11 @@ p.small {
   margin: 0 auto;
   text-align: center;
 }
+@media screen and (min-width: 640px) {
+  .tickets__qr {
+    width: auto;
+  }
+}
 .tickets__qr p {
   margin: 0;
   padding: 0;
