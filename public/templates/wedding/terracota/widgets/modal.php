@@ -66,7 +66,7 @@
 				<button class="button modal__btns--formodal modal__btns--formodalgrey" data-target="cancel">
 					No podré ir
 				</button>
-				<button class="button modal__btns--formodal" data-target="confirm">
+				<button disabled class="button button__primary modal__btns--formodal" data-target="confirm">
 					Confirmar
 				</button>
 			</div>

@@ -1,26 +1,35 @@
 .button
   align-items: center
-  background: linear-gradient(175deg, rgba(255,199,128,1) 0%, rgba(217,158,59,1) 87%)
   border-radius: 5px
-  border: 0px
-  color: $color-white
+  background: $color-white
+  border: solid 1px #B3B3B3
+  color: $color-grey-text
   display: flex
-  font-family: $font-body-secondary
   font-size: 20px
   font-weight: 600
   gap: 8px
   justify-content: center
   margin: 0 auto
-  min-width: 274px
-  padding: 10px 0
-  &__calendar
-    background: url('../img/terracota/icon_calendar.svg') no-repeat
-    display: block
-    height: 26px
-    width: 26px
-  &__whatsapp
-    align-items: center
+  width: 100%
+  padding: 10px 24px
+  i
     display: flex
     height: 25px
     justify-content: center
     width: 25px
+    filter: $color-filter-grey
+    align-items: center
+    font-size: 24px
+  &__primary
+    background: linear-gradient(175deg, rgba(255,199,128,1) 0%, rgba(217,158,59,1) 87%)
+    border: 0px
+    color: $color-white
+    font-family: $font-body-secondary
+    i
+      color: $color-white
+      filter: $color-filter-white
+  &:disabled
+    opacity: 0.5
+  &__calendar
+    background: url('../img/terracota/icon_calendar.svg') no-repeat
+

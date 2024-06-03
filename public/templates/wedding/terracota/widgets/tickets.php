@@ -33,7 +33,7 @@
 							<?php endif ?>
 						</div>
 
-						<button class="button" data-toggle="modal" data-target="modal__ticket">
+						<button class="button button__primary" data-toggle="modal" data-target="modal__ticket">
 							<i class="fa-solid fa-ticket"></i>
 							Confirmar Asistencia
 						</button>

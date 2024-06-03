@@ -130,32 +130,43 @@ body {
 
 .button {
   align-items: center;
-  background: linear-gradient(175deg, rgb(255, 199, 128) 0%, rgb(217, 158, 59) 87%);
   border-radius: 5px;
-  border: 0px;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border: solid 1px #B3B3B3;
+  color: #5B5B5F;
   display: flex;
-  font-family: "HelveticaNeueLTCom-MdCn";
   font-size: 20px;
   font-weight: 600;
   gap: 8px;
   justify-content: center;
   margin: 0 auto;
-  min-width: 274px;
-  padding: 10px 0;
+  width: 100%;
+  padding: 10px 24px;
 }
-.button__calendar {
-  background: url("../img/terracota/icon_calendar.svg") no-repeat;
-  display: block;
-  height: 26px;
-  width: 26px;
-}
-.button__whatsapp {
-  align-items: center;
+.button i {
   display: flex;
   height: 25px;
   justify-content: center;
   width: 25px;
+  filter: invert(37%) sepia(10%) saturate(147%) hue-rotate(201deg) brightness(91%) contrast(88%);
+  align-items: center;
+  font-size: 24px;
+}
+.button__primary {
+  background: linear-gradient(175deg, rgb(255, 199, 128) 0%, rgb(217, 158, 59) 87%);
+  border: 0px;
+  color: #FFFFFF;
+  font-family: "HelveticaNeueLTCom-MdCn";
+}
+.button__primary i {
+  color: #FFFFFF;
+  filter: invert(0%) sepia(0%) saturate(2%) hue-rotate(35deg) brightness(109%) contrast(100%);
+}
+.button:disabled {
+  opacity: 0.5;
+}
+.button__calendar {
+  background: url("../img/terracota/icon_calendar.svg") no-repeat;
 }
 
 .divider {
@@ -402,16 +413,6 @@ body {
     height: 12%;
   }
 }
-.modal__btns--formodal {
-  width: 100%;
-  min-width: auto;
-  padding: 3% 4%;
-}
-.modal__btns--formodalgrey {
-  border: solid 1px #B3B3B3;
-  background: none !important;
-  color: #5B5B5F;
-}
 
 .nochildren {
   display: flex;
@@ -547,7 +548,7 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  margin-top: -460px;
+  margin-top: -440px;
 }
 @media screen and (min-width: 480px) {
   .profile__seal {
@@ -949,6 +950,10 @@ p.small {
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: center;
+}
+.wemarried__button {
+  width: 310px;
+  margin: auto;
 }
 
 .witnesses {

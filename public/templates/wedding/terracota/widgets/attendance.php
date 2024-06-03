@@ -6,13 +6,13 @@
 
 	<div class="attendance__contact">
 		<div class="contact__container contact__container--bride">
-			<a href="https://walink.co/d69cc7" class="button">
+			<a href="https://walink.co/d69cc7" class="button button__primary">
 				<i class="button__whatsapp fa-brands fa-whatsapp"></i>
 				Novia
 			</a>
 		</div>
 		<div class="contact__container contact__container--fiance">
-			<a href="https://walink.co/841426" class="button">
+			<a href="https://walink.co/841426" class="button button__primary">
 				<i class="button__whatsapp fa-brands fa-whatsapp"></i>
 				Novio
 			</a>

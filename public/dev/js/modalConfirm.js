@@ -9,6 +9,7 @@ function modalConfirm() {
   suscribeEvents = function () {
     $(document).on('click', '[data-target="confirm"]', fn.confirm)
     $(document).on('click', '[data-target="cancel"]', fn.cancel)
+    $(document).on('click', 'input[name="guest_item"]', fn.check)
   }
 
   events = {}
@@ -16,6 +17,15 @@ function modalConfirm() {
   }
 
   fn = {}
+  fn.check = function () {
+    let checkboxes = $('input[name="guest_item"]');
+    let hasChecked = checkboxes.is(':checked');
+    if (hasChecked)
+      $('button[data-target="confirm"]').prop('disabled', false)
+    else
+      $('button[data-target="confirm"]').prop('disabled', true)
+  }
+
   fn.confirm = function () {
     console.log('asistir')
     let checkboxes = $('input[name="guest_item"]');
