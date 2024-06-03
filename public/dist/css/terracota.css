@@ -290,7 +290,7 @@ body {
 }
 
 .modal {
-  background-image: url("../img/terracota/bgtransparent.png");
+  background-image: url("../img/terracota/bgtransparentblack.png");
   display: none;
   position: fixed;
   width: 100%;
@@ -298,6 +298,7 @@ body {
   top: 0;
   z-index: 9;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .modal__container {
@@ -308,6 +309,9 @@ body {
 @media screen and (min-width: 480px) {
   .modal__container {
     width: 600px;
+    height: 70%;
+    border: solid 1px #5B5B5F;
+    border-radius: 15px;
   }
 }
 .modal.active {
@@ -316,10 +320,10 @@ body {
 .modal__header {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 22%;
+  height: 30%;
   padding: 0 4%;
   gap: 12px;
 }
@@ -341,12 +345,12 @@ body {
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 78%;
+  height: 70%;
 }
 .modal__list {
   display: flex;
   flex-direction: column;
-  height: 87%;
+  height: 80%;
   padding: 0 4%;
   overflow: auto;
 }
@@ -410,7 +414,7 @@ body {
 }
 @media screen and (min-width: 480px) {
   .modal__btns {
-    height: 12%;
+    height: 20%;
   }
 }
 
