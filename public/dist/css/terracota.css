@@ -924,6 +924,9 @@ p.small {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
 .tickets__qr p {
   margin: 0;
