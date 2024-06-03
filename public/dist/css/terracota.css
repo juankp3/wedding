@@ -19,13 +19,13 @@ body {
 }
 @font-face {
   font-family: "HelveticaNeueLTCom-LtCn";
-  src: url(../fonts/HelveticaNeueLTCom-LtCn.ttf);
+  src: url("../../fonts/HelveticaNeueLTCom-LtCn.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "HelveticaNeueLTCom-MdCn";
-  src: url(../fonts/HelveticaNeueLTCom-MdCn.ttf);
+  src: url("../../fonts/HelveticaNeueLTCom-MdCn.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -410,11 +410,12 @@ body {
   flex-wrap: nowrap;
   gap: 40px;
   padding: 4%;
-  align-items: center;
+  align-items: flex-end;
+  height: 20%;
 }
 @media screen and (min-width: 480px) {
   .modal__btns {
-    height: 20%;
+    align-items: center;
   }
 }
 
