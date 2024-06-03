@@ -1,10 +1,13 @@
 $(document).ready(function () {
     var winStatus = 'all'
 
-    let openModal = () => {
-        const data = $(this).data()
-        $("#exampleModalLabel").html(data.name)
-        console.log('data', data.name)
+    function openModal(event) {
+      event.preventDefault();
+      const id = $(this).data('id');
+      const guest = guestsObject[id]
+      console.log('guest', guest)
+
+      $("#exampleModalLabel").html(guest.name)
     }
 
     let statusGuest = (status) => {
@@ -33,15 +36,28 @@ $(document).ready(function () {
         statusGuest(winStatus)
     }
 
+    let findGuestByToken = (token) => {
+      return jsonData.find(guest => guest.token === token);
+    }
+
+    let getGuest = () => {
+      if (token != '') {
+        const guest = findGuestByToken(token)
+        $(`#guest_${guest.id_guest}`).click()
+        $('#exampleModal').modal('show');
+      }
+    }
+
     let load = () => {
         let data = sortGuest(jsonData);
         $.each(data, function (index, guest) {
             $("#content").append(table(index + 1, guest))
         });
+        getGuest()
     }
 
     let sortGuest = (guests) => {
-        return guests.sort(function (a, b) {
+      return guests.sort(function (a, b) {
             return a.name.localeCompare(b.name);
         });
     }
@@ -75,22 +91,22 @@ $(document).ready(function () {
     let table = (index, guest) => {
         let tr =  `<tr>
             <th scope="row">
-                ${index}
+              ${index}
             </th>
             <td>
-                <a class="icon-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a id="guest_${guest.id_guest}" class="icon-link" data-id="${guest.id_guest}" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     ${guest.name}
                 </a>
-                <br>
-                ${guest.parent_name ? `<span class="secondary" style="font-size: 12px;">${guest.parent_name}</span>` : ''}
+              <br>
+              ${guest.parent_name ? `<span class="secondary" style="font-size: 12px;">${guest.parent_name}</span>` : ''}
             </td>
             <td>
-                ${guest.qyt_tickets}
+              ${guest.qyt_tickets}
             </td>
             <td>
-                <a href="tel:+${guest.phone}" class="icon-link">
+              <a href="tel:+${guest.phone}" class="icon-link">
                 ${guest.phone}
-                </a>
+              </a>
             </td>
         </tr>`
 

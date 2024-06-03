@@ -5,16 +5,15 @@ class Code
 {
     public function index()
     {
+		$paramsUrl = Flight::request()->query->getData();
 		$guestModel = new GuestModel();
 		$guest = array();
 		$guest = $guestModel->getAllGuest();
-		// $aditionalGuest = $guestModel->getAlladitioalGuest();
 
 		$totalGuest = $guestModel->getTotal();
 		$totalConfirm = $guestModel->getTotalConfirm();
 		$totalPending = $guestModel->getTotalPending();
 		$totalCancelled = $guestModel->getTotalCancelled();
-
 
 		$params['totals'] = array(
 			'total' => $totalGuest['cantidad'],
@@ -23,12 +22,12 @@ class Code
 			'cancelled' => count($totalCancelled),
 		);
 
-
 		$params['guests'] = $guest;
+		$params['token'] = !empty($paramsUrl['token'])? $paramsUrl['token']:'';
+
 		Flight::set('flight.views.path', 'public/templates/code');
 		Flight::render('index', $params, 'body_content');
 		Flight::render('_layout/template');
-
     }
 
 }
