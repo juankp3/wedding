@@ -724,8 +724,18 @@ body {
 .body-envelope {
   overflow: hidden;
 }
+@media screen and (min-width: 480px) {
+  .body-envelope {
+    overflow: auto;
+  }
+}
 .body-envelope .envelope-wrapper {
   display: block;
+}
+@media screen and (min-width: 480px) {
+  .body-envelope .envelope-wrapper {
+    display: none;
+  }
 }
 
 .blanco {
@@ -743,6 +753,11 @@ body {
   display: none;
   transition: background-color 1s ease;
   z-index: 4;
+}
+@media screen and (min-width: 480px) {
+  .envelope-wrapper {
+    display: none;
+  }
 }
 .envelope-wrapper .envelope {
   top: 0;
