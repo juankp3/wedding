@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+	<?php Flight::render('../../widgets/analytics.php') ?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
@@ -14,7 +15,7 @@
 			}
 		}
 	</script>
-	<?php Flight::render('../../widgets/analytics.php') ?>
+
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
@@ -29,6 +30,9 @@
 </head>
 
 <body class="body-envelope">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWX9BDDL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<?php echo $body_content; ?>
 </body>
 
