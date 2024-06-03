@@ -19,13 +19,13 @@ body {
 }
 @font-face {
   font-family: "HelveticaNeueLTCom-LtCn";
-  src: url("../../fonts/HelveticaNeueLTCom-LtCn.woff2") format("woff2");
+  src: url(../fonts/HelveticaNeueLTCom-LtCn.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "HelveticaNeueLTCom-MdCn";
-  src: url("../../fonts/HelveticaNeueLTCom-MdCn.woff2") format("woff2");
+  src: url(../fonts/HelveticaNeueLTCom-MdCn.ttf);
   font-weight: normal;
   font-style: normal;
 }

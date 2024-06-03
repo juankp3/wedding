@@ -10,6 +10,11 @@ $(document).ready(function () {
       $("#exampleModalLabel").html(guest.name)
     }
 
+      let closeModal = () => {
+        let url = `${app.urls.base_url}/code`
+        window.history.replaceState(null, null, url);
+    }
+
     let statusGuest = (status) => {
         $("a.js-tab").removeClass('active')
         $(`#${status}`).addClass('active')
@@ -115,6 +120,7 @@ $(document).ready(function () {
 
 
     $(document).on('click', 'a[data-bs-toggle]', openModal)
+    $(document).on('click', 'button.btn-close', closeModal)
     $(document).on('click', '#all', allStatus)
     $(document).on('click', '#pending', pendingStatus)
     $(document).on('click', '#confirmed', confirmStatus)
