@@ -8,6 +8,12 @@ $(document).ready(function () {
       console.log('guest', guest)
 
       $("#exampleModalLabel").html(guest.name)
+      $("#confirmation").html(guest.confirmation)
+      $("#openinvitation_lastdate").html(guest.openinvitation_lastdate)
+      $("#phone").html(guest.phone)
+      $("#qyt_tickets").html(guest.qyt_tickets)
+      $("#openinvitation_calltoaction").html(guest.openinvitation_calltoaction)
+
     }
 
       let closeModal = () => {

@@ -8,26 +8,38 @@
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
+
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="mb-3 col-6 col-sm-6">
-									<label for="exampleInputEmail1" class="form-label">Email address</label>
-									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-								</div>
-								<div class="mb-3 col-6 col-sm-6">
-									<label for="exampleInputPassword1" class="form-label">Password</label>
-									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+									<label for="exampleInputEmail1" class="form-label">Confirmación</label>
+									<div id="confirmation" class="form-text">confirmation</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="mb-3 col-6 col-sm-6">
-									<label for="exampleInputEmail1" class="form-label">Email address</label>
-									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+									<label for="exampleInputEmail1" class="form-label">Pases</label>
+									<div id="qyt_tickets" class="form-text">cantidad</div>
 								</div>
 								<div class="mb-3 col-6 col-sm-6">
-									<label for="exampleInputPassword1" class="form-label">Password</label>
-									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+									<label for="exampleInputPassword1" class="form-label">Última visita Web</label>
+									<div id="openinvitation_lastdate" class="form-text"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputEmail1" class="form-label">Teléfono</label>
+									<div id="phone" class="form-text"></div>
+								</div>
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputPassword1" class="form-label">Cantidad visitas Web</label>
+									<div id="openinvitation_calltoaction" class="form-text">Cantidad visitas web</div>
 								</div>
 							</div>
 						</div>
@@ -39,8 +51,8 @@
 							<thead>
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">First</th>
-									<th scope="col">Last</th>
+									<th scope="col">Acompañante</th>
+									<th scope="col">Confirmación</th>
 								</tr>
 							</thead>
 							<tbody>
