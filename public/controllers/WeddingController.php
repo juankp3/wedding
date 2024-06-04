@@ -1,14 +1,8 @@
 <?php
 require_once dirname(__FILE__) . '/../../src/models/GuestModel.php';
-use Endroid\QrCode\Color\Color;
-use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel;
+require_once dirname(__FILE__) . '/../../src/models/EventModel.php';
 use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Label\Label;
-use Endroid\QrCode\Logo\Logo;
-use Endroid\QrCode\RoundBlockSizeMode;
 use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\Writer\ValidationException;
 
 class WeddingController
 {
@@ -57,10 +51,13 @@ class WeddingController
 		$paramsUrl = Flight::request()->query->getData();
 
 		$params['showQR'] = false;
+		$guest = array();
 		if (!empty($paramsUrl['token'])) {
 			$params = $this->getDataGuest($paramsUrl['token']);
+			$guest = $params['guest'];
 		}
-		$params['title'] = 'Angelica y Luis';
+		// $params['title'] = 'Angelica y Luis';
+		$params['og'] = $this->OpenGraphByGuest($guest);
 
 		if (empty($paramsUrl['preview']) && !empty($paramsUrl['token'])) {
 			$openinvitation = $params['guest']['openinvitation_calltoaction'] + 1;
@@ -72,6 +69,33 @@ class WeddingController
         Flight::render('_layout/template');
     }
 
+
+	public function OpenGraphByGuest($guest = array())
+	{
+		$eventId = !empty($guest['id_event']) ? $guest['id_event'] : 1;
+		$eventModel = new EventModel($eventId);
+
+		$message = $eventModel->msj_template;
+		$link = $_ENV['BASE_URL'] . "/boda/angelica-y-luis" . (!empty($guest['token']) ? '?token=' . $guest['token'] : '');
+		$variables = array(
+			'name' => !empty($guest['name']) ? $guest['name'] : '',
+			'link' => $link
+		);
+
+		$response['title'] = $eventModel->name;
+		$response['url'] = $link;
+		$response['description'] = $this->replacePlaceholders($message, $variables);
+		$response['image'] = DIST_IMG_URL . '/terracota/al/novios.png';
+
+		return $response;
+	}
+
+	public function replacePlaceholders($message, $variables)
+	{
+		return preg_replace_callback('/\{(\w+)\}/', function ($matches) use ($variables) {
+			return $variables[$matches[1]] ?? $matches[0];
+		}, $message);
+	}
 
 	public function getDataGuest($token)
 	{

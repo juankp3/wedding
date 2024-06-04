@@ -27,6 +27,41 @@
 		</div>
 	<?php endif ?>
 
+	<?php if ($input['type'] == 'textarea') :
+		$placeholder =  isset($input['placeholder']) ? $input['placeholder'] : '';
+		$required = isset($input['required']) && $input['required'] ? true : false;
+		$description = isset($input['description']) ? true : '';
+	?>
+		<div class="form-group">
+			<label class="form-label">
+				<?php if ($required) : ?><span style="color: red;padding: 0px 4px;">*</span><?php endif ?><?php echo $input['label'] ?>
+			</label>
+			<?php if ($description) : ?>
+				<small class="form-text text-body-secondary">
+					<?php echo $input['description'] ?>
+				</small>
+			<?php endif ?>
+
+			<div class="card">
+				<div class="card-body">
+						<div class="form-group">
+							<textarea name="<?php echo $input['name'] ?>" class="form-control form-control-flush form-control-auto <?php echo !empty($error['fields'][$input['name']]) ? 'is-invalid' : '' ?>" data-autosize="" rows="3" placeholder="<?php echo $placeholder ?>" style="overflow: hidden; overflow-wrap: break-word; text-align: start; height: 116px;"><?php echo !empty($data[$input['name']]) ? $data[$input['name']] : '' ?></textarea>
+						</div>
+					<div class="row align-items-center">
+						<div class="col">
+							<small class="text-body-secondary">0/500</small>
+						</div>
+						<div class="col-auto"></div>
+					</div>
+				</div>
+			</div>
+
+			<?php if (!empty($error['fields'][$input['name']])) : ?>
+				<div class="invalid-feedback"><?php echo $error['fields'][$input['name']] ?></div>
+			<?php endif ?>
+		</div>
+	<?php endif ?>
+
 	<?php if ($input['type'] == 'email') : ?>
 		<div class="form-group">
 			<label class="form-label"><?php echo $input['label'] ?></label>
@@ -47,17 +82,17 @@
 		</div>
 	<?php endif ?>
 
-	<?php if ($input['type'] == 'select') : 
-				$defaultValue = isset($input['defaultValue']) && $input['defaultValue'] ? true : false;
-				$required = isset($input['required']) && $input['required'] ? true : false;
-		
-		?>
+	<?php if ($input['type'] == 'select') :
+		$defaultValue = isset($input['defaultValue']) && $input['defaultValue'] ? true : false;
+		$required = isset($input['required']) && $input['required'] ? true : false;
+
+	?>
 		<div class="form-group">
 			<label class="form-label">
 				<?php if ($required) : ?><span style="color: red;padding: 0px 4px;">*</span><?php endif ?><?php echo $input['label'] ?>
 			</label>
 			<select id="<?php echo $input['name'] ?>" name="<?php echo $input['name'] ?>" class="form-select <?php echo !empty($error['fields'][$input['name']]) ? 'is-invalid' : '' ?>" data-choices>
-				<?php if (!$defaultValue): ?><option value="">Seleccionar</option> <?php endif ?>
+				<?php if (!$defaultValue) : ?><option value="">Seleccionar</option> <?php endif ?>
 				<?php foreach ($input['options'] as $key => $value) :
 					$selected = isset($data[$input['name']]) && $data[$input['name']] == $key  ? 'selected' : '';
 				?>
@@ -77,7 +112,7 @@
 			<label class="form-label mb-1">
 				<?php echo $input['label'] ?>
 			</label>
-			<?php if ($description): ?>
+			<?php if ($description) : ?>
 				<small class="form-text text-body-secondary">
 					<?php echo $input['description'] ?>
 				</small>

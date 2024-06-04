@@ -152,7 +152,13 @@ class EventController extends FrontController implements Repository, UITableView
 		$form[] = array(
             'label' => 'Mensaje para los invitados',
             'name' => 'msj_template',
-            'type' => 'text',
+            'type' => 'textarea',
+			'placeholder' => '¡Hola {name}! 🎉
+Nos encantaría que nos acompañaras en nuestra boda.
+Para más detalles y confirmar tu asistencia, por favor visita el siguiente enlace: {link}
+¡Esperamos verte!
+Carlos y María',
+			'description' => 'Para poder enviar un mensaje personalizado agrega {name} para el nombre del invitado y {link} para el link de la invitación'
         );
 
 		$form[] = array(
