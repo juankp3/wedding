@@ -11,22 +11,29 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="row">
-								<div class="col-6 col-sm-6"><b>Ultima visita:</b> fecha</div>
-								<div class="col-6 col-sm-6"><b>Cant. de vistas:</b> 2</div>
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputEmail1" class="form-label">Email address</label>
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputPassword1" class="form-label">Password</label>
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
 							</div>
 							<div class="row">
-								<div class="col-6 col-sm-6"><b>Ultima visita:</b> fecha</div>
-								<div class="col-6 col-sm-6"><b>Cant. de vistas:</b> 2</div>
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputEmail1" class="form-label">Email address</label>
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
+								<div class="mb-3 col-6 col-sm-6">
+									<label for="exampleInputPassword1" class="form-label">Password</label>
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
 							</div>
-							<div class="row">
-								<div class="col-6 col-sm-6"><b>Ultima visita:</b> fecha</div>
-								<div class="col-6 col-sm-6"><b>Cant. de vistas:</b> 2</div>
-							</div>
-
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row mb-6 ">
 						<h6>Invitados adicionales</h6>
 						<table class="table">
 							<thead>
@@ -51,9 +58,7 @@
 							</tbody>
 						</table>
 					</div>
-
 				</div>
-
 			</div>
 
 			<!-- <div class="modal-footer">
