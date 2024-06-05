@@ -17,5 +17,5 @@
 <?php Flight::render('widgets/attendance.php') ?>
 <?php Flight::render('widgets/footer.php') ?>
 <?php Flight::render('widgets/modal.php') ?>
-<?php // Flight::render('widgets/seal.php') ?>
+<?php Flight::render('widgets/seal.php') ?>
 <?php Flight::render('widgets/audio.php') ?>
