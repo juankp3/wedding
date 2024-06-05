@@ -9,6 +9,7 @@ function _slidingup() {
   suscribeEvents = function () {
     // dom.btn.on('click', events.onClickBtn)
     $(document).on('click', '#goodwishes', fn.open)
+    $(document).on('click', '#panel a.close', fn.close)
   }
 
   events = {}
@@ -18,8 +19,17 @@ function _slidingup() {
   fn = {}
   fn.open = function (e) {
     console.log('Holaa')
-    // $(".goodwishes").slideUp("slow");
+    $("#panel").closest('.overlay-panel').addClass('overlay-panel__active')
     $("#panel").slideDown("slow");
+    e.preventDefault()
+  }
+
+  fn.close = function (e) {
+    console.log('close')
+    $("#panel").slideUp("slow", function(){
+
+      $("#panel").closest('.overlay-panel').removeClass('overlay-panel__active')
+    });
     e.preventDefault()
   }
 
