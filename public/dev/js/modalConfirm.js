@@ -70,6 +70,16 @@ function modalConfirm() {
 
   fn.cancel = function () {
     console.log('cancelar')
+
+    window.overlay(true)
+    const html = `<div class="tickets__cancelmsj">
+						        <p class="secondary">Nos deja muy triste el que no puedas asistir al evento mas importante de nuestra vida.</p>
+						        <p class="secondary">Y aunque nos falte tu presencia que no falte tu regalo.</p>
+                    <a href="#gifts">Mostrar los numeros de cuenta</a>
+					        </div>`
+    $(".tickets__body").html(html);
+    window.overlay(false)
+
     fn.closeModal()
     return false
   }

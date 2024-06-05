@@ -1,4 +1,4 @@
-<section class="gifts">
+<section id="gifts" class="gifts">
 	<div class="gifts__info">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/gifts.svg" alt="">
 		<h2>Regalos</h1>
