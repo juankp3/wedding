@@ -39,12 +39,19 @@ function modalConfirm() {
       });
     });
 
+    const html = `<div class="tickets__qr">
+						<p class="secondary">Gracias por confirmar tu asistencia</p>
+						<p class="small">Por favor presente este codigo QR en la entrada del evento</p>
+						<img src="${app.urls.base_url}/uploads/${res.token}.png">
+					</div>`
+
     request.token = token
     request.result = result
-    fn.ajax(request)
+    request.type = 'confirm'
+    fn.ajax(request, html)
   }
 
-  fn.ajax = function(data) {
+  fn.ajax = function(data, html) {
     window.overlay(true)
     $.ajax({
       url: `${app.urls.base_url}/ajax`,
@@ -53,11 +60,6 @@ function modalConfirm() {
       dataType: 'json',
       success: function(res) {
         console.log(res)
-        const html = `<div class="tickets__qr">
-						<p class="secondary">Gracias por confirmar tu asistencia</p>
-						<p class="small">Por favor presente este codigo QR en la entrada del evento</p>
-						<img src="${app.urls.base_url}/uploads/${res.token}.png">
-					</div>`
         $(".tickets__body").html(html);
         window.overlay(false)
         fn.closeModal()
@@ -70,17 +72,19 @@ function modalConfirm() {
 
   fn.cancel = function () {
     console.log('cancelar')
+    let token = $("#token").val()
+    let request = {}
 
-    window.overlay(true)
     const html = `<div class="tickets__cancelmsj">
 						        <p class="secondary">Nos deja muy triste el que no puedas asistir al evento mas importante de nuestra vida.</p>
 						        <p class="secondary">Y aunque nos falte tu presencia que no falte tu regalo.</p>
                     <a href="#gifts">Mostrar los numeros de cuenta</a>
 					        </div>`
-    $(".tickets__body").html(html);
-    window.overlay(false)
 
-    fn.closeModal()
+    request.token = token
+    request.type = 'cancel'
+    fn.ajax(request, html)
+
     return false
   }
 

@@ -11,7 +11,27 @@ class WeddingController
 
     }
 
-    public function ajax()
+	public function ajax()
+    {
+		$data = Flight::request()->data;
+
+		if ($data['type'] == 'confirm'){
+			return $this->confirm();
+		}
+
+		if ($data['type'] == 'cancel'){
+			return $this->cancel();
+		}
+
+    }
+
+	public function cancel()
+	{
+		$data = Flight::request()->data;
+		Flight::json($data);
+	}
+
+    public function confirm()
     {
 		$data = Flight::request()->data;
 		$token = $data['token'];
