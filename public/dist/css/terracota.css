@@ -965,6 +965,14 @@ p.small {
   width: 150px;
   margin-top: 16px;
 }
+.tickets__cancelmsj {
+  width: 270px;
+  text-align: center;
+}
+.tickets__cancelmsj a {
+  color: #5B5B5F;
+  font-weight: 600;
+}
 
 .wemarried {
   display: flex;
