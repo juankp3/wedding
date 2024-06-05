@@ -28,6 +28,12 @@ class WeddingController
 	public function cancel()
 	{
 		$data = Flight::request()->data;
+		foreach($data['result'] as $guest) {
+			$guestModel = new GuestModel($guest['id']);
+			$guestModel->confirmation = ($guest['status'] == 1) ? 'confirmed' : 'cancelled';
+			$guestModel->date_upd = date("Y-m-d H:i:s");
+			$guestModel->update();
+		}
 		Flight::json($data);
 	}
 
@@ -51,7 +57,6 @@ class WeddingController
 		$result->saveToFile(APP_UPLOAD_FILE_RELATIVE . "/$token.png");
 
 		$response['token'] = $token;
-
 		Flight::json($response);
     }
 

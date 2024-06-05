@@ -72,8 +72,16 @@ function modalConfirm() {
 
   fn.cancel = function () {
     console.log('cancelar')
+    let checkboxes = $('input[name="guest_item"]')
     let token = $("#token").val()
     let request = {}
+    let result = []
+    checkboxes.each(function () {
+      result.push({
+        id: $(this).val(),
+        status: $(this).is(':checked') ? 1 : 0
+      });
+    });
 
     const html = `<div class="tickets__cancelmsj">
 						        <p class="secondary">Nos deja muy triste el que no puedas asistir al evento mas importante de nuestra vida.</p>
@@ -82,6 +90,7 @@ function modalConfirm() {
 					        </div>`
 
     request.token = token
+    request.result = result
     request.type = 'cancel'
     fn.ajax(request, html)
 
