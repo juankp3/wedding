@@ -26,8 +26,7 @@ function modalConfirm() {
       $('button[data-target="confirm"]').prop('disabled', true)
   }
 
-  fn.confirm = function () {
-    console.log('asistir')
+  fn.getTicketData = function () {
     let checkboxes = $('input[name="guest_item"]');
     let token = $("#token").val()
     let request = {};
@@ -38,20 +37,19 @@ function modalConfirm() {
         status: $(this).is(':checked') ? 1 : 0
       });
     });
-
-    const html = `<div class="tickets__qr">
-						<p class="secondary">Gracias por confirmar tu asistencia</p>
-						<p class="small">Por favor presente este codigo QR en la entrada del evento</p>
-						<img src="${app.urls.base_url}/uploads/${res.token}.png">
-					</div>`
-
     request.token = token
     request.result = result
-    request.type = 'confirm'
-    fn.ajax(request, html)
+    return request
   }
 
-  fn.ajax = function(data, html) {
+  fn.confirm = function () {
+    let data = fn.getTicketData()
+    data.type = 'confirm'
+    fn.ajax(data)
+  }
+
+  fn.ajax = function(data) {
+    let html = ''
     window.overlay(true)
     $.ajax({
       url: `${app.urls.base_url}/ajax`,
@@ -59,7 +57,19 @@ function modalConfirm() {
       data: data,
       dataType: 'json',
       success: function(res) {
-        console.log(res)
+        if (data.type == 'confirm') {
+          html = `<div class="tickets__qr">
+						<p class="secondary">${titleConfirm}</p>
+						<p class="small">${descriptionConfirm}</p>
+            <img src="${app.urls.base_url}/uploads/${res.token}.png">
+					</div>`
+        }
+        if (data.type == 'cancel') {
+          html = `<div class="tickets__cancelmsj">
+						        <p class="secondary">${descriptionCancel}</p>
+                    <a href="#gifts">${anchorAccouts}</a>
+					        </div>`
+        }
         $(".tickets__body").html(html);
         window.overlay(false)
         fn.closeModal()
@@ -68,37 +78,16 @@ function modalConfirm() {
         window.overlay(false)
       }
     });
+
   }
 
   fn.cancel = function () {
-    console.log('cancelar')
-    let checkboxes = $('input[name="guest_item"]')
-    let token = $("#token").val()
-    let request = {}
-    let result = []
-    checkboxes.each(function () {
-      result.push({
-        id: $(this).val(),
-        status: $(this).is(':checked') ? 1 : 0
-      });
-    });
-
-    const html = `<div class="tickets__cancelmsj">
-						        <p class="secondary">Nos deja muy triste el que no puedas asistir al evento mas importante de nuestra vida.</p>
-						        <p class="secondary">Y aunque nos falte tu presencia que no falte tu regalo.</p>
-                    <a href="#gifts">Mostrar los numeros de cuenta</a>
-					        </div>`
-
-    request.token = token
-    request.result = result
-    request.type = 'cancel'
-    fn.ajax(request, html)
-
-    return false
+    let data = fn.getTicketData()
+    data.type = 'cancel'
+    fn.ajax(data)
   }
 
   fn.closeModal = function () {
-    console.log('Cierra modalllll')
     $(`.modal`).removeClass('active')
     $('body').css('overflow', '')
     return false

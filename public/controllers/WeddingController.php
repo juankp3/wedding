@@ -30,7 +30,7 @@ class WeddingController
 		$data = Flight::request()->data;
 		foreach($data['result'] as $guest) {
 			$guestModel = new GuestModel($guest['id']);
-			$guestModel->confirmation = ($guest['status'] == 1) ? 'confirmed' : 'cancelled';
+			$guestModel->confirmation = 'cancelled';
 			$guestModel->date_upd = date("Y-m-d H:i:s");
 			$guestModel->update();
 		}
