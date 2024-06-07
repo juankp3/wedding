@@ -6,6 +6,28 @@ $(document).ready(function () {
       const id = $(this).data('id');
       const guest = guestsObject[id]
       console.log('guest', guest)
+      let aditionalGuests = findGuestByParentId(id)
+      console.log('aditionalguests', aditionalGuests);
+      let tr = ''
+      aditionalGuests.forEach((element,index) => {
+        tr += `<tr>
+                <th scope="row">${index+1}</th>
+                <td>${element.name}</td>
+                <td>${element.confirmation}</td>
+              </tr>`
+      })
+      let tableguest = `<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Acompañante</th>
+									<th scope="col">Confirmación</th>
+								</tr>
+							</thead>
+							<tbody>
+                  ${tr}
+							</tbody>
+						</table>`
 
       $("#exampleModalLabel").html(guest.name)
       $("#confirmation").html(guest.confirmation)
@@ -13,6 +35,8 @@ $(document).ready(function () {
       $("#phone").html(guest.phone)
       $("#qyt_tickets").html(guest.qyt_tickets)
       $("#openinvitation_calltoaction").html(guest.openinvitation_calltoaction)
+      $("#tableguest").html(tableguest)
+
 
     }
 
@@ -49,6 +73,10 @@ $(document).ready(function () {
 
     let findGuestByToken = (token) => {
       return jsonData.find(guest => guest.token === token);
+    }
+
+    let findGuestByParentId = (parentId) => {
+      return jsonData.filter(guest => guest.id_guest_parent == parentId);
     }
 
     let getGuest = () => {
