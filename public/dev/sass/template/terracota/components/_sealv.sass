@@ -1,0 +1,105 @@
+.body-envelope
+  overflow: hidden
+  .envelope-wrapper
+    display: block
+    @include xss()
+      display: none
+.blanco
+    background-color: transparent !important
+.envelope-wrapper
+  position: fixed
+  width: 100%
+  height: 100vh
+  justify-content: center
+  align-items: center
+  background-color: #ECE6DA
+  top: 0
+  display: none
+  z-index: 4
+  transition: background-color 1.0s ease
+  .envelope
+    top: 0
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    position: relative
+    .envelope1
+      position: absolute
+      top: -150px
+      left: 50%
+      transform: translateX(-50%)
+      width: fit-content
+      @include xxxs()
+        top: -69px
+      @include xxs()
+        top: -49px
+      @include xss()
+        top: -30px
+      @include xs()
+        top: -70px
+
+    .envelope2
+      left: calc(-100vw - 40px)
+      position: absolute
+      bottom: -40px
+      width: fit-content
+      @include xxxs()
+        left: calc(-100vw - 22px)
+        bottom: 0px
+      @include xxs()
+        left: calc(-100vw + 14px)
+      @include xss()
+        left: calc(-100vw + 40px)
+  .seal
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  .image-seal
+    width: 170px
+    height: 170px
+  .seal-content
+    position: absolute
+    display: flex
+    margin: 0 auto
+    height: 250px
+    width: 100%
+    top: 48%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: $zIndex-9--overlay
+    .tippy-content
+      position: absolute
+      background: red
+      margin: 0 auto
+      z-index: $zIndex-9--overlay
+      padding: 4px 8px
+      border-radius: 8px
+      top: calc( 50% - 80px )
+      left: 50%
+      transform: translate(-50%, -50%)
+      p
+        color: #FFFFFF
+        font-size: 12px
+        position: relative
+      &::before
+        height: 1.2rem
+        width: 1.2rem
+        bottom: calc(-0.1rem - 0.3rem)
+        left: 0
+        margin: auto
+        right: 0
+        content: ""
+        position: absolute
+        transform: rotate(45deg)
+        background: red
+      &::after
+        content: ""
+        position: absolute
+        height: 1.2rem
+        width: 1.2rem
+        bottom: calc(-0.8rem - 0.3rem)
+        left: 0
+        margin: auto
+        right: 0
+

@@ -30,24 +30,45 @@
     @content
 
 // Media queries mobile first
-@mixin xs()
+
+// iPhone SE          : 375px x 667px
+
+
+// iPhone 12 Pro      : 390px x 844px
+@mixin xxxs() // iPhone 12 Pro
+  @media screen and (min-width: 390px)
+    @content
+
+// iPhone XR          : 414px x 896px
+@mixin xxs() // iPhone XR
+  @media screen and (min-width: 414px)
+    @content
+
+// iPhone 14 Pro Max  : 430px x 932px
+@mixin xss() // iPhone 14 Pro Max
+  @media screen and (min-width: 430px)
+    @content
+
+
+// default Media Queries
+@mixin xs() // default
   @media screen and (min-width: 480px)
     @content
 // Small
-@mixin sm()
+@mixin sm() // default
   @media screen and (min-width: 640px)
     @content
 
 // ;edium
-@mixin md()
+@mixin md() // default
   @media screen and (min-width: 768px)
     @content
 
 // Large
-@mixin lg()
+@mixin lg() // default
   @media screen and (min-width: 1024px)
     @content
 // Extra Large
-@mixin xl()
+@mixin xl() // default
   @media screen and (min-width: 1280px)
     @content
