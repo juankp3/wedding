@@ -47,28 +47,7 @@
 
 					<div class="row mb-6 ">
 						<h6>Invitados adicionales</h6>
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Acompañante</th>
-									<th scope="col">Confirmación</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-								</tr>
-
-							</tbody>
-						</table>
+						<div id="tableguest"></div>
 					</div>
 				</div>
 			</div>

@@ -77,6 +77,11 @@ body {
   background-position: center 14px;
   width: 280px;
 }
+.attendance__contact .contact__container--weddingplanner {
+  background: url("../img/terracota/weddingplanner.svg") no-repeat;
+  background-position: 95px 9px;
+  width: 280px;
+}
 .attendance__message {
   width: 286px;
   margin: 80px auto 0 auto;

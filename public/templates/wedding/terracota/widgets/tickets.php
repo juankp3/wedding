@@ -9,7 +9,7 @@
 <?php if ($showQR) :  ?>
 	<?php if (!empty($guest)) : ?>
 		<section class="tickets">
-			<h2>Estas Invitado</h2>
+			<h2>Estás Invitado</h2>
 			<div class="tickets__name">
 				<p class="big"><?php echo $guest['name'] ?></p>
 			</div>
