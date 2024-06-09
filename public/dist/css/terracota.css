@@ -368,6 +368,13 @@ body {
   width: 100%;
   padding: 16px;
 }
+.modal__body p {
+  padding: 0;
+  margin: 0;
+}
+.modal__body--center {
+  text-align: center;
+}
 .modal__footer {
   display: flex;
   flex-direction: row;

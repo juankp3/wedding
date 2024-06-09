@@ -2,13 +2,9 @@
 <div id="confirm__action" class="modal modal__small">
 	<div class="modal__container">
 		<div class="modal__header">
-			<!-- <a href="#" class="modal__close">
-				<i class="fa-solid fa-xmark"></i>
-			</a> -->
 			<h2>Confirmación</h2>
-
 		</div>
-		<div class="modal__body">
+		<div class="modal__body modal__body--center">
 			<p>¿Desea guardar el registro?</p>
 
 		</div>
