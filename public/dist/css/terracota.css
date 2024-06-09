@@ -735,6 +735,11 @@ body {
 .body-envelope {
   overflow: hidden;
 }
+@media screen and (min-width: 480px) {
+  .body-envelope {
+    overflow: auto;
+  }
+}
 .body-envelope .envelope-wrapper {
   display: block;
 }
