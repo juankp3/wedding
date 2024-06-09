@@ -1,4 +1,29 @@
-<!-- Modal Basilica -->
+<!-- Modal confirmAction -->
+<div id="confirm__action" class="modal modal__small">
+	<div class="modal__container">
+		<div class="modal__header">
+			<!-- <a href="#" class="modal__close">
+				<i class="fa-solid fa-xmark"></i>
+			</a> -->
+			<h2>Confirmación</h2>
+
+		</div>
+		<div class="modal__body">
+			<p>¿Desea guardar el registro?</p>
+
+		</div>
+		<div class="modal__footer">
+			<button class="button" data-target="not">
+				No
+			</button>
+			<button class="button button__primary" data-target="yes">
+				Sí
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- Fin del Modal -->
 <div id="modal__basilica" class="modal">
 	<div class="modal__header">
 		<h5>Basilica Maria Auxiliadora</h5>
@@ -27,7 +52,7 @@
 <!-- Fin del Modal -->
 
 <!-- Modal Tickets -->
-<div id="modal__ticket" class="modal">
+<div id="modal__ticket" class="modal modal__fullscreen modal__medium">
 	<div class="modal__container">
 		<div class="modal__header">
 			<a href="#" class="modal__close">
@@ -62,17 +87,16 @@
 					<?php endif ?>
 				</ul>
 			</div>
-			<div class="modal__btns">
-				<button class="button modal__btns--formodal modal__btns--formodalgrey" data-target="cancel">
-					No podré ir
-				</button>
-				<button disabled class="button button__primary modal__btns--formodal" data-target="confirm">
-					Confirmar
-				</button>
-			</div>
+		</div>
+		<div class="modal__footer">
+			<button class="button" data-target="cancel">
+				No podré ir
+			</button>
+			<button disabled class="button button__primary" data-target="confirm">
+				Confirmar
+			</button>
 		</div>
 	</div>
-
 </div>
 <!-- Fin del Modal -->
 

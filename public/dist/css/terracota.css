@@ -294,8 +294,19 @@ body {
   margin-top: 25px;
 }
 
+.goodwishes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 30px;
+  width: 300px;
+  margin: auto;
+}
+
 .modal {
-  background-image: url("../img/terracota/bgtransparentblack.png");
+  background-color: rgba(0, 0, 0, 0.3019607843);
   display: none;
   position: fixed;
   width: 100%;
@@ -307,20 +318,16 @@ body {
   align-items: center;
 }
 .modal__container {
-  width: 100%;
-  height: 100%;
   background-color: #FFFFFF;
+  border: solid 1px #5B5B5F;
+  border-radius: 8px;
 }
 @media screen and (min-width: 480px) {
   .modal__container {
-    width: 600px;
-    height: 70%;
-    border: solid 1px #5B5B5F;
-    border-radius: 15px;
+    min-width: 300px;
+    max-width: 600px;
+    height: auto;
   }
-}
-.modal.active {
-  display: flex !important;
 }
 .modal__header {
   display: flex;
@@ -328,9 +335,11 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30%;
-  padding: 0 4%;
+  padding: 0 16px;
   gap: 12px;
+  margin-top: 8px;
+  position: relative;
+  padding: 16px 16px 0px;
 }
 .modal__header a {
   font-size: 25px;
@@ -338,6 +347,13 @@ body {
   width: 32px;
   height: 32px;
   text-align: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-decoration: solid;
 }
 .modal__close {
   color: #8f8e8d;
@@ -350,13 +366,62 @@ body {
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 70%;
+  padding: 16px;
 }
+.modal__footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  bottom: 0;
+  z-index: 2;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: flex-end;
+  padding: 16px;
+}
+@media screen and (min-width: 480px) {
+  .modal__footer {
+    position: relative;
+    align-items: center;
+  }
+}
+.modal.active {
+  display: flex !important;
+}
+.modal__small .modal__container {
+  width: 300px;
+}
+@media screen and (min-width: 480px) {
+  .modal__medium .modal__container {
+    width: 600px;
+  }
+}
+.modal__fullscreen .modal__container {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0px;
+  border: 0;
+}
+@media screen and (min-width: 480px) {
+  .modal__fullscreen .modal__container {
+    border: solid 1px #5B5B5F;
+    border-radius: 8px;
+    height: auto;
+  }
+}
+.modal__fullscreen .modal__footer {
+  position: absolute;
+}
+@media screen and (min-width: 480px) {
+  .modal__fullscreen .modal__footer {
+    position: relative;
+  }
+}
+
 .modal__list {
   display: flex;
   flex-direction: column;
-  height: 80%;
-  padding: 0 4%;
   overflow: auto;
 }
 .modal__list ul {
@@ -404,24 +469,6 @@ body {
   position: absolute;
   top: -2px;
   right: -5px;
-}
-.modal__btns {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  bottom: 0;
-  z-index: 2;
-  flex-wrap: nowrap;
-  gap: 40px;
-  padding: 4%;
-  align-items: flex-end;
-  height: 20%;
-}
-@media screen and (min-width: 480px) {
-  .modal__btns {
-    align-items: center;
-  }
 }
 
 .nochildren {
@@ -934,6 +981,8 @@ h2 {
   color: #D99E3B;
   font-family: "HearthStone";
   font-size: 36px;
+  line-height: 72px;
+  margin-bottom: 0px;
 }
 
 h3 {
@@ -1001,6 +1050,8 @@ p.small {
   color: #D99E3B;
   font-family: "HearthStone";
   font-size: 36px;
+  line-height: 72px;
+  margin-bottom: 0px;
 }
 .tickets__number p {
   margin-top: 20px;

@@ -4,6 +4,7 @@
 
 <?php Flight::render('widgets/wemarried.php') ?>
 <?php Flight::render('widgets/tickets.php') ?>
+<?php Flight::render('widgets/goodwishes.php') ?>
 <hr class="divider" />
 <?php Flight::render('widgets/witnesses.php') ?>
 <hr class="divider" />
