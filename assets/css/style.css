@@ -61,14 +61,39 @@
         }
     }*/
 
-.custom-notification{
+
+.ct-avatar {
+	cursor: pointer;
+}
+.ct-avatar.active {
+	cursor: default;
+}
+.ct-avatar .avatar-title i {
+	font-family: "Font Awesome 5 Pro"
+}
+.ct-avatar .bg-primary-subtle {
+	background-color: #d5e5fa;
+}
+.ct-avatar .fa-regular.fa-check {
+	display: none
+}
+.ct-avatar.active .fa-regular.fa-envelope {
+	display: none
+}
+.ct-avatar.active .fa-regular.fa-check {
+	display: block;
+}
+
+
+
+
+.custom-notification {
 	width: auto;
 	position: fixed;
 	bottom: 4px;
 	right: 16px;
 	z-index: 1;
 }
-
 @media (max-width: 640px) {
 
 	.custom-notification {
