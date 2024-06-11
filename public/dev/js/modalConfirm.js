@@ -1,3 +1,5 @@
+// import { createYesNoModal } from './confirmAction.js';
+
 function modalConfirm() {
   var dom, catchDom, suscribeEvents, events, fn, init
 
@@ -45,7 +47,24 @@ function modalConfirm() {
   fn.confirm = function () {
     let data = fn.getTicketData()
     data.type = 'confirm'
-    fn.ajax(data)
+    window.createYesNoModal(
+      '¿Estás seguro que los <b>seleccionados asistirán</b> a nuestro matrimonio?',
+      function(){
+        fn.ajax(data)
+        console.log('Yesss')
+      }
+    );
+  }
+
+  fn.cancel = function () {
+    let data = fn.getTicketData()
+    data.type = 'cancel'
+    window.createYesNoModal(
+      '¿Estás seguro de que <b>no podrás</b> asistir a nuestro matrimonio?',
+      function () {
+        fn.ajax(data)
+      }
+    );
   }
 
   fn.ajax = function(data) {
@@ -61,6 +80,7 @@ function modalConfirm() {
           html = `<div class="tickets__qr">
 						<p class="secondary">${titleConfirm}</p>
 						<p class="small">${descriptionConfirm}</p>
+						<p class="small">${descriptionConfirmQR}</p>
             <img src="${app.urls.base_url}/uploads/${res.token}.png">
 					</div>`
         }
@@ -81,11 +101,7 @@ function modalConfirm() {
 
   }
 
-  fn.cancel = function () {
-    let data = fn.getTicketData()
-    data.type = 'cancel'
-    fn.ajax(data)
-  }
+
 
   fn.closeModal = function () {
     $(`.modal`).removeClass('active')
