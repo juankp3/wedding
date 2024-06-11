@@ -18,6 +18,7 @@
 				<?php if ($guest['confirmation'] != 'pending') : ?>
 					<div class="tickets__qr">
 						<p class="secondary">Gracias por confirmar tu asistencia</p>
+						<p class="small">¡Nos alegra saber que asistirás a nuestro matrimonio! Esperamos compartir este día tan especial contigo.</p>
 						<p class="small">Por favor presente este codigo QR en la entrada del evento</p>
 						<img src="<?php echo APP_UPLOAD_FILE . $guest['token'] . '.png' ?>">
 					</div>

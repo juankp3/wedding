@@ -1,5 +1,5 @@
 <!-- Modal confirmAction -->
-<div id="confirm__action" class="modal modal__small">
+<!-- <div id="confirm__action" class="modal modal__small">
 	<div class="modal__container">
 		<div class="modal__header">
 			<h2>Confirmación</h2>
@@ -14,6 +14,29 @@
 			</button>
 			<button class="button button__primary" data-target="yes">
 				Sí
+			</button>
+		</div>
+	</div>
+</div> -->
+
+<!-- Modal Buenos Deseos -->
+<div id="modal__goodwishes" class="modal modal__fullscreen modal__medium">
+	<div class="modal__container">
+		<div class="modal__header">
+			<h2>Buenos Deseos</h2>
+			<a href="#" class="modal__close">
+				<i class="fa-solid fa-xmark"></i>
+			</a>
+		</div>
+		<div class="modal__body modal__body--center">
+			<textarea placeholder="Ingresa tus buenos deseos para nosotros"></textarea>
+		</div>
+		<div class="modal__footer">
+			<button class="button" data-target="not">
+				Cancelar
+			</button>
+			<button class="button button__primary" data-target="yes">
+				Enviar
 			</button>
 		</div>
 	</div>

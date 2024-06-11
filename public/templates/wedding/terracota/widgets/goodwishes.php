@@ -1,8 +1,14 @@
 <section class="goodwishes">
-	Buenos deseos
-	<button class="button button__primary" data-toggle="modal" data-target="confirm__action">
-		<i class="fa-solid fa-ticket"></i>
-		Modal de confirmación
-	</button>
+	<h2>Buenos deseos</h2>
+
+	<div class="goodwishes__content">
+		<p>¿Quieres mandarnos tus deseos? </p>
+		<p>Escríbenos y te agradeceremos mucho</p>
+
+		<button class="button button__primary" data-toggle="modal" data-target="modal__goodwishes">
+			Envía tus Buenos Deseos
+		</button>
+	</div>
+
 
 </section>
