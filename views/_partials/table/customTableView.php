@@ -28,7 +28,7 @@
 			}
 		);
 
-		$('.copyButton').on('click', function() {
+		$('.copyButton').on('click', function(e) {
 			const obj = $(this)
 			const url = obj.data('url');
 			console.log('url', url)
@@ -37,7 +37,7 @@
 			}).catch(function(error) {
 				console.error('Error al copiar la URL: ', error);
 			});
-			// e.preventDefault()
+			e.preventDefault()
 		});
 	});
 </script>
