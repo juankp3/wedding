@@ -12,7 +12,6 @@ function goodWishes() {
     $(document).on('click', '[data-target="send-goodwishes"]', fn.confirm)
     $(document).on('click', '[data-target="cancel-goodwishes"]', fn.cancel)
     $(document).on('keyup', '#mygoodwishes', fn.enableButtonOnInput)
-    // $(document).on('click', 'input[name="guest_item"]', fn.check)
   }
 
   events = {}

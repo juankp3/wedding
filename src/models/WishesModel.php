@@ -29,7 +29,7 @@ class WishesModel extends Model
 	{
 		$table = $this->definition['table'];
 		$query = "SELECT w.id_wishes, w.id_guest, w.message, w.active, w.deleted,
-				date_format(w.date_add, '%d/%m/%Y') as date_add , w.date_upd, g.name
+				date_format(w.date_add, '%d/%m/%Y %H:%i') as date_add , w.date_upd, g.name
 				FROM $table w
 				LEFT JOIN guest g on w.id_guest = g.id_guest
 				WHERE w.deleted = 0
@@ -41,6 +41,5 @@ class WishesModel extends Model
 
 		return $this->executeS($query);
 	}
-
 
 }
