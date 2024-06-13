@@ -29,7 +29,13 @@
 			</a>
 		</div>
 		<div class="modal__body modal__body--center">
-			<textarea id="mygoodwishes" placeholder="Ingresa tus buenos deseos para nosotros"></textarea>
+			<?php
+			$placeholderTexArea = '¡Hola! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.';
+			if (!empty($token)) {
+				$placeholderTexArea = "¡Hola Juan! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.";
+			}
+			?>
+			<textarea id="mygoodwishes" placeholder="<?php echo $placeholderTexArea ?>"></textarea>
 		</div>
 		<div class="modal__footer">
 			<button class="button" data-target="cancel-goodwishes">

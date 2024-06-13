@@ -32,6 +32,7 @@ function goodWishes() {
   fn.confirm = function () {
     let data = {}
     data.text = $("#mygoodwishes").val()
+    data.token = $("#token").val()
     data.type = 'goodwishes'
     fn.ajax(data)
     console.log('Confirmar')

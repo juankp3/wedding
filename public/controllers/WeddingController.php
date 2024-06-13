@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__FILE__) . '/../../src/models/GuestModel.php';
 require_once dirname(__FILE__) . '/../../src/models/EventModel.php';
+require_once dirname(__FILE__) . '/../../src/models/WishesModel.php';
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 
@@ -31,7 +32,19 @@ class WeddingController
 
 	public function ajaxGoodWishes()
 	{
+		$wishesModel = new WishesModel();
 		$data = Flight::request()->data;
+		$guestId = 0;
+		$token = $data['token'];
+		if (!empty($token)) {
+			$guest = $this->getDataGuest($token);
+			$guestId = $guest['guest']['id_guest'];
+		}
+
+		echo "<pre>";
+		var_dump($guestId);
+		echo "</pre>";
+		exit;
 
 		Flight::json($data);
 	}
@@ -145,7 +158,6 @@ class WeddingController
 			$params['showQR'] = ($params['guest']['confirmation'] != 'cancelled') ? true : false;
 			foreach ($params['guest']['items'] as $g) {
 				if ($g['confirmation'] != 'cancelled') {
-					$showQR = true;
 					$params['showQR'] = true;
 				}
 			}
