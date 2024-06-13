@@ -16,16 +16,27 @@ class WeddingController
 		$data = Flight::request()->data;
 
 		if ($data['type'] == 'confirm'){
-			return $this->confirm();
+			return $this->ajaxConfirm();
 		}
 
 		if ($data['type'] == 'cancel'){
-			return $this->cancel();
+			return $this->ajaxCancel();
+		}
+
+		if ($data['type'] == 'goodwishes') {
+			return $this->ajaxGoodWishes();
 		}
 
     }
 
-	public function cancel()
+	public function ajaxGoodWishes()
+	{
+		$data = Flight::request()->data;
+
+		Flight::json($data);
+	}
+
+	public function ajaxCancel()
 	{
 		$data = Flight::request()->data;
 		foreach($data['result'] as $guest) {
@@ -37,7 +48,7 @@ class WeddingController
 		Flight::json($data);
 	}
 
-    public function confirm()
+    public function ajaxConfirm()
     {
 		$data = Flight::request()->data;
 		$token = $data['token'];
