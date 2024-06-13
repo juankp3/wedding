@@ -40,12 +40,10 @@ class WeddingController
 			$guest = $this->getDataGuest($token);
 			$guestId = $guest['guest']['id_guest'];
 		}
-
-		echo "<pre>";
-		var_dump($guestId);
-		echo "</pre>";
-		exit;
-
+		$wishesModel->id_guest = $guestId;
+		$wishesModel->message = $data['text'];
+		$wishesModel->active = 0;
+		$wishesModel->save();
 		Flight::json($data);
 	}
 

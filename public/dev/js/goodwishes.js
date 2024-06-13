@@ -33,12 +33,17 @@ function goodWishes() {
     data.text = $("#mygoodwishes").val()
     data.token = $("#token").val()
     data.type = 'goodwishes'
-    fn.ajax(data)
-    console.log('Confirmar')
+
+    window.confirmModal(
+      'Tu mensaje fue enviado a los novios',
+      function () {
+        fn.ajax(data)
+      }
+    );
   }
 
   fn.cancel = function () {
-    console.log('Cancelar')
+    fn.closeModal()
   }
 
   fn.ajax = function (data) {
@@ -52,7 +57,7 @@ function goodWishes() {
       success: function (res) {
         console.log(res)
         window.overlay(false)
-        // fn.closeModal()
+        fn.closeModal()
       },
       error: function (res, a) {
         window.overlay(false)
@@ -61,6 +66,11 @@ function goodWishes() {
 
   }
 
+  fn.closeModal = function () {
+    $(`.modal`).removeClass('active')
+    $('body').css('overflow', '')
+    return false
+  }
 
   init = function () {
     catchDom()
