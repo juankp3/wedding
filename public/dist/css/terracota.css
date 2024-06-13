@@ -207,6 +207,7 @@ body {
 }
 .dresscode__text {
   text-align: center;
+  width: 240px;
 }
 
 .footer {

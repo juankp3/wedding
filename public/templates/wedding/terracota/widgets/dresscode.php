@@ -11,6 +11,7 @@
 
 	<div class="dresscode__text">
 		<p><b>Elegante</b></p>
+		<p>Prepárense para una boda llena de colores.</br>Dejen el blanco para la NOVIA</p>
 	</div>
 
 </section>
