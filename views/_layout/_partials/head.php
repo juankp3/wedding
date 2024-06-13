@@ -22,11 +22,23 @@
 <link rel="stylesheet" href="<?php echo CSS_URL ?>/libs.bundle.css">
 <link rel="stylesheet" href="<?php echo CSS_URL ?>/theme.bundle.css" id="stylesheetLight">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link rel="stylesheet" href="<?php echo CSS_URL ?>/style.css?v=8" >
+<link rel="stylesheet" href="<?php echo CSS_URL ?>/style.css?v=9" >
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js?v=1"></script>
+<script type="text/javascript" src="<?php echo JS_URL?>/wishes.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<script type="text/javascript">
+    var app = {
+        'urls': {
+            'base_url': '<?php echo BASE_URL ?>',
+            'js_url': '<?php echo JS_URL ?>',
+            'img_url': '<?php echo IMG_URL ?>'
+        }
+    }
+
+</script>
 
 <style>
     body {

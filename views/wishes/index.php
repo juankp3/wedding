@@ -27,13 +27,15 @@
 								<div class="list-group-item">
 									<div class="row">
 										<div class="col-auto">
+
 											<!-- Avatar-->
-											<div class="ct-avatar avatar avatar-sm <?php echo $item['active']==1?'active':'' ?>">
+											<div data-id="<?php echo $item['id_wishes'] ?>" class="ct-avatar avatar avatar-sm <?php echo $item['active']==1?'active':'' ?>">
 												<div class="avatar-title fs-lg bg-primary-subtle rounded-circle text-primary">
 													<i class="fa-regular fa-envelope"></i>
 													<i class="fa-regular fa-check"></i>
 												</div>
 											</div>
+
 										</div>
 										<div class="col ms-n2">
 											<!-- Heading -->
