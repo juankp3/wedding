@@ -43,6 +43,7 @@ class WeddingController
 		$wishesModel->id_guest = $guestId;
 		$wishesModel->message = $data['text'];
 		$wishesModel->active = 0;
+		$wishesModel->deleted = 0;
 		$wishesModel->save();
 		Flight::json($data);
 	}
