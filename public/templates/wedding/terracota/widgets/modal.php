@@ -29,13 +29,13 @@
 			</a>
 		</div>
 		<div class="modal__body modal__body--center">
-			<textarea placeholder="Ingresa tus buenos deseos para nosotros"></textarea>
+			<textarea id="mygoodwishes" placeholder="Ingresa tus buenos deseos para nosotros"></textarea>
 		</div>
 		<div class="modal__footer">
-			<button class="button" data-target="not">
+			<button class="button" data-target="cancel-goodwishes">
 				Cancelar
 			</button>
-			<button class="button button__primary" data-target="yes">
+			<button disabled class="button button__primary" data-target="send-goodwishes">
 				Enviar
 			</button>
 		</div>
