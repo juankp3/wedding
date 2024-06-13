@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `wishes` (
   `id_wishes` INT NOT NULL AUTO_INCREMENT,
   `id_guest`  INT NOT NULL,
   `message`   TEXT NULL,
+  `active`    INT NOT NULL,
   `deleted`   INT NOT NULL,
   `date_add`  DATETIME NULL,
   `date_upd`  DATETIME NULL,

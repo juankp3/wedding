@@ -22,41 +22,39 @@
 						<!-- List group -->
 						<div class="list-group list-group-flush list-group-activity my-n3">
 
-							<?php
-								$active = 'noactive';
-								for ($i=0; $i < 5; $i++) {
-							?>
-							<!-- Item con carta -->
+							<?php foreach ($data as $item) : ?>
 
-							<div class="list-group-item">
-								<div class="row">
-									<div class="col-auto">
-										<!-- Avatar-->
-										<div class="ct-avatar avatar avatar-sm <?php echo $i%2==0?'active':'' ?>">
-											<div class="avatar-title fs-lg bg-primary-subtle rounded-circle text-primary">
-												<i class="fa-regular fa-envelope"></i>
-												<i class="fa-regular fa-check"></i>
+								<div class="list-group-item">
+									<div class="row">
+										<div class="col-auto">
+											<!-- Avatar-->
+											<div class="ct-avatar avatar avatar-sm <?php echo $item['active']==1?'active':'' ?>">
+												<div class="avatar-title fs-lg bg-primary-subtle rounded-circle text-primary">
+													<i class="fa-regular fa-envelope"></i>
+													<i class="fa-regular fa-check"></i>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col ms-n2">
-										<!-- Heading -->
-										<h5 class="mb-1">
-											Launchday 1.4.0 update email sent
-										</h5>
-										<!-- Text -->
-										<p class="small text-gray-700 mb-0">
-											Sent to all 1,851 subscribers over a 24 hour period
-										</p>
-										<!-- Time -->
-										<small class="text-body-secondary">
-											2m ago
-										</small>
-									</div>
-								</div> <!-- / .row -->
-							</div>
-							<!-- FIn con carta -->
-							<?php } ?>
+										<div class="col ms-n2">
+											<!-- Heading -->
+											<h5 class="mb-1">
+												<?php echo $item['name'] ?>
+											</h5>
+											<!-- Text -->
+											<p class="small text-gray-700 mb-0">
+												<?php echo $item['message'] ?>
+											</p>
+											<!-- Time -->
+											<small class="text-body-secondary">
+												<?php echo $item['date_add'] ?>
+											</small>
+										</div>
+									</div> <!-- / .row -->
+								</div>
+
+							<?php endforeach ?>
+
+
 						</div>
 
 					</div>

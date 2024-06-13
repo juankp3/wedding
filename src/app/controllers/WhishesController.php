@@ -1,11 +1,13 @@
 <?php
-require_once dirname(__FILE__).'/../../models/TableModel.php';
+
+require_once dirname(__FILE__).'/../../models/WishesModel.php';
+
 class WishesController extends FrontController
 {
 
     public function __construct()
     {
-        $this->name = 'table';
+        $this->name = 'wishes';
         parent::__construct();
     }
 
@@ -14,18 +16,15 @@ class WishesController extends FrontController
      */
     public function index()
     {
-
-        // $tableModel = new TableModel();
+		$wishesModel = new WishesModel();
+        $rawdataWishes = $wishesModel->getWishes();
 
         $this->params['title'] = 'Buenos deseos';
-        $this->params['data'] = array();
+        $this->params['data'] =  $rawdataWishes; //array();
 
         Flight::render('wishes/index', $this->params, 'body_content');
         Flight::render('_layout/template');
     }
-
-
-
 
 }
 
