@@ -38,6 +38,7 @@ function goodWishes() {
       'Tu mensaje fue enviado a los novios',
       function () {
         fn.ajax(data)
+        fn.closeModal()
       }
     );
   }
@@ -47,7 +48,6 @@ function goodWishes() {
   }
 
   fn.ajax = function (data) {
-    let html = ''
     window.overlay(true)
     $.ajax({
       url: `${app.urls.base_url}/ajax`,
@@ -67,6 +67,7 @@ function goodWishes() {
   }
 
   fn.closeModal = function () {
+    $("#mygoodwishes").val('')
     $(`.modal`).removeClass('active')
     $('body').css('overflow', '')
     return false

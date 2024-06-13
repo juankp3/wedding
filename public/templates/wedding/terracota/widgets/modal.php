@@ -32,7 +32,8 @@
 			<?php
 			$placeholderTexArea = '¡Hola! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.';
 			if (!empty($token)) {
-				$placeholderTexArea = "¡Hola Juan! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.";
+				$name = $guest['name'];
+				$placeholderTexArea = "¡Hola $name! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.";
 			}
 			?>
 			<textarea id="mygoodwishes" placeholder="<?php echo $placeholderTexArea ?>"></textarea>
