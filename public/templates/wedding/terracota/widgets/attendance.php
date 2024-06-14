@@ -1,8 +1,9 @@
 <section class="attendance">
 
 	<div class="attendance__top">
-		<h2>Confirma </br> tu Asistencia</h2>
-		<p>con nuestra Wedding Planner</p>
+		<h2>Wedding Planner</h2>
+		<!-- <h2>Confirma </br> tu Asistencia</h2> -->
+		<p>Si tienes alguna consulta, <br>puedes realizarla aquí.</p>
 	</div>
 
 
@@ -25,7 +26,7 @@
 		<div class="contact__container contact__container--weddingplanner">
 			<a href="https://bit.ly/3z0FedF" class="button button__primary">
 				<i class="button__whatsapp fa-brands fa-whatsapp"></i>
-				Wedding Planeer
+				Cinthya Montoro
 			</a>
 		</div>
 	</div>

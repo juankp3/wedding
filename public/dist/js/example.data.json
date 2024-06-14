@@ -4,7 +4,7 @@
     "bride": "M. Angelica",
     "image": "./dist/img/couple.png",
     "verse": "El amor nunca se da por vencido, jamás ​​​​​​​​​​pierde la fe, siempre tiene esperanzas y ​​​​​se ​​​​​mantiene firme en toda circunstancia",
-    "chapter": "12 Corintios 13:7"
+    "chapter": "1 Corintios 13:7"
   },
   "parents": [
     {
@@ -41,7 +41,7 @@
       "title": "Ceremonia Religiosa",
       "hour": "3:30 PM",
       "locationimg": "dist/img/basilicaauxiliadora.jpg",
-      "locationname": "Basílica María Auxiliadora", 
+      "locationname": "Basílica María Auxiliadora",
       "locationaddress": "Av. Brasil 210, Breña",
       "locationiconbtn": "fa-church",
       "locationtxtbtn": "Ver Ubicación",
@@ -53,7 +53,7 @@
       "title": "Recepción",
       "hour": "7:00 PM",
       "locationimg": "dist/img/mamacona.png",
-      "locationname": "Club Cascada de Mamacona", 
+      "locationname": "Club Cascada de Mamacona",
       "locationaddress": "Mz. A Lt 2A  Asoc. Agroganadería (Mamacona Alta - Lurín)",
       "locationiconbtn": "fa-location-dot",
       "locationtxtbtn": "Ver Ubicación",

@@ -2,7 +2,8 @@
 	<div class="gifts__info">
 		<img src="<?php echo DIST_IMG_URL ?>/terracota/gifts.svg" alt="">
 		<h2>Regalos</h1>
-			<p>No hay mejor regalo que celebrar juntos. Pero si deseas tener un detalle con nosotros.</p>
+			<p>No hay mejor regalo que celebrar juntos.
+				<br>Pero si deseas tener un detalle con nosotros.</p>
 			<p><b>¡Suma kilómetros a nuestro viaje!</b></p>
 	</div>
 	<div class="witnesses__item">

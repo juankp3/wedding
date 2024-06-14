@@ -16,7 +16,7 @@
 				jamás ​​​​​​​​​​pierde la fe, siempre tiene
 				esperanzas y ​​​​​se ​​​​​mantiene firme en
 				toda circunstancia”</p>
-			<p class="profile__seal--gold secondary">12 Corintios 13:7</p>
+			<p class="profile__seal--gold secondary">1 Corintios 13:7</p>
 		</div>
 	</div>
 </section>

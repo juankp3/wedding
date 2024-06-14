@@ -9,7 +9,8 @@
 	</div>
 
 	<div class="nochildren__text">
-		<p><b>Amamos a los niños,</b> </br>pero hemos reservado sitios solo para los adultos.</p>
+		<p><b>Amamos a los niños,</b> </br>pero hemos reservado sitios
+		<br>solo para los adultos.</p>
 	</div>
 
 </section>
