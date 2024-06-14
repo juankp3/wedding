@@ -6,7 +6,7 @@
 	</div>
 	<div class="profile__seal">
 		<div class="profile__name">
-			<p>NUESTRA BODA</p>
+			<!-- <p>NUESTRA BODA</p> -->
 			<h1>M.Angélica</h1>
 			<h1>y</h1>
 			<h1>Luis Angel</h1>
