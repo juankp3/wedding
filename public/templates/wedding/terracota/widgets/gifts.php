@@ -7,13 +7,13 @@
 			<p><b>¡Suma kilómetros a nuestro viaje!</b></p>
 	</div>
 	<div class="witnesses__item">
-		<h3>Bcp Soles</h3>
+		<h3>BCP Soles</h3>
 		<p>N° de cuenta: 19397846175017</p>
 		<p>CCI: 00219319784617501712</p>
 		<p>Kuga María O Salvatierra Luis</p>
 	</div>
 	<div class="witnesses__item witnesses__item--last-child gifts__topspace">
-		<h3>Bcp Dólares</h3>
+		<h3>BCP Dólares</h3>
 		<p>N° de cuenta: 19397846743191</p>
 		<p>CCI: 00219319784674319118</p>
 		<p>Kuga María O Salvatierra Luis</p>
