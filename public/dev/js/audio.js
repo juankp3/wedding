@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var audio = document.getElementById("music");
   var button = $(".toggleButton");
-  audio.currentTime = 20;
+  audio.currentTime = 25;
   audio.volume = 0.3;
   button.click(function () {
     if (audio.paused) {

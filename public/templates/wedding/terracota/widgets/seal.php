@@ -3,8 +3,8 @@
 
 	<div class="envelope">
 
-		<img class="envelope2" src="<?php echo DIST_IMG_URL ?>/terracota/al/seal-bottom.png">
-		<img class="envelope1" src="<?php echo DIST_IMG_URL ?>/terracota/al/seal-top.png">
+		<img class="envelope2" src="<?php echo DIST_IMG_URL ?>/terracota/al/seal-bottom-v1.png">
+		<img class="envelope1" src="<?php echo DIST_IMG_URL ?>/terracota/al/seal-top-v1.png">
 
 		<!-- <img class="envelope1" src="https://invitafy.com/24so/ChrisyBrenda/_app/immutable/assets/sobre3-f19ba8ea.png">
 		<img class="envelope2" src="https://invitafy.com/24so/ChrisyBrenda/_app/immutable/assets/sobre4-20f79002.png"> -->
