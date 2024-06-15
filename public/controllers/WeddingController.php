@@ -92,10 +92,10 @@ class WeddingController
 		return $content;
 	}
 
-    public function terracota()
+	public function getData()
     {
 		$guestModel = new GuestModel();
-		$params = array();
+		// $params = array();
 		$paramsUrl = Flight::request()->query->getData();
 
 		$params['showQR'] = false;
@@ -112,10 +112,24 @@ class WeddingController
 			$guestModel->updateOpenInvitation($openinvitation, $paramsUrl['token']);
 		}
 
+		return $params;
+	}
+
+    public function terracota()
+    {
+		$params = $this->getData();
         Flight::set('flight.views.path', 'public/templates/wedding/terracota');
         Flight::render('index', $params, 'body_content');
         Flight::render('_layout/template');
     }
+
+	public function test()
+	{
+		$params = $this->getData();
+		Flight::set('flight.views.path', 'public/templates/wedding/terracota');
+		Flight::render('test', $params, 'body_content');
+		Flight::render('_layout/template');
+	}
 
 
 	public function OpenGraphByGuest($guest = array())
@@ -171,4 +185,5 @@ $oWeddingController = new WeddingController();
 Flight::route('GET /boda', array($oWeddingController, 'index'));
 Flight::route('POST /ajax', array($oWeddingController, 'ajax'));
 Flight::route('GET /boda/angelica-y-luis', array($oWeddingController, 'terracota'));
+Flight::route('GET /test', array($oWeddingController, 'test'));
 Flight::route('GET /boda/ladislao-y-luis', array($oWeddingController, 'rouse'));

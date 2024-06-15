@@ -29,7 +29,19 @@
 			</a>
 		</div>
 		<div class="modal__body modal__body--center">
-			<input type="text" placeholder="Ingresa el nombre de la canción">
+			<div class="modal__list">
+				<ol class="numbered-list">
+					<li>“A Thousand Years” - Christina Perri</li>
+					<li>“Here Comes the Sun” - The Beatles</li>
+					<li>“Marry Me” - Train</li>
+				</ol>
+			</div>
+			<div class="autocomplete-container">
+				<input type="text" id="autocomplete-input" placeholder="Escribe algo...">
+				<button class="autocomplete-close-btn">&times;</button>
+			</div>
+
+			<!-- <input type="text" placeholder="Ingresa el nombre de la canción"> -->
 			<!-- <textarea id="mysongs" placeholder=""></textarea> -->
 		</div>
 		<div class="modal__footer">
@@ -111,7 +123,7 @@
 		<div class="modal__body">
 			<input id="token" type="hidden" value="<?php echo !empty($token) ? $token : '' ?>">
 			<div class="modal__list">
-				<ul>
+				<ul class="check">
 					<?php if (!empty($guest)) : ?>
 						<li>
 							<label for="guest_item<?php echo $guest['id_guest'] ?>">

@@ -319,7 +319,7 @@ body {
   width: 320px;
 }
 
-#modal__goodwishes textarea {
+textarea {
   width: 100%;
   height: 180px;
   border: 1px solid #D99E3B;
@@ -331,6 +331,17 @@ body {
   outline: none;
   color: #5B5B5F;
   font-size: 16px;
+}
+
+input[type=text] {
+  border: 1px solid #D99E3B;
+  border-radius: 4px;
+  height: 45px;
+  padding: 8px 16px;
+}
+input[type=text]:focus {
+  outline: none;
+  border: 1px solid #D99E3B;
 }
 
 .modal {
@@ -459,7 +470,7 @@ body {
   flex-direction: column;
   overflow: auto;
 }
-.modal__list ul {
+.modal__list ul.check {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -467,26 +478,26 @@ body {
   flex-direction: column;
   gap: 6px;
 }
-.modal__list ul li {
+.modal__list ul.check li {
   display: flex;
   height: 56px;
   border: solid 1px #D99E3B;
   padding: 0 4%;
 }
-.modal__list ul li label {
+.modal__list ul.check li label {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   cursor: pointer;
 }
-.modal__list ul li label input {
+.modal__list ul.check li label input {
   display: none;
 }
-.modal__list ul li label input[type=checkbox]:checked + .item__box::after {
+.modal__list ul.check li label input[type=checkbox]:checked + .item__box::after {
   display: block;
 }
-.modal__list ul li label .item__box {
+.modal__list ul.check li label .item__box {
   position: relative;
   display: flex;
   justify-content: center;
@@ -495,7 +506,7 @@ body {
   height: 28px;
   background: url("../img/terracota/checkbox.svg");
 }
-.modal__list ul li label .item__box::after {
+.modal__list ul.check li label .item__box::after {
   display: none;
   content: "";
   background: url("../img/terracota/check.svg");
@@ -976,6 +987,10 @@ body {
   padding: 32px 0;
   width: 100%;
 }
+.songs h2 {
+  line-height: 52px;
+  text-align: center;
+}
 .songs p {
   text-align: center;
   margin: 0;
@@ -987,18 +1002,31 @@ body {
   width: 320px;
 }
 
-#modal__goodwishes textarea {
-  width: 100%;
-  height: 180px;
-  border: 1px solid #D99E3B;
-  resize: none;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 14px;
-  border-radius: 5px;
-  outline: none;
-  color: #5B5B5F;
-  font-size: 16px;
+.autocomplete-container {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-close-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#modal__songs ol.numbered-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: decimal;
+  gap: 6px;
+  align-items: flex-start;
 }
 
 h1 {
