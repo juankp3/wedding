@@ -19,6 +19,36 @@
 	</div>
 </div> -->
 
+<!-- Modal Sugerencias de Canciones -->
+<div id="modal__songs" class="modal modal__fullscreen modal__medium">
+	<div class="modal__container">
+		<div class="modal__header">
+			<h2>Sugerencias de Canciones</h2>
+			<a href="#" class="modal__close">
+				<i class="fa-solid fa-xmark"></i>
+			</a>
+		</div>
+		<div class="modal__body modal__body--center">
+			<?php
+			$placeholderTexArea = '¡Hola! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.';
+			if (!empty($token)) {
+				$name = $guest['name'];
+				$placeholderTexArea = "¡Hola $name! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.";
+			}
+			?>
+			<textarea id="mysongs" placeholder="<?php echo $placeholderTexArea ?>"></textarea>
+		</div>
+		<div class="modal__footer">
+			<button class="button" data-target="cancel-songs">
+				Cancelar
+			</button>
+			<button disabled class="button button__primary" data-target="send-songs">
+				Enviar
+			</button>
+		</div>
+	</div>
+</div>
+
 <!-- Modal Buenos Deseos -->
 <div id="modal__goodwishes" class="modal modal__fullscreen modal__medium">
 	<div class="modal__container">

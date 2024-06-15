@@ -14,7 +14,7 @@
 	<div class="witnesses__item witnesses__item--last-child">
 		<h3>Padrinos</h3>
 		<p>Fredy Lisauro Poicón Salvatierra</p>
-		<p>Danitza Uterina de la Cruz Rojas</p>
+		<p>Ying Andia Ramos</p>
 	</div>
 
 </section>
