@@ -29,19 +29,10 @@
 			</a>
 		</div>
 		<div class="modal__body modal__body--center">
-			<?php
-			$placeholderTexArea = '¡Hola! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.';
-			if (!empty($token)) {
-				$name = $guest['name'];
-				$placeholderTexArea = "¡Hola $name! Deja tus buenos deseos para los novios y comparte tu alegría en este día tan especial.";
-			}
-			?>
-			<textarea id="mysongs" placeholder="<?php echo $placeholderTexArea ?>"></textarea>
+			<input type="text" placeholder="Ingresa el nombre de la canción">
+			<!-- <textarea id="mysongs" placeholder=""></textarea> -->
 		</div>
 		<div class="modal__footer">
-			<button class="button" data-target="cancel-songs">
-				Cancelar
-			</button>
 			<button disabled class="button button__primary" data-target="send-songs">
 				Enviar
 			</button>

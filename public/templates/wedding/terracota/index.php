@@ -17,7 +17,7 @@
 <hr class="divider">
 <?php Flight::render('widgets/attendance.php') ?>
 <?php Flight::render('widgets/goodwishes.php') ?>
-<?php Flight::render('widgets/songs.php') ?>
+<?php // Flight::render('widgets/songs.php') ?>
 <?php Flight::render('widgets/thanks.php') ?>
 <?php Flight::render('widgets/footer.php') ?>
 <?php Flight::render('widgets/modal.php') ?>

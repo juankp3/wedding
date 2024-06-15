@@ -155,6 +155,36 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id_user`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `songs`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `songs` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `songs` (
+  `id_songs` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_songs`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `guest_songs`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `guest_songs` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `guest_songs` (
+  `id_guest_songs` INT NOT NULL AUTO_INCREMENT,
+  `id_guest`  INT NOT NULL,
+  `id_songs`  INT NOT NULL,
+  `id_event`  INT NOT NULL,
+  `date_add`  DATETIME NULL,
+  `date_upd`  DATETIME NULL,
+  PRIMARY KEY (`id_guest_songs`))
+ENGINE = InnoDB;
+
 SHOW WARNINGS;
 
 SET SQL_MODE=@OLD_SQL_MODE;
