@@ -15,8 +15,7 @@
 			<br>cuando nuestros caminos se cruzaron por
 			<br>primera vez. Con el paso del tiempo cada uno emprendió su rumbo, hasta que 14 años
 			<br>después nuestros caminos se reencontraron.
-			<br>Desde entonces nos enamoramos profundamente<br>
-			y decidimos formar una familia juntos, con la bendicion de Dios.</p>
+			<br>Desde entonces nos enamoramos profundamente y decidimos formar una familia juntos, con la bendicion de Dios.</p>
 
 			<!-- <p>Nos conocimos </br> <b>Enero 2024</b></p> -->
 		</div>

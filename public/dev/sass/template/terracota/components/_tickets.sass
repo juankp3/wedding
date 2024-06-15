@@ -8,6 +8,7 @@
   margin-top: 100px
   width: 100%
   gap: 30px
+  margin-bottom: 40px
   h2
     padding-top: 25px
   &__name
@@ -32,7 +33,7 @@
     span
       @include title()
     p
-      margin-top: 20px
+      margin-top: 16px
       height: 84px
       line-height: 83px
   &__qr
@@ -51,6 +52,20 @@
   &__cancelmsj
     width: 270px
     text-align: center
+    position: relative
     a
-      color: $color-grey-text
+      color: $color-primary
       font-weight: 600
+      text-decoration: none
+      position: relative
+    &::after
+      display: block
+      content: ''
+      width: 12px
+      height: 12px
+      background: transparent
+      position: absolute
+      bottom: 13px
+      right: 15px
+      box-shadow: 2px 2px 0 rgb(215, 27, 60, .9)
+      transform: rotate(45deg)
