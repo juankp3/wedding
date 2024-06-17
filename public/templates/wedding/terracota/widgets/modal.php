@@ -18,6 +18,7 @@
 		</div>
 	</div>
 </div> -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
 
 <!-- Modal Sugerencias de Canciones -->
 <div id="modal__songs" class="modal modal__fullscreen modal__medium">
@@ -30,15 +31,13 @@
 		</div>
 		<div class="modal__body modal__body--center">
 			<div class="modal__list">
-				<ol class="numbered-list">
-					<li>“A Thousand Years” - Christina Perri</li>
-					<li>“Here Comes the Sun” - The Beatles</li>
-					<li>“Marry Me” - Train</li>
+				<ol id="songs-list" class="numbered-list">
+
 				</ol>
 			</div>
 			<div class="autocomplete-container">
 				<input type="text" id="autocomplete-input" placeholder="Escribe algo...">
-				<button class="autocomplete-close-btn">&times;</button>
+				<!-- <button class="autocomplete-close-btn">&times;</button> -->
 			</div>
 
 			<!-- <input type="text" placeholder="Ingresa el nombre de la canción"> -->

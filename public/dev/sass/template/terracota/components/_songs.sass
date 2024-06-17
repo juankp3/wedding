@@ -20,30 +20,23 @@
     width: 320px
 
 
-.autocomplete-container
-  position: relative
-  display: inline-block
-
-.autocomplete-close-btn
-  position: absolute
-  right: 5px
-  top: 50%
-  transform: translateY(-50%)
-  background: none
-  border: none
-  cursor: pointer
-  font-size: 18px
-
-
 #modal__songs
   ol.numbered-list
     list-style: none
-    padding: 0
     margin: 0
     display: flex
     flex-direction: column
     list-style-type: decimal
-    gap: 6px
     align-items: flex-start
+    color: $color-grey-text
+  .autocomplete-container
+    width: 100%
+    margin-top: 40px
+    input
+      width: 100%
+  .suggestion
+    color: $color-grey-text
+    font-size: 12px
+
     // li
     //   display: flex

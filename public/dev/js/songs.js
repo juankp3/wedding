@@ -1,30 +1,44 @@
+function songs() {
+  var suscribeEvents, fn, init
 
+  suscribeEvents = function () {
+    console.log('init - songs')
+    $(document).on('change', '#autocomplete-input', fn.changeInput)
+    fn.suggestedSongs()
+  }
 
-$(document).ready(function () {
-  const songNames = suggestedSongs.map(item => item.name);
-  console.log('songNames', songNames)
+  fn = {}
+  fn.changeInput = function () {
+    let text = $(this).val()
+    fn.add(text)
+  }
 
-  // $("#autocomplete-input").autocomplete({
-  //   source: songNames
-  // });
+  fn.add = function (name) {
+    let list = $("#songs-list")
+    list.append(`<li>${name}</li>`)
+    $('#autocomplete-input').val('')
+  }
 
+  fn.suggestedSongs = function () {
+    const songNames = suggestedSongs.map(item => item.name);
+    $("#autocomplete-input").autocomplete({
+      autoFocus: true,
+      minLength: 3,
+      source: songNames,
+      select: function (event, ui) {
+        let text = ui.item.value
+        fn.add(text)
+      },
+      close: function (event, ui) {
+        $('#autocomplete-input').val('')
+      }
+    });
+  }
 
-  // $("#autocomplete-input").autocomplete({
-  //   source: songNames,
-  //   open: function (event, ui) {
-  //     // Mostrar las opciones de autocompletado en la consola
-  //     console.log("Opciones de autocompletado:", songNames.filter(name => name.toLowerCase().includes($(this).val().toLowerCase())));
-  //   }
-  // })
+  init = function () {
+    suscribeEvents()
+  }
 
-  $("#autocomplete-input").autocomplete({
-    lookup: songNames,
-    onSelect: function (suggestion) {
-      alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
-    }
-  });
-
-
-
-});
-
+  return init()
+}
+songs()
