@@ -4,6 +4,7 @@ function songs() {
   suscribeEvents = function () {
     console.log('init - songs')
     $(document).on('change', '#autocomplete-input', fn.changeInput)
+    $(document).on('click', '#sendSongs', fn.send)
     fn.suggestedSongs()
   }
 
@@ -15,8 +16,21 @@ function songs() {
 
   fn.add = function (name) {
     let list = $("#songs-list")
-    list.append(`<li>${name}</li>`)
-    $('#autocomplete-input').val('')
+
+    if (fn.valid(name)) {
+      $("#autocomplete-input").removeClass('--error')
+      list.prepend(`<li>${name}<input type="hidden"></li>`)
+      $('#autocomplete-input').val('')
+    } else {
+      $("#autocomplete-input").addClass('--error')
+      console.log('No cumple con el formato')
+    }
+    fn.toggleButtonState()
+  }
+
+  fn.valid = function (name) {
+    var regex = /^[A-Za-z0-9\s]+ - [A-Za-z\s]+$/;
+    return (regex.test(name));
   }
 
   fn.suggestedSongs = function () {
@@ -33,6 +47,26 @@ function songs() {
         $('#autocomplete-input').val('')
       }
     });
+  }
+
+  fn.toggleButtonState = function () {
+    var hasInput = $('#songs-list input').length > 0;
+
+    if (hasInput) {
+      $('#sendSongs').prop('disabled', false)
+    } else {
+      $('#sendSongs').prop('disabled', true)
+    }
+  }
+
+  fn.send = function () {
+    window.createYesNoModal(
+      '¿Estás seguro de enviar estas canciones?',
+      function () {
+        // fn.ajax(data)
+        console.log('Yesss')
+      }
+    );
   }
 
   init = function () {

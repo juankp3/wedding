@@ -29,22 +29,26 @@
 				<i class="fa-solid fa-xmark"></i>
 			</a>
 		</div>
-		<div class="modal__body modal__body--center">
+
+		<div class="modal__body">
+			<p>Escribe la canción y el artista en este formato:</p>
+			<p><b>“Runaway - Bruno Mars”</b>. Luego haz clic en “Enviar”.</p>
+
+			<div class="autocomplete-container">
+				<input type="text" id="autocomplete-input" placeholder="Runaway Baby - Bruno Mars">
+				<button class="autocomplete-close-btn button">Añadir</button>
+			</div>
+
 			<div class="modal__list">
 				<ol id="songs-list" class="numbered-list">
 
 				</ol>
 			</div>
-			<div class="autocomplete-container">
-				<input type="text" id="autocomplete-input" placeholder="Escribe algo...">
-				<!-- <button class="autocomplete-close-btn">&times;</button> -->
-			</div>
-
 			<!-- <input type="text" placeholder="Ingresa el nombre de la canción"> -->
 			<!-- <textarea id="mysongs" placeholder=""></textarea> -->
 		</div>
 		<div class="modal__footer">
-			<button disabled class="button button__primary" data-target="send-songs">
+			<button id="sendSongs" disabled class="button button__primary" data-target="send-songs">
 				Enviar
 			</button>
 		</div>

@@ -9,6 +9,8 @@
   padding: 32px 0
   width: 100%
   h2
+    text-align: center
+    width: 300px
     line-height: 52px
     text-align: center
   p
@@ -30,13 +32,24 @@
     align-items: flex-start
     color: $color-grey-text
   .autocomplete-container
+    display: flex
     width: 100%
-    margin-top: 40px
+    gap: 8px
+    margin-top: 16px
     input
+      height: 52px
       width: 100%
+      text-transform: capitalize
+    button
+      flex: 1
   .suggestion
     color: $color-grey-text
     font-size: 12px
-
-    // li
-    //   display: flex
+  .modal__body
+    p
+      font-size: 18px
+  .modal__list
+    height: calc(100vh - 310px)
+    margin-top: 24px
+  input.--error
+    border: 1px solid $color-red
