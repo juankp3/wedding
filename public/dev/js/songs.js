@@ -42,10 +42,17 @@ function songs() {
       select: function (event, ui) {
         let text = ui.item.value
         fn.add(text)
+        setTimeout(() => {
+          console.log('Limpia OK')
+          $('#autocomplete-input').val('');
+        }, 50);
+        // $('#autocomplete-input').val('')
       },
-      close: function (event, ui) {
-        $('#autocomplete-input').val('')
-      }
+      // close: function (event, ui) {
+      //   console.log('event', event)
+      //   console.log('ui', ui)
+      //   $('#autocomplete-input').val('')
+      // }
     });
   }
 
