@@ -4,10 +4,10 @@ require_once dirname(__FILE__) . '/Model.php';
 class SongModel extends Model
 {
 
-	public $id;
+		public $id;
     public $id_guest;
-	public $id_songs;
-	public $id_event;
+		public $id_songs;
+		public $id_event;
     public $date_add;
     public $date_upd;
     public $definition = array(
@@ -28,7 +28,7 @@ class SongModel extends Model
 	public function getSongs($offset = null, $limit = null)
 	{
 		$table = $this->definition['table'];
-		$query = 	"SELECT gs.* ,s.name , g.name
+		$query = 	"SELECT gs.* ,s.name as cancion , g.name as invitado
 					FROM guest_songs gs
 					LEFT JOIN guest g ON g.id_guest = gs.id_guest
 					LEFT JOIN songs s ON gs.id_songs = s.id_songs

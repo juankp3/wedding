@@ -98,6 +98,11 @@ class Menu
                 'name' => 'Buenos deseos',
                 'link' =>  BASE_URL . '/dashboard/wishes',
             ),
+			'songs' => array(
+                'id' => 'songs',
+                'name' => 'Canciones',
+                'link' =>  BASE_URL . '/dashboard/songs',
+            ),
         );
 
         return array(
