@@ -37,7 +37,7 @@ function songs() {
     // const songNames = suggestedSongs.songs.map(item => item.name);
     let selectedSongs = [];
     const songNames = suggestedSongs.songs.map(song => ({
-      label: `${song.name} <span class="suggested-count">(sugerido ${song.cant})</span>`,
+      label: `${song.name} ${song.cant > 0 ? `<span class="suggested-count">(sugerido ${song.cant}  ${song.cant > 1 ? 'veces' : 'vez'} )</span>` : ''}`,
       value: song.id_songs,
       actualLabel: song.name
       // value: song.id_songs

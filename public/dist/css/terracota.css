@@ -1017,6 +1017,13 @@ input[type=text]:focus {
   color: #5B5B5F;
   text-transform: capitalize;
 }
+#modal__songs ol.numbered-list li::after {
+  content: "x";
+  position: absolute;
+  right: 20px;
+  text-transform: lowercase;
+  cursor: pointer;
+}
 #modal__songs .autocomplete-container {
   display: flex;
   width: 100%;

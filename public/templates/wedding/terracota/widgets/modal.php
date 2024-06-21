@@ -1,26 +1,9 @@
+<?php if (!empty($token)) : ?>
 <script>
 	const suggestedSongs = <?php echo json_encode($suggestedSongs);?>
 </script>
-<!-- Modal confirmAction -->
-<!-- <div id="confirm__action" class="modal modal__small">
-	<div class="modal__container">
-		<div class="modal__header">
-			<h2>Confirmación</h2>
-		</div>
-		<div class="modal__body modal__body--center">
-			<p>¿Desea guardar el registro?</p>
+<?php endif ?>
 
-		</div>
-		<div class="modal__footer">
-			<button class="button" data-target="not">
-				No
-			</button>
-			<button class="button button__primary" data-target="yes">
-				Sí
-			</button>
-		</div>
-	</div>
-</div> -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
 
 <!-- Modal Sugerencias de Canciones -->
