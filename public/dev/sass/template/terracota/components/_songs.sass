@@ -31,6 +31,7 @@
     list-style-type: decimal
     align-items: flex-start
     color: $color-grey-text
+    text-transform: capitalize
   .autocomplete-container
     display: flex
     width: 100%
@@ -51,5 +52,19 @@
   .modal__list
     height: calc(100vh - 310px)
     margin-top: 24px
+    @include xs()
+      height: auto
+      max-height: 150px
   input.--error
     border: 1px solid $color-red
+
+.suggested-count
+  font-size: 12px
+  // color: #636363
+.ui-menu .ui-menu-item-wrapper
+  position: relative
+  padding: 8px 1em 8px .4em !important
+  display: flex
+  align-items: center
+  gap: 4px
+

@@ -89,7 +89,8 @@ class Conexion
         $describe = $this->describe($table);
         $data = [];
         foreach($this->execute($query) as $key => $fields) {
-            foreach($fields as $k => $v) {
+			foreach($fields as $k => $v) {
+				$type = 'string';
 
 				if (!empty($describe[$k]))
 					$type = $describe[$k];
@@ -102,7 +103,6 @@ class Conexion
                 if (strstr($type, 'decimal')) {
                     $dato[$k] = (float)$v;
                 }
-
             }
             $data[] = $dato;
         }

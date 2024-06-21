@@ -1,3 +1,6 @@
+<script>
+	const suggestedSongs = <?php echo json_encode($suggestedSongs);?>
+</script>
 <!-- Modal confirmAction -->
 <!-- <div id="confirm__action" class="modal modal__small">
 	<div class="modal__container">
@@ -31,8 +34,13 @@
 		</div>
 
 		<div class="modal__body">
+
+
+
 			<p>Escribe la canción y el artista en este formato:</p>
-			<p><b>“Runaway - Bruno Mars”</b>. Luego haz clic en “Enviar”.</p>
+			<p><b>“Runaway Baby - Bruno Mars”</b>. haz clic en añadir y una vez que has ingresado
+				todas las canciones, finalmente haz clic en Enviar</p>
+			<!-- <p><b>“Runaway Baby - Bruno Mars”</b>. Luego haz clic en “Enviar”.</p> -->
 
 			<div class="autocomplete-container">
 				<input type="text" id="autocomplete-input" placeholder="Runaway Baby - Bruno Mars">

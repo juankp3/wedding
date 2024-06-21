@@ -4,10 +4,10 @@ require_once dirname(__FILE__) . '/Model.php';
 class SongModel extends Model
 {
 
-		public $id;
+	public $id;
     public $id_guest;
-		public $id_songs;
-		public $id_event;
+	public $id_songs;
+	public $id_event;
     public $date_add;
     public $date_upd;
     public $definition = array(
@@ -37,6 +37,22 @@ class SongModel extends Model
 		if (isset($offset) && isset($limit)) {
 			$query .= " limit $offset, $limit";
 		}
+
+		return $this->executeS($query);
+	}
+
+	public function getSuggestedSongsByEventId($eventId)
+	{
+		// $query = "SELECT s.id_songs, s.name, count(*) as 'cant'
+		// 		FROM guest_songs gs
+		// 		LEFT JOIN songs s ON gs.id_songs = s.id_songs
+		// 		WHERE gs.id_event = $eventId
+		// 		group by s.id_songs;";
+		$query = "SELECT s.id_songs, s.name,
+				(SELECT count(*)  from guest_songs gs
+				WHERE gs.id_event = $eventId and gs.id_songs = s.id_songs) as 'cant'
+				FROM songs s
+				group by s.id_songs;";
 
 		return $this->executeS($query);
 	}

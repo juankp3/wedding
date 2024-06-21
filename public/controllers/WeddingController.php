@@ -2,6 +2,7 @@
 require_once dirname(__FILE__) . '/../../src/models/GuestModel.php';
 require_once dirname(__FILE__) . '/../../src/models/EventModel.php';
 require_once dirname(__FILE__) . '/../../src/models/WishesModel.php';
+require_once dirname(__FILE__) . '/../../src/models/SongModel.php';
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 
@@ -95,16 +96,27 @@ class WeddingController
 	public function getData()
     {
 		$guestModel = new GuestModel();
+		$songModel = new SongModel();
 		// $params = array();
 		$paramsUrl = Flight::request()->query->getData();
-
 		$params['showQR'] = false;
+
 		$guest = array();
 		if (!empty($paramsUrl['token'])) {
 			$params = $this->getDataGuest($paramsUrl['token']);
+			// $params['suggestedSongs'] =  $songModel->getSuggestedSongsByEventId(1);
+			$songs = $songModel->getSuggestedSongsByEventId(1);
+			// $params['suggestedSongs'] =  $songModel->getIndicesById($songModel->getSuggestedSongsByEventId(1), 'id_songs');
+			$params['suggestedSongs'] =  array(
+				'songs' => $songs,
+				'songsbyId' => $songModel->getIndicesById($songs, 'id_songs')
+			);
+
+			// echo "<pre>";
+			// var_dump($params['suggestedSongs']);
+			// echo "</pre>";exit;
 			$guest = $params['guest'];
 		}
-		// $params['title'] = 'Angelica y Luis';
 		$params['og'] = $this->OpenGraphByGuest($guest);
 
 		if (empty($paramsUrl['preview']) && !empty($paramsUrl['token'])) {

@@ -374,11 +374,10 @@ input[type=text]:focus {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
   gap: 12px;
   margin-top: 8px;
   position: relative;
-  padding: 36px 0px 16px 0;
+  padding: 36px 0px 0px 0;
 }
 .modal__header h2 {
   font-size: 30px;
@@ -1016,6 +1015,7 @@ input[type=text]:focus {
   list-style-type: decimal;
   align-items: flex-start;
   color: #5B5B5F;
+  text-transform: capitalize;
 }
 #modal__songs .autocomplete-container {
   display: flex;
@@ -1042,8 +1042,26 @@ input[type=text]:focus {
   height: calc(100vh - 310px);
   margin-top: 24px;
 }
+@media screen and (min-width: 480px) {
+  #modal__songs .modal__list {
+    height: auto;
+    max-height: 150px;
+  }
+}
 #modal__songs input.--error {
   border: 1px solid #ff0000;
+}
+
+.suggested-count {
+  font-size: 12px;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+  position: relative;
+  padding: 8px 1em 8px 0.4em !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 h1 {

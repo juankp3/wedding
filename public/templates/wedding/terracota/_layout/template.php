@@ -36,27 +36,6 @@
 			}
 		}
 
-		const suggestedSongs = [{
-				"name": "La Chata - Amen",
-				"qty": 15
-			},
-			{
-				"name": "La bicicleta - Shakira",
-				"qty": 20
-			},
-			{
-				"name": "Desconocidos - Manuel Turizo",
-				"qty": 8
-			},
-			{
-				"name": "Complicated - Avril Lavigne",
-				"qty": 12
-			},
-			{
-				"name": "Stronger - Britney Spears",
-				"qty": 7
-			}
-		];
 	</script>
 </head>
 
