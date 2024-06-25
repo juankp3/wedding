@@ -32,12 +32,14 @@
     align-items: flex-start
     color: $color-grey-text
     text-transform: capitalize
-    li::after
-      content: 'x'
-      position: absolute
-      right: 20px
-      text-transform: lowercase
-      cursor: pointer
+    padding: 0px 24px
+    li
+      display: flex
+      align-items: center
+      width: 100%
+      justify-content: space-between
+      span
+        cursor: pointer
   .autocomplete-container
     display: flex
     width: 100%

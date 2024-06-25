@@ -1016,12 +1016,15 @@ input[type=text]:focus {
   align-items: flex-start;
   color: #5B5B5F;
   text-transform: capitalize;
+  padding: 0px 24px;
 }
-#modal__songs ol.numbered-list li::after {
-  content: "x";
-  position: absolute;
-  right: 20px;
-  text-transform: lowercase;
+#modal__songs ol.numbered-list li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+#modal__songs ol.numbered-list li span {
   cursor: pointer;
 }
 #modal__songs .autocomplete-container {

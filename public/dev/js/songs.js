@@ -1,30 +1,63 @@
+window.selectedSongs = []
 function songs() {
   var suscribeEvents, fn, init
 
   suscribeEvents = function () {
     console.log('init - songs')
-    $(document).on('change', '#autocomplete-input', fn.changeInput)
     $(document).on('click', '#sendSongs', fn.send)
+    $(document).on('click', '#add-song', fn.addSong)
+    $(document).on('click', '#songs-list li span', fn.remove)
     fn.suggestedSongs()
   }
 
   fn = {}
-  fn.changeInput = function () {
-    let text = $(this).val()
-    fn.add(text)
+  fn.getJSON = function () {
+    console.log(window.selectedSongs)
+    return window.selectedSongs
+  }
+  fn.addJSON = function (songObject) {
+    window.selectedSongs.push(songObject)
+    $('#autocomplete-input').val('');
+    fn.renderList()
+  }
+  fn.removeJSON = function (key) {
+    fn.getJSON().forEach((item, index) => {
+      console.log(`${item.id_songs} - ${key}`)
+      if (index === key) {
+        delete window.selectedSongs[index];
+      }
+    });
+    window.selectedSongs = window.selectedSongs.filter(item => item !== undefined);
+    fn.renderList()
   }
 
-  fn.add = function (name) {
-    let list = $("#songs-list")
-
-    if (fn.valid(name)) {
+  fn.addSong = function () {
+    let text = $("#autocomplete-input").val()
+    if (fn.valid(text)) {
       $("#autocomplete-input").removeClass('--error')
-      list.prepend(`<li>${name}</li>`)
-      $('#autocomplete-input').val('')
+      console.log('Se agrega')
+      fn.addJSON({
+        id_songs: 0,
+        name: text,
+        cant: "0"
+      })
     } else {
       $("#autocomplete-input").addClass('--error')
       console.log('No cumple con el formato')
     }
+  }
+
+  fn.remove = function () {
+    let id = parseInt($(this).closest('li').attr('id'))
+    fn.removeJSON(id)
+  }
+
+  fn.renderList = function () {
+    const container = $("#songs-list")
+    container.html('')
+    fn.getJSON().forEach((element, index) => {
+      container.prepend(`<li id="${index}">${element.name}<span class="after-element">x</span></li>`)
+    });
     fn.toggleButtonState()
   }
 
@@ -34,14 +67,10 @@ function songs() {
   }
 
   fn.suggestedSongs = function () {
-    // const songNames = suggestedSongs.songs.map(item => item.name);
-    let selectedSongs = [];
     const songNames = suggestedSongs.songs.map(song => ({
       label: `${song.name} ${song.cant > 0 ? `<span class="suggested-count">(sugerido ${song.cant}  ${song.cant > 1 ? 'veces' : 'vez'} )</span>` : ''}`,
       value: song.id_songs,
       actualLabel: song.name
-      // value: song.id_songs
-      // value: song.name
     }));
 
     $("#autocomplete-input").autocomplete({
@@ -49,21 +78,13 @@ function songs() {
       minLength: 3,
       source: songNames,
       focus: function (event, ui) {
-        // $("#autocomplete-input").val('testt');
-        $("#autocomplete-input").val(ui.item.actualLabel);
         return false;
       },
       select: function (event, ui) {
         const selectedSong = suggestedSongs.songsbyId[ui.item.value];
-        console.log('selectedSong', selectedSong);
-        if (!selectedSongs.some(song => song.id_songs === selectedSong.id_songs)) {
-          selectedSongs.push(selectedSong);
-          fn.add(selectedSong.name);
-          // const $listItem = $('<li></li>').text(selectedSong.name);
-          // $('#selected-songs').append($listItem);
+        if (!fn.getJSON().some(song => song.id_songs === selectedSong.id_songs)) {
+          fn.addJSON(selectedSong)
         }
-        console.log(selectedSongs);
-        // $('#autocomplete-input').val('');
         setTimeout(() => {
           console.log('Limpia OK');
           $('#autocomplete-input').val('');
@@ -76,35 +97,10 @@ function songs() {
         .append("<div>" + item.label + "</div>")
         .appendTo(ul);
     };
-
-    // $("#autocomplete-input").autocomplete({
-    //   autoFocus: true,
-    //   minLength: 3,
-    //   source: songNames,
-    //   focus: function (event, ui) {
-    //     $("#autocomplete-input").val(ui.item.label.replace(/<[^>]+>/g, ""));
-    //     return false;
-    //   },
-    //   select: function (event, ui) {
-    //     const selectedSong = suggestedSongs.songsbyId[ui.item.value];
-    //     console.log('selectedSong', selectedSong)
-    //     if (!selectedSongs.some(song => song.id_songs === selectedSong.id_songs)) {
-    //       selectedSongs.push(selectedSong);
-    //       fn.add(selectedSong.name)
-    //     }
-    //     console.log(selectedSongs)
-    //     $('#autocomplete-input').val('');
-    //     setTimeout(() => {
-    //       console.log('Limpia OK')
-    //       $('#autocomplete-input').val('');
-    //     }, 50);
-    //   },
-    // });
-
   }
 
   fn.toggleButtonState = function () {
-    var hasInput = $('#songs-list input').length > 0;
+    var hasInput = fn.getJSON().length > 0;
 
     if (hasInput) {
       $('#sendSongs').prop('disabled', false)

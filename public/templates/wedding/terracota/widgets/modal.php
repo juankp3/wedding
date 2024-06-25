@@ -27,7 +27,7 @@
 
 			<div class="autocomplete-container">
 				<input type="text" id="autocomplete-input" placeholder="Runaway Baby - Bruno Mars">
-				<button class="autocomplete-close-btn button">Añadir</button>
+				<button id="add-song" class="autocomplete-close-btn button">Añadir</button>
 			</div>
 
 			<div class="modal__list">
