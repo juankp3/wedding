@@ -130,8 +130,8 @@ function songs() {
           dataType: 'json',
           success: function(res) {
             console.log(res)
-            // window.overlay(false)
-            // fn.closeModal()
+            window.overlay(false)
+            fn.closeModal()
           },
           error: function(res, a) {
             window.overlay(false)
