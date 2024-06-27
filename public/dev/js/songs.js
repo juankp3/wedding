@@ -3,18 +3,24 @@ function songs() {
   var suscribeEvents, fn, init
 
   suscribeEvents = function () {
-    console.log('init - songs')
     $(document).on('click', '#sendSongs', fn.send)
     $(document).on('click', '#add-song', fn.addSong)
     $(document).on('click', '#songs-list li span', fn.remove)
+    $(document).on('keyup', '#autocomplete-input', fn.input)
     fn.suggestedSongs()
   }
 
   fn = {}
+
+  fn.input = function (event) {
+    if (event.which == 13)
+      fn.addSong()
+  }
+
   fn.getJSON = function () {
-    console.log(window.selectedSongs)
     return window.selectedSongs
   }
+
   fn.addJSON = function (songObject) {
     window.selectedSongs.push(songObject)
     $('#autocomplete-input').val('');
@@ -22,7 +28,6 @@ function songs() {
   }
   fn.removeJSON = function (key) {
     fn.getJSON().forEach((item, index) => {
-      console.log(`${item.id_songs} - ${key}`)
       if (index === key) {
         delete window.selectedSongs[index];
       }
@@ -35,7 +40,6 @@ function songs() {
     let text = $("#autocomplete-input").val()
     if (fn.valid(text)) {
       $("#autocomplete-input").removeClass('--error')
-      console.log('Se agrega')
       fn.addJSON({
         id_songs: 0,
         name: text,
@@ -86,7 +90,6 @@ function songs() {
           fn.addJSON(selectedSong)
         }
         setTimeout(() => {
-          console.log('Limpia OK');
           $('#autocomplete-input').val('');
         }, 50);
 
@@ -113,10 +116,37 @@ function songs() {
     window.createYesNoModal(
       '¿Estás seguro de enviar estas canciones?',
       function () {
-        // fn.ajax(data)
-        console.log('Yesss')
+        console.log('songs', fn.getJSON())
+
+
+        $.ajax({
+          url: `${app.urls.base_url}/ajax`,
+          type: 'POST',
+          data: {
+            type: 'songs',
+            token: $("#token").val(),
+            songs: fn.getJSON(),
+          },
+          dataType: 'json',
+          success: function(res) {
+            console.log(res)
+            // window.overlay(false)
+            // fn.closeModal()
+          },
+          error: function(res, a) {
+            window.overlay(false)
+            fn.closeModal()
+          }
+        });
+
       }
     );
+  }
+
+  fn.closeModal = function () {
+    $(`.modal`).removeClass('active')
+    $('body').css('overflow', '')
+    return false
   }
 
   init = function () {

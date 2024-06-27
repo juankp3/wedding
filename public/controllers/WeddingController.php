@@ -29,7 +29,39 @@ class WeddingController
 			return $this->ajaxGoodWishes();
 		}
 
+		if ($data['type'] == 'songs') {
+			return $this->ajaxSongs();
+		}
+
     }
+
+	public function ajaxSongs()
+	{
+		$songModel = new SongModel();
+		$data = Flight::request()->data;
+		$token = $data['token'];
+		if (!empty($token)) {
+			$guest = $this->getDataGuest($token);
+			$guestId = $guest['guest']['id_guest'];
+		}
+
+		foreach($data['songs'] as $song) {
+			$songId = $song['id_songs'];
+
+			if ($song['id_songs'] == 0) {
+				$songModel->name = $song['name'];
+				$songModel->save();
+				$songId = $songModel->getLastId();
+			}
+
+			$guestSongsModel = new GuestSongsModel();
+			$guestSongsModel->id_guest = $guestId;
+			$guestSongsModel->id_songs = $songId;
+			$guestSongsModel->id_event = 1;
+			$guestSongsModel->save();
+		}
+		Flight::json($data);
+	}
 
 	public function ajaxGoodWishes()
 	{
@@ -97,24 +129,17 @@ class WeddingController
     {
 		$guestModel = new GuestModel();
 		$songModel = new SongModel();
-		// $params = array();
 		$paramsUrl = Flight::request()->query->getData();
 		$params['showQR'] = false;
 
 		$guest = array();
 		if (!empty($paramsUrl['token'])) {
 			$params = $this->getDataGuest($paramsUrl['token']);
-			// $params['suggestedSongs'] =  $songModel->getSuggestedSongsByEventId(1);
 			$songs = $songModel->getSuggestedSongsByEventId(1);
-			// $params['suggestedSongs'] =  $songModel->getIndicesById($songModel->getSuggestedSongsByEventId(1), 'id_songs');
 			$params['suggestedSongs'] =  array(
 				'songs' => $songs,
 				'songsbyId' => $songModel->getIndicesById($songs, 'id_songs')
 			);
-
-			// echo "<pre>";
-			// var_dump($params['suggestedSongs']);
-			// echo "</pre>";exit;
 			$guest = $params['guest'];
 		}
 		$params['og'] = $this->OpenGraphByGuest($guest);

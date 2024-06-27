@@ -162,14 +162,7 @@ class Model
 
 	function getIndicesById($array, $id)
 	{
-		// $indices = array_keys($array);
-		// $ids = array_column($array, 'id');
-		// $combined = array_combine($indices, $ids);
-		// $result = array_keys($combined, $id);
-
 		$keys = array_column($array, $id);
 		return array_combine($keys, $array);
-
-		// return $result;
 	}
 }
