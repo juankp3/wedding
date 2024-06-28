@@ -21,6 +21,7 @@ function _slidingup() {
   fn.open = function (e) {
     console.log('Holaa')
     $("#panel").closest('.overlay-panel').addClass('overlay-panel__active')
+    $('.btn_start').removeClass('btn_start__selected')
     $("#panel").slideDown("slow");
     e.preventDefault()
   }
@@ -51,26 +52,27 @@ function _slidingup() {
       $('.btn_start').removeClass('btn_start__active');
     });
 
-    $('.btn_start').on('click', function () {
+    $('.btn_start').on('click', function (event) {
       var value = $(this).data('value');
       $('.btn_start').each(function () {
         if ($(this).data('value') <= value) {
           $(this).addClass('btn_start__selected');
-          window.createOKModal(
-            '¿Estás seguro que los <b>seleccionados asistirán</b> a nuestro matrimonio?',
-            function () {
-              // fn.ajax(data)
-              console.log('Yesss')
-              fn.closeModal()
-              $("#panel").closest('.overlay-panel').removeClass('overlay-panel__active')
-            }
-          );
         } else {
           $(this).removeClass('btn_start__selected');
         }
       });
+
+      window.createOKModal(
+        'Tu opinión nos ayuda a mejorar',
+        function () {
+          // fn.ajax(data)
+          console.log('Yesss')
+          fn.closeModal()
+          $("#panel").closest('.overlay-panel').removeClass('overlay-panel__active')
+        }
+      );
+      event.preventDefault()
     });
-    return false
   }
 
   fn.closeModal = function () {
