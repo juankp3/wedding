@@ -27,6 +27,9 @@ INSERT INTO guest_songs (id_guest,id_songs,id_event,date_add,date_upd) VALUES
 	 
 SELECT * from songs s ;
 SELECT * from guest_songs gs ;
+describe guest_songs;
+describe songs;
+
 
 
 SELECT s.id_songs, s.name, 

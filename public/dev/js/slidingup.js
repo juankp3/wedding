@@ -10,6 +10,7 @@ function _slidingup() {
     // dom.btn.on('click', events.onClickBtn)
     $(document).on('click', '#goodwishes', fn.open)
     $(document).on('click', '#panel a.close', fn.close)
+    fn.hover()
   }
 
   events = {}
@@ -31,6 +32,35 @@ function _slidingup() {
       $("#panel").closest('.overlay-panel').removeClass('overlay-panel__active')
     });
     e.preventDefault()
+  }
+
+  fn.hover = function (e) {
+    $('.btn_start').on('mouseover', function () {
+      var value = $(this).data('value');
+      console.log('value', value)
+      $('.btn_start').each(function () {
+        if ($(this).data('value') <= value) {
+          $(this).addClass('btn_start__active');
+        } else {
+          $(this).removeClass('btn_start__active');
+        }
+      });
+    });
+
+    $('.btn_start').on('mouseout', function () {
+      $('.btn_start').removeClass('btn_start__active');
+    });
+
+    $('.btn_start').on('click', function () {
+      var value = $(this).data('value');
+      $('.btn_start').each(function () {
+        if ($(this).data('value') <= value) {
+          $(this).addClass('btn_start__selected');
+        } else {
+          $(this).removeClass('btn_start__selected');
+        }
+      });
+    });
   }
 
   init = function () {

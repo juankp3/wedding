@@ -12,21 +12,44 @@
     display: flex
 
 .panel
-  padding: 50px
-  display: none
   background: $color-white
-  height: 300px
-  position: absolute
-  bottom: 0
-  width: 100%
-  z-index: 4
-  border-top-left-radius: 32px
-  border-top-right-radius: 32px
-  border-top: 1px solid gray
+  border-bottom: none
   border-left: none
   border-right: none
-  border-bottom: none
-  padding: 20px
+  border-top-left-radius: 8px
+  border-top-right-radius: 8px
+  border-top: 1px solid gray
+  bottom: 0
+  display: none
+  height: 160px
+  padding: 8px
+  position: absolute
+  width: 100%
+  width: 380px
+  z-index: 4
+  @include xs()
+    height: 160px
+  &__body
+    display: flex
+    flex-direction: column
+    gap: 16px
+    padding: 8px 16px
+  &__title
+    text-align: center
+    font-weight: bold
+  &__content
+    display: flex
+    flex-direction: column
+    width: 100%
+  &__start
+    display: flex
+    justify-content: space-around
+  &__description
+    display: flex
+    justify-content: space-between
+    padding-top: 8px
+    span
+      font-size: 14px
   &__header
     display: flex
     a.close
@@ -35,3 +58,14 @@
       width: 32px
       height: 32px
       text-align: center
+      color: $color-grey-text
+.btn_start
+  width: 32px
+  height: 32px
+  &__active, &__selected
+    filter: $color-filter-primary
+  &:hover
+    img
+      filter: $color-filter-primary
+
+

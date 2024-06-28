@@ -1,4 +1,4 @@
-<?php //Flight::render('widgets/slidingup.php')
+<?php Flight::render('widgets/slidingup.php')
 ?>
 <?php Flight::render('widgets/profile.php') ?>
 <hr class="divider" />

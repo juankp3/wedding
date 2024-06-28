@@ -952,21 +952,53 @@ input[type=text]:focus {
 }
 
 .panel {
-  padding: 50px;
-  display: none;
   background: #FFFFFF;
-  height: 300px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 4;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  border-top: 1px solid gray;
+  border-bottom: none;
   border-left: none;
   border-right: none;
-  border-bottom: none;
-  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top: 1px solid gray;
+  bottom: 0;
+  display: none;
+  height: 160px;
+  padding: 8px;
+  position: absolute;
+  width: 100%;
+  width: 380px;
+  z-index: 4;
+}
+@media screen and (min-width: 480px) {
+  .panel {
+    height: 160px;
+  }
+}
+.panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 16px;
+}
+.panel__title {
+  text-align: center;
+  font-weight: bold;
+}
+.panel__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.panel__start {
+  display: flex;
+  justify-content: space-around;
+}
+.panel__description {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+.panel__description span {
+  font-size: 14px;
 }
 .panel__header {
   display: flex;
@@ -977,6 +1009,18 @@ input[type=text]:focus {
   width: 32px;
   height: 32px;
   text-align: center;
+  color: #5B5B5F;
+}
+
+.btn_start {
+  width: 32px;
+  height: 32px;
+}
+.btn_start__active, .btn_start__selected {
+  filter: invert(28%) sepia(87%) saturate(431%) hue-rotate(330deg) brightness(93%) contrast(86%);
+}
+.btn_start:hover img {
+  filter: invert(28%) sepia(87%) saturate(431%) hue-rotate(330deg) brightness(93%) contrast(86%);
 }
 
 .songs {
