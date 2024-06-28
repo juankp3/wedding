@@ -3,7 +3,7 @@
 	<div class="footer__info">
 
 		<div class="info__votacion">
-			<p>¿Te ha gustado esta invitación virtual? </br> <a id="goodwishes" href="#" >Ayúdanos a mejorar</a></p>
+			<p>¿Te ha gustado esta invitación virtual? </br> <a id="survey" href="#">Ayúdanos a mejorar</a></p>
 		</div>
 
 		<div class="info__message">

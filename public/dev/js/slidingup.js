@@ -3,12 +3,12 @@ function _slidingup() {
 
   dom = {}
   catchDom = function () {
-    dom.btn = $('#goodwishes')
+    dom.btn = $('#survey')
   }
 
   suscribeEvents = function () {
     // dom.btn.on('click', events.onClickBtn)
-    $(document).on('click', '#goodwishes', fn.open)
+    $(document).on('click', '#survey', fn.open)
     $(document).on('click', '#panel a.close', fn.close)
     fn.hover()
   }
@@ -23,6 +23,12 @@ function _slidingup() {
     $("#panel").closest('.overlay-panel').addClass('overlay-panel__active')
     $('.btn_start').removeClass('btn_start__selected')
     $("#panel").slideDown("slow");
+
+    window.scrollTo(0, document.body.scrollHeight); // Desplazar al final de la página
+    setTimeout(function () {
+      window.scrollTo(0, document.body.scrollHeight); // Asegurarse de que la barra de direcciones se oculta
+    }, 10);
+
     e.preventDefault()
   }
 
