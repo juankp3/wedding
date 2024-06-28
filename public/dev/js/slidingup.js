@@ -56,11 +56,27 @@ function _slidingup() {
       $('.btn_start').each(function () {
         if ($(this).data('value') <= value) {
           $(this).addClass('btn_start__selected');
+          window.createOKModal(
+            '¿Estás seguro que los <b>seleccionados asistirán</b> a nuestro matrimonio?',
+            function () {
+              // fn.ajax(data)
+              console.log('Yesss')
+              fn.closeModal()
+              $("#panel").closest('.overlay-panel').removeClass('overlay-panel__active')
+            }
+          );
         } else {
           $(this).removeClass('btn_start__selected');
         }
       });
     });
+    return false
+  }
+
+  fn.closeModal = function () {
+    $(`.modal`).removeClass('active')
+    $('body').css('overflow', '')
+    return false
   }
 
   init = function () {
