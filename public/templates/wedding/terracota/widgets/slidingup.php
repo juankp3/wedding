@@ -1,6 +1,3 @@
-<a id="goodwishes" href="#">
-	Hola
-</a>
 <div class="overlay-panel">
 	<div id="panel" class="panel">
 		<div class="panel__header">
@@ -10,7 +7,7 @@
 			</a>
 		</div>
 		<div class="panel__body">
-			<div class="panel__title">¿Qué te pareció esta la tarjeta virtual?</div>
+			<div class="panel__title">¿Qué te pareció esta la invitación virtual?</div>
 			<div class="panel__content">
 				<div class="panel__start">
 					<a href="#" class="btn_start" data-value="1">
